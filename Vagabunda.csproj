@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39CAC2CC-13D6-4FA9-AFEF-C68F2D8695DF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Vagabunda</RootNamespace>
+    <AssemblyName>Vagabunda</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.Licensing.6.3.0\lib\net48\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.9.1.0\lib\net48\Bunifu.UI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Drawing.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.CodeDom, Version=9.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.CodeDom.9.0.4\lib\net462\System.CodeDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bajas.Designer.cs">
+      <DependentUpon>Bajas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BUNIFU.cs" />
+    <Compile Include="Contraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contraseña.Designer.cs">
+      <DependentUpon>Contraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestioDePrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestioDePrestamos.Designer.cs">
+      <DependentUpon>GestioDePrestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionDeLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionDeLibros.Designer.cs">
+      <DependentUpon>GestionDeLibros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionDeUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionDeUsuarios.Designer.cs">
+      <DependentUpon>GestionDeUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IniciarSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IniciarSesion.Designer.cs">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipla.Designer.cs">
+      <DependentUpon>MenuPrincipla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Penalizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Penalizacion.Designer.cs">
+      <DependentUpon>Penalizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilBibiotecario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerfilBibiotecario.Designer.cs">
+      <DependentUpon>PerfilBibiotecario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes.Designer.cs">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Bajas.resx">
+      <DependentUpon>Bajas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contraseña.resx">
+      <DependentUpon>Contraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestioDePrestamos.resx">
+      <DependentUpon>GestioDePrestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionDeLibros.resx">
+      <DependentUpon>GestionDeLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionDeUsuarios.resx">
+      <DependentUpon>GestionDeUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IniciarSesion.resx">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipla.resx">
+      <DependentUpon>MenuPrincipla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Penalizacion.resx">
+      <DependentUpon>Penalizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerfilBibiotecario.resx">
+      <DependentUpon>PerfilBibiotecario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Reportes.resx">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
