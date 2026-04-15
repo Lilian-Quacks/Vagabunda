@@ -21,5 +21,16 @@ namespace Vagabunda
         {
 
         }
+
+        private void PE_Bibliotecario_EditValueChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void LBLPerfil_Click(object sender, EventArgs e)
+        {
+            PerfilBibiotecario perfil = new PerfilBibiotecario();
+            perfil.ShowDialog();
+        }
     }
 }

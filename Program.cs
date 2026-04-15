@@ -16,7 +16,7 @@ namespace Vagabunda
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Contraseña());
+            Application.Run(new IniciarSesion());
         }
     }
 }

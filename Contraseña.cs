@@ -16,8 +16,7 @@ namespace Vagabunda
         {
             InitializeComponent();
         }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void SB_Enviar_Click(object sender, EventArgs e)
         {
 
         }

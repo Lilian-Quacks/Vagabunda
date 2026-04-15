@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipla));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LBLPerfil = new System.Windows.Forms.Label();
+            this.PE_Bibliotecario = new DevExpress.XtraEditors.PictureEdit();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureEdit6 = new DevExpress.XtraEditors.PictureEdit();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,23 +43,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit7 = new DevExpress.XtraEditors.PictureEdit();
-            this.pictureEdit5 = new DevExpress.XtraEditors.PictureEdit();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PE_Bibliotecario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(213)))), ((int)(((byte)(186)))));
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.pictureEdit5);
+            this.panel1.Controls.Add(this.LBLPerfil);
+            this.panel1.Controls.Add(this.PE_Bibliotecario);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.pictureEdit6);
             this.panel1.Controls.Add(this.label4);
@@ -72,6 +72,34 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1612, 142);
             this.panel1.TabIndex = 2;
+            // 
+            // LBLPerfil
+            // 
+            this.LBLPerfil.AutoSize = true;
+            this.LBLPerfil.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
+            this.LBLPerfil.ForeColor = System.Drawing.Color.OldLace;
+            this.LBLPerfil.Location = new System.Drawing.Point(1448, 95);
+            this.LBLPerfil.Name = "LBLPerfil";
+            this.LBLPerfil.Size = new System.Drawing.Size(120, 31);
+            this.LBLPerfil.TabIndex = 27;
+            this.LBLPerfil.Text = "PERFIL";
+            this.LBLPerfil.Click += new System.EventHandler(this.LBLPerfil_Click);
+            // 
+            // PE_Bibliotecario
+            // 
+            this.PE_Bibliotecario.EditValue = ((object)(resources.GetObject("PE_Bibliotecario.EditValue")));
+            this.PE_Bibliotecario.Location = new System.Drawing.Point(1463, 22);
+            this.PE_Bibliotecario.Name = "PE_Bibliotecario";
+            this.PE_Bibliotecario.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.PE_Bibliotecario.Properties.Appearance.Options.UseBackColor = true;
+            this.PE_Bibliotecario.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.PE_Bibliotecario.Properties.InitialImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("pictureEdit5.Properties.InitialImageOptions.Image")));
+            this.PE_Bibliotecario.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.PE_Bibliotecario.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.PE_Bibliotecario.Properties.ZoomAcceleration = 1333D;
+            this.PE_Bibliotecario.Size = new System.Drawing.Size(93, 93);
+            this.PE_Bibliotecario.TabIndex = 26;
+            this.PE_Bibliotecario.EditValueChanged += new System.EventHandler(this.PE_Bibliotecario_EditValueChanged);
             // 
             // label6
             // 
@@ -201,42 +229,16 @@
             // pictureEdit7
             // 
             this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
-            this.pictureEdit7.Location = new System.Drawing.Point(358, 111);
+            this.pictureEdit7.Location = new System.Drawing.Point(494, 128);
             this.pictureEdit7.Name = "pictureEdit7";
             this.pictureEdit7.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit7.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit7.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit7.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit7.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit7.Size = new System.Drawing.Size(1196, 719);
+            this.pictureEdit7.Size = new System.Drawing.Size(901, 590);
             this.pictureEdit7.TabIndex = 11;
             this.pictureEdit7.EditValueChanged += new System.EventHandler(this.pictureEdit7_EditValueChanged);
-            // 
-            // pictureEdit5
-            // 
-            this.pictureEdit5.EditValue = ((object)(resources.GetObject("pictureEdit5.EditValue")));
-            this.pictureEdit5.Location = new System.Drawing.Point(1463, 22);
-            this.pictureEdit5.Name = "pictureEdit5";
-            this.pictureEdit5.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.pictureEdit5.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit5.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit5.Properties.InitialImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("pictureEdit5.Properties.InitialImageOptions.Image")));
-            this.pictureEdit5.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit5.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit5.Properties.ZoomAcceleration = 1333D;
-            this.pictureEdit5.Size = new System.Drawing.Size(93, 93);
-            this.pictureEdit5.TabIndex = 26;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.OldLace;
-            this.label5.Location = new System.Drawing.Point(1448, 95);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 31);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "PERFIL";
             // 
             // MenuPrincipla
             // 
@@ -251,13 +253,13 @@
             this.Text = "MenuPrincipla";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PE_Bibliotecario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -276,7 +278,7 @@
         private DevExpress.XtraEditors.PictureEdit pictureEdit3;
         private DevExpress.XtraEditors.PictureEdit pictureEdit6;
         private DevExpress.XtraEditors.PictureEdit pictureEdit7;
-        private System.Windows.Forms.Label label5;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit5;
+        private System.Windows.Forms.Label LBLPerfil;
+        private DevExpress.XtraEditors.PictureEdit PE_Bibliotecario;
     }
 }

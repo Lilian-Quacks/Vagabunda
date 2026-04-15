@@ -35,22 +35,22 @@
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.TXTConfNuevContra = new System.Windows.Forms.TextBox();
+            this.TXTNuevaContra = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.SB_Contra = new DevExpress.XtraEditors.SimpleButton();
+            this.SB_Actualizar = new DevExpress.XtraEditors.SimpleButton();
+            this.TXTContraAct = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TXTCorreo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TXTRol = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TXTUsuario = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TXTNombre = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
@@ -117,22 +117,22 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(207)))));
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.textBox7);
-            this.panel3.Controls.Add(this.textBox8);
+            this.panel3.Controls.Add(this.TXTConfNuevContra);
+            this.panel3.Controls.Add(this.TXTNuevaContra);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.simpleButton3);
-            this.panel3.Controls.Add(this.simpleButton4);
-            this.panel3.Controls.Add(this.textBox9);
+            this.panel3.Controls.Add(this.SB_Contra);
+            this.panel3.Controls.Add(this.SB_Actualizar);
+            this.panel3.Controls.Add(this.TXTContraAct);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.panel2);
-            this.panel3.Controls.Add(this.textBox5);
+            this.panel3.Controls.Add(this.TXTCorreo);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.textBox4);
+            this.panel3.Controls.Add(this.TXTRol);
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.TXTUsuario);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.TXTNombre);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.pictureEdit3);
@@ -152,21 +152,21 @@
             this.label6.TabIndex = 44;
             this.label6.Text = "SEGURIDAD";
             // 
-            // textBox7
+            // TXTConfNuevContra
             // 
-            this.textBox7.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold);
-            this.textBox7.Location = new System.Drawing.Point(490, 324);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(366, 29);
-            this.textBox7.TabIndex = 43;
+            this.TXTConfNuevContra.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold);
+            this.TXTConfNuevContra.Location = new System.Drawing.Point(490, 324);
+            this.TXTConfNuevContra.Name = "TXTConfNuevContra";
+            this.TXTConfNuevContra.Size = new System.Drawing.Size(366, 29);
+            this.TXTConfNuevContra.TabIndex = 43;
             // 
-            // textBox8
+            // TXTNuevaContra
             // 
-            this.textBox8.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold);
-            this.textBox8.Location = new System.Drawing.Point(490, 224);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(366, 29);
-            this.textBox8.TabIndex = 42;
+            this.TXTNuevaContra.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold);
+            this.TXTNuevaContra.Location = new System.Drawing.Point(490, 224);
+            this.TXTNuevaContra.Name = "TXTNuevaContra";
+            this.TXTNuevaContra.Size = new System.Drawing.Size(366, 29);
+            this.TXTNuevaContra.TabIndex = 42;
             // 
             // label8
             // 
@@ -179,56 +179,58 @@
             this.label8.TabIndex = 41;
             this.label8.Text = "CONFIRMAR NUEVA CONTRASEÑA:";
             // 
-            // simpleButton3
+            // SB_Contra
             // 
-            this.simpleButton3.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
-            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(196)))), ((int)(((byte)(195)))));
-            this.simpleButton3.Appearance.BorderColor = System.Drawing.SystemColors.ControlText;
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Bold);
-            this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.simpleButton3.Appearance.Options.UseBackColor = true;
-            this.simpleButton3.Appearance.Options.UseBorderColor = true;
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Appearance.Options.UseForeColor = true;
-            this.simpleButton3.Appearance.Options.UseTextOptions = true;
-            this.simpleButton3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton3.Location = new System.Drawing.Point(524, 473);
-            this.simpleButton3.LookAndFeel.SkinName = "Office 2013";
-            this.simpleButton3.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(258, 54);
-            this.simpleButton3.TabIndex = 40;
-            this.simpleButton3.Text = "CONFIRMAR CAMBIO \r\nDE CONTRASEÑA\r\n";
+            this.SB_Contra.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
+            this.SB_Contra.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(196)))), ((int)(((byte)(195)))));
+            this.SB_Contra.Appearance.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.SB_Contra.Appearance.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Bold);
+            this.SB_Contra.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.SB_Contra.Appearance.Options.UseBackColor = true;
+            this.SB_Contra.Appearance.Options.UseBorderColor = true;
+            this.SB_Contra.Appearance.Options.UseFont = true;
+            this.SB_Contra.Appearance.Options.UseForeColor = true;
+            this.SB_Contra.Appearance.Options.UseTextOptions = true;
+            this.SB_Contra.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SB_Contra.Location = new System.Drawing.Point(524, 473);
+            this.SB_Contra.LookAndFeel.SkinName = "Office 2013";
+            this.SB_Contra.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.SB_Contra.Name = "SB_Contra";
+            this.SB_Contra.Size = new System.Drawing.Size(258, 54);
+            this.SB_Contra.TabIndex = 40;
+            this.SB_Contra.Text = "CONFIRMAR CAMBIO \r\nDE CONTRASEÑA\r\n";
+            this.SB_Contra.Click += new System.EventHandler(this.SB_Contra_Click);
             // 
-            // simpleButton4
+            // SB_Actualizar
             // 
-            this.simpleButton4.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
-            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(196)))), ((int)(((byte)(195)))));
-            this.simpleButton4.Appearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Bold);
-            this.simpleButton4.Appearance.ForeColor = System.Drawing.SystemColors.Window;
-            this.simpleButton4.Appearance.Options.UseBackColor = true;
-            this.simpleButton4.Appearance.Options.UseBorderColor = true;
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Appearance.Options.UseForeColor = true;
-            this.simpleButton4.Appearance.Options.UseTextOptions = true;
-            this.simpleButton4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton4.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.simpleButton4.Location = new System.Drawing.Point(524, 399);
-            this.simpleButton4.LookAndFeel.SkinName = "Office 2013";
-            this.simpleButton4.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(258, 55);
-            this.simpleButton4.TabIndex = 36;
-            this.simpleButton4.Text = "ACTUALIZAR PERFIL";
+            this.SB_Actualizar.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
+            this.SB_Actualizar.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(196)))), ((int)(((byte)(195)))));
+            this.SB_Actualizar.Appearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.SB_Actualizar.Appearance.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Bold);
+            this.SB_Actualizar.Appearance.ForeColor = System.Drawing.SystemColors.Window;
+            this.SB_Actualizar.Appearance.Options.UseBackColor = true;
+            this.SB_Actualizar.Appearance.Options.UseBorderColor = true;
+            this.SB_Actualizar.Appearance.Options.UseFont = true;
+            this.SB_Actualizar.Appearance.Options.UseForeColor = true;
+            this.SB_Actualizar.Appearance.Options.UseTextOptions = true;
+            this.SB_Actualizar.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SB_Actualizar.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.SB_Actualizar.Location = new System.Drawing.Point(524, 399);
+            this.SB_Actualizar.LookAndFeel.SkinName = "Office 2013";
+            this.SB_Actualizar.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.SB_Actualizar.Name = "SB_Actualizar";
+            this.SB_Actualizar.Size = new System.Drawing.Size(258, 55);
+            this.SB_Actualizar.TabIndex = 36;
+            this.SB_Actualizar.Text = "ACTUALIZAR PERFIL";
+            this.SB_Actualizar.Click += new System.EventHandler(this.SB_Actualizar_Click);
             // 
-            // textBox9
+            // TXTContraAct
             // 
-            this.textBox9.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold);
-            this.textBox9.Location = new System.Drawing.Point(490, 131);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(366, 29);
-            this.textBox9.TabIndex = 37;
+            this.TXTContraAct.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold);
+            this.TXTContraAct.Location = new System.Drawing.Point(490, 131);
+            this.TXTContraAct.Name = "TXTContraAct";
+            this.TXTContraAct.Size = new System.Drawing.Size(366, 29);
+            this.TXTContraAct.TabIndex = 37;
             // 
             // label13
             // 
@@ -260,13 +262,13 @@
             this.panel2.Size = new System.Drawing.Size(27, 684);
             this.panel2.TabIndex = 34;
             // 
-            // textBox5
+            // TXTCorreo
             // 
-            this.textBox5.Font = new System.Drawing.Font("Century", 11F, System.Drawing.FontStyle.Bold);
-            this.textBox5.Location = new System.Drawing.Point(12, 556);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(410, 34);
-            this.textBox5.TabIndex = 33;
+            this.TXTCorreo.Font = new System.Drawing.Font("Century", 11F, System.Drawing.FontStyle.Bold);
+            this.TXTCorreo.Location = new System.Drawing.Point(12, 556);
+            this.TXTCorreo.Name = "TXTCorreo";
+            this.TXTCorreo.Size = new System.Drawing.Size(410, 34);
+            this.TXTCorreo.TabIndex = 33;
             // 
             // label12
             // 
@@ -280,13 +282,13 @@
             this.label12.Text = "CORREO:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox4
+            // TXTRol
             // 
-            this.textBox4.Font = new System.Drawing.Font("Century", 11F, System.Drawing.FontStyle.Bold);
-            this.textBox4.Location = new System.Drawing.Point(13, 480);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(409, 34);
-            this.textBox4.TabIndex = 31;
+            this.TXTRol.Font = new System.Drawing.Font("Century", 11F, System.Drawing.FontStyle.Bold);
+            this.TXTRol.Location = new System.Drawing.Point(13, 480);
+            this.TXTRol.Name = "TXTRol";
+            this.TXTRol.Size = new System.Drawing.Size(409, 34);
+            this.TXTRol.TabIndex = 31;
             // 
             // label11
             // 
@@ -300,13 +302,13 @@
             this.label11.Text = "ROL:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox3
+            // TXTUsuario
             // 
-            this.textBox3.Font = new System.Drawing.Font("Century", 11F, System.Drawing.FontStyle.Bold);
-            this.textBox3.Location = new System.Drawing.Point(13, 399);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(409, 34);
-            this.textBox3.TabIndex = 29;
+            this.TXTUsuario.Font = new System.Drawing.Font("Century", 11F, System.Drawing.FontStyle.Bold);
+            this.TXTUsuario.Location = new System.Drawing.Point(13, 399);
+            this.TXTUsuario.Name = "TXTUsuario";
+            this.TXTUsuario.Size = new System.Drawing.Size(409, 34);
+            this.TXTUsuario.TabIndex = 29;
             // 
             // label7
             // 
@@ -320,13 +322,13 @@
             this.label7.Text = "USUARIO:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox2
+            // TXTNombre
             // 
-            this.textBox2.Font = new System.Drawing.Font("Century", 11F, System.Drawing.FontStyle.Bold);
-            this.textBox2.Location = new System.Drawing.Point(13, 324);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(409, 34);
-            this.textBox2.TabIndex = 26;
+            this.TXTNombre.Font = new System.Drawing.Font("Century", 11F, System.Drawing.FontStyle.Bold);
+            this.TXTNombre.Location = new System.Drawing.Point(13, 324);
+            this.TXTNombre.Name = "TXTNombre";
+            this.TXTNombre.Size = new System.Drawing.Size(409, 34);
+            this.TXTNombre.TabIndex = 26;
             // 
             // label9
             // 
@@ -375,6 +377,7 @@
             this.Controls.Add(this.panel3);
             this.Name = "PerfilBibiotecario";
             this.Text = "PerfilBibiotecario";
+            this.Load += new System.EventHandler(this.PerfilBibiotecario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
@@ -392,24 +395,24 @@
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TXTCorreo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TXTRol;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TXTUsuario;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TXTNombre;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private DevExpress.XtraEditors.PictureEdit pictureEdit3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox TXTConfNuevContra;
+        private System.Windows.Forms.TextBox TXTNuevaContra;
         private System.Windows.Forms.Label label8;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private System.Windows.Forms.TextBox textBox9;
+        private DevExpress.XtraEditors.SimpleButton SB_Contra;
+        private DevExpress.XtraEditors.SimpleButton SB_Actualizar;
+        private System.Windows.Forms.TextBox TXTContraAct;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
     }

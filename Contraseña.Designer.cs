@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contraseña));
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.Usuario = new System.Windows.Forms.TextBox();
+            this.SB_Enviar = new DevExpress.XtraEditors.SimpleButton();
+            this.TXTCorreo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -42,32 +42,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // simpleButton1
+            // SB_Enviar
             // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(144)))), ((int)(((byte)(162)))));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Bold);
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseBorderColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.Appearance.Options.UseTextOptions = true;
-            this.simpleButton1.Location = new System.Drawing.Point(118, 462);
-            this.simpleButton1.LookAndFeel.SkinName = "Office 2013";
-            this.simpleButton1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton1.Size = new System.Drawing.Size(202, 40);
-            this.simpleButton1.TabIndex = 16;
-            this.simpleButton1.Text = "ENVIAR";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.SB_Enviar.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(144)))), ((int)(((byte)(162)))));
+            this.SB_Enviar.Appearance.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Bold);
+            this.SB_Enviar.Appearance.Options.UseBackColor = true;
+            this.SB_Enviar.Appearance.Options.UseBorderColor = true;
+            this.SB_Enviar.Appearance.Options.UseFont = true;
+            this.SB_Enviar.Appearance.Options.UseForeColor = true;
+            this.SB_Enviar.Appearance.Options.UseTextOptions = true;
+            this.SB_Enviar.Location = new System.Drawing.Point(118, 462);
+            this.SB_Enviar.LookAndFeel.SkinName = "Office 2013";
+            this.SB_Enviar.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.SB_Enviar.Name = "SB_Enviar";
+            this.SB_Enviar.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.SB_Enviar.Size = new System.Drawing.Size(202, 40);
+            this.SB_Enviar.TabIndex = 16;
+            this.SB_Enviar.Text = "ENVIAR";
+            this.SB_Enviar.Click += new System.EventHandler(this.SB_Enviar_Click);
             // 
-            // Usuario
+            // TXTCorreo
             // 
-            this.Usuario.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
-            this.Usuario.Location = new System.Drawing.Point(39, 415);
-            this.Usuario.Name = "Usuario";
-            this.Usuario.Size = new System.Drawing.Size(382, 36);
-            this.Usuario.TabIndex = 14;
+            this.TXTCorreo.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
+            this.TXTCorreo.Location = new System.Drawing.Point(39, 415);
+            this.TXTCorreo.Name = "TXTCorreo";
+            this.TXTCorreo.Size = new System.Drawing.Size(382, 36);
+            this.TXTCorreo.TabIndex = 14;
             // 
             // label3
             // 
@@ -156,8 +156,8 @@
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureEdit3);
-            this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.Usuario);
+            this.Controls.Add(this.SB_Enviar);
+            this.Controls.Add(this.TXTCorreo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -172,8 +172,8 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private System.Windows.Forms.TextBox Usuario;
+        private DevExpress.XtraEditors.SimpleButton SB_Enviar;
+        private System.Windows.Forms.TextBox TXTCorreo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
