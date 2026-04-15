@@ -162,6 +162,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Contraseña";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contraseña";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
