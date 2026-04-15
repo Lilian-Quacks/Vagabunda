@@ -12,7 +12,6 @@ namespace Vagabunda
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            // Quitamos el ReadOnly para que puedas editarlo
             TXTUsuario.ReadOnly = false;
         }
 

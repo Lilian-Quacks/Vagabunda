@@ -40,7 +40,6 @@ namespace Vagabunda
 
                 MenuPrincipla seleccionar = new MenuPrincipla();
 
-                // PASO 1: Le decimos que el inicio es en el centro de la pantalla
                 seleccionar.StartPosition = FormStartPosition.CenterScreen;
 
                 seleccionar.FormClosed += (s, args) => {
@@ -48,11 +47,8 @@ namespace Vagabunda
                     if (!CBRecordar.Checked) TXTContra.Clear();
                 };
 
-                // PASO 2: Mostramos el menú
                 seleccionar.Show();
-
-                // PASO 3: Re-centramos justo después de mostrarlo 
-                // (Esto corrige el error de escalado de la laptop)
+  
                 seleccionar.Location = new Point(
                     Screen.PrimaryScreen.WorkingArea.Width / 2 - seleccionar.Width / 2,
                     Screen.PrimaryScreen.WorkingArea.Height / 2 - seleccionar.Height / 2
