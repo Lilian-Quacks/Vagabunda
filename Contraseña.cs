@@ -83,5 +83,10 @@ namespace Vagabunda
                 MessageBox.Show("Error detallado: " + ex.InnerException?.Message ?? ex.Message);
             }
         }
+
+        private void Contraseña_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

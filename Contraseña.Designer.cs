@@ -51,12 +51,13 @@
             this.SB_Enviar.Appearance.Options.UseFont = true;
             this.SB_Enviar.Appearance.Options.UseForeColor = true;
             this.SB_Enviar.Appearance.Options.UseTextOptions = true;
-            this.SB_Enviar.Location = new System.Drawing.Point(118, 462);
+            this.SB_Enviar.Location = new System.Drawing.Point(105, 370);
             this.SB_Enviar.LookAndFeel.SkinName = "Office 2013";
             this.SB_Enviar.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.SB_Enviar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SB_Enviar.Name = "SB_Enviar";
             this.SB_Enviar.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.SB_Enviar.Size = new System.Drawing.Size(202, 40);
+            this.SB_Enviar.Size = new System.Drawing.Size(180, 32);
             this.SB_Enviar.TabIndex = 16;
             this.SB_Enviar.Text = "ENVIAR";
             this.SB_Enviar.Click += new System.EventHandler(this.SB_Enviar_Click);
@@ -64,9 +65,10 @@
             // TXTCorreo
             // 
             this.TXTCorreo.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
-            this.TXTCorreo.Location = new System.Drawing.Point(39, 415);
+            this.TXTCorreo.Location = new System.Drawing.Point(35, 332);
+            this.TXTCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTCorreo.Name = "TXTCorreo";
-            this.TXTCorreo.Size = new System.Drawing.Size(382, 36);
+            this.TXTCorreo.Size = new System.Drawing.Size(340, 33);
             this.TXTCorreo.TabIndex = 14;
             // 
             // label3
@@ -74,27 +76,29 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.label3.Location = new System.Drawing.Point(34, 307);
+            this.label3.Location = new System.Drawing.Point(30, 246);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(387, 56);
+            this.label3.Size = new System.Drawing.Size(341, 50);
             this.label3.TabIndex = 13;
             this.label3.Text = "INGRESA TU CORREO PARA \r\nENVIARTE INFORMACION:\r\n";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(213)))), ((int)(((byte)(186)))));
-            this.panel2.Location = new System.Drawing.Point(-5, 542);
+            this.panel2.Location = new System.Drawing.Point(-4, 434);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(463, 62);
+            this.panel2.Size = new System.Drawing.Size(412, 50);
             this.panel2.TabIndex = 12;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(213)))), ((int)(((byte)(186)))));
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-5, -2);
+            this.panel1.Location = new System.Drawing.Point(-4, -2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(463, 61);
+            this.panel1.Size = new System.Drawing.Size(412, 49);
             this.panel1.TabIndex = 11;
             // 
             // label1
@@ -102,16 +106,17 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 14F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.OldLace;
-            this.label1.Location = new System.Drawing.Point(17, 11);
+            this.label1.Location = new System.Drawing.Point(15, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(430, 33);
+            this.label1.Size = new System.Drawing.Size(385, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "RECUPERAR CONTRASEÑA";
             // 
             // pictureEdit3
             // 
             this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
-            this.pictureEdit3.Location = new System.Drawing.Point(118, 82);
+            this.pictureEdit3.Location = new System.Drawing.Point(105, 66);
+            this.pictureEdit3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit3.Properties.Appearance.Options.UseBackColor = true;
@@ -120,7 +125,7 @@
             this.pictureEdit3.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit3.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit3.Properties.ZoomAcceleration = 1333D;
-            this.pictureEdit3.Size = new System.Drawing.Size(219, 211);
+            this.pictureEdit3.Size = new System.Drawing.Size(195, 169);
             this.pictureEdit3.TabIndex = 26;
             // 
             // label2
@@ -128,9 +133,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century", 11F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.label2.Location = new System.Drawing.Point(34, 385);
+            this.label2.Location = new System.Drawing.Point(30, 308);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 27);
+            this.label2.Size = new System.Drawing.Size(111, 23);
             this.label2.TabIndex = 27;
             this.label2.Text = "CORREO:";
             // 
@@ -140,19 +145,19 @@
             this.linkLabel1.Font = new System.Drawing.Font("Century", 7F, System.Drawing.FontStyle.Bold);
             this.linkLabel1.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(126, 505);
+            this.linkLabel1.Location = new System.Drawing.Point(112, 404);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(173, 17);
+            this.linkLabel1.Size = new System.Drawing.Size(162, 16);
             this.linkLabel1.TabIndex = 28;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Volver al inciar sesion";
             // 
             // Contraseña
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(234)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(452, 603);
+            this.ClientSize = new System.Drawing.Size(402, 482);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureEdit3);
@@ -161,9 +166,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Contraseña";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contraseña";
+            this.Load += new System.EventHandler(this.Contraseña_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
