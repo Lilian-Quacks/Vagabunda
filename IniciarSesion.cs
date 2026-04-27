@@ -7,7 +7,7 @@ namespace Vagabunda
 {
     public partial class IniciarSesion : Form
     {
-        string cadena = @"Data Source=PERLARAMIREZ;Initial Catalog=Gestión para Sala de Lectura;User ID=sa;Password=Don32324;";
+        string cadena = @"Data Source=LOCALHOST;Initial Catalog=Gestión para Sala de Lectura;Integrated Security=True;";
 
         public IniciarSesion()
         {
