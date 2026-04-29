@@ -22,12 +22,6 @@ namespace Vagabunda
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            this.Load += GestioDePrestamos_Load;
-            txtBusqueda.TextChanged += txtBusqueda_TextChanged;
-            dgvPrestamos.CellClick += dgvPrestamos_CellClick;
-
-            btnGuardar.Click += btnGuardar_Click;
-            btnEliminar.Click += btnEliminar_Click;
         }
 
         private void GestioDePrestamos_Load(object sender, EventArgs e)

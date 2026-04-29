@@ -22,7 +22,6 @@ namespace Vagabunda
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.Load += GestionDeUsuarios_Load;
         }
 
         private void GestionDeUsuarios_Load(object sender, EventArgs e)
