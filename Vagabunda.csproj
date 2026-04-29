@@ -161,12 +161,6 @@
     <Compile Include="MenuPrincipla.Designer.cs">
       <DependentUpon>MenuPrincipla.cs</DependentUpon>
     </Compile>
-    <Compile Include="Penalizacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Penalizacion.Designer.cs">
-      <DependentUpon>Penalizacion.cs</DependentUpon>
-    </Compile>
     <Compile Include="PerfilBibiotecario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,9 +195,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipla.resx">
       <DependentUpon>MenuPrincipla.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Penalizacion.resx">
-      <DependentUpon>Penalizacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PerfilBibiotecario.resx">
       <DependentUpon>PerfilBibiotecario.cs</DependentUpon>
