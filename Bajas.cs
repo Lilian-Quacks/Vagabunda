@@ -106,9 +106,9 @@ namespace Vagabunda
 
                     cmdInsert.ExecuteNonQuery();
 
-                    string deleteLibro = "DELETE FROM Libros WHERE Libros_ID = @ID";
+                    string deleteLibro = "UPDATE Libros SET Estatus_Operativo = 'Baja' WHERE Titulo = @Titulo";
                     SqlCommand cmdDelete = new SqlCommand(deleteLibro, con, trans);
-                    cmdDelete.Parameters.AddWithValue("@ID", libroID);
+                    cmdDelete.Parameters.AddWithValue("@Titulo", txtLibro.Text);
 
                     cmdDelete.ExecuteNonQuery();
 
