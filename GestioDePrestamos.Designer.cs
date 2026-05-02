@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestioDePrestamos));
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -75,19 +75,19 @@
             this.panel4.Controls.Add(this.txtBusqueda);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.dgvPrestamos);
-            this.panel4.Location = new System.Drawing.Point(261, 64);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Location = new System.Drawing.Point(196, 52);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(863, 485);
+            this.panel4.Size = new System.Drawing.Size(647, 394);
             this.panel4.TabIndex = 13;
             // 
             // txtBusqueda
             // 
             this.txtBusqueda.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
-            this.txtBusqueda.Location = new System.Drawing.Point(223, 18);
-            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBusqueda.Location = new System.Drawing.Point(167, 15);
+            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(360, 32);
+            this.txtBusqueda.Size = new System.Drawing.Size(271, 27);
             this.txtBusqueda.TabIndex = 12;
             this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
@@ -96,9 +96,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.label7.Location = new System.Drawing.Point(42, 22);
+            this.label7.Location = new System.Drawing.Point(32, 18);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(159, 27);
+            this.label7.Size = new System.Drawing.Size(132, 22);
             this.label7.TabIndex = 12;
             this.label7.Text = "BUSQUEDA:";
             // 
@@ -107,14 +108,14 @@
             this.dgvPrestamos.AllowUserToAddRows = false;
             this.dgvPrestamos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(225)))));
             this.dgvPrestamos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(181)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPrestamos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(181)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPrestamos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrestamos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Idprestamo,
@@ -124,13 +125,13 @@
             this.FechLimite,
             this.Estatu});
             this.dgvPrestamos.EnableHeadersVisualStyles = false;
-            this.dgvPrestamos.Location = new System.Drawing.Point(19, 62);
-            this.dgvPrestamos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvPrestamos.Location = new System.Drawing.Point(14, 50);
+            this.dgvPrestamos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvPrestamos.Name = "dgvPrestamos";
             this.dgvPrestamos.RowHeadersVisible = false;
             this.dgvPrestamos.RowHeadersWidth = 62;
             this.dgvPrestamos.RowTemplate.Height = 28;
-            this.dgvPrestamos.Size = new System.Drawing.Size(821, 406);
+            this.dgvPrestamos.Size = new System.Drawing.Size(616, 330);
             this.dgvPrestamos.TabIndex = 0;
             // 
             // Idprestamo
@@ -179,10 +180,10 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(207)))));
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(-4, 64);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(-3, 52);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(269, 51);
+            this.panel2.Size = new System.Drawing.Size(202, 41);
             this.panel2.TabIndex = 11;
             // 
             // label2
@@ -190,9 +191,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Olive;
-            this.label2.Location = new System.Drawing.Point(44, 10);
+            this.label2.Location = new System.Drawing.Point(33, 8);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(175, 33);
+            this.label2.Size = new System.Drawing.Size(144, 27);
             this.label2.TabIndex = 1;
             this.label2.Text = "DETALLES";
             // 
@@ -202,17 +204,17 @@
             this.panel1.Controls.Add(this.pictureEdit2);
             this.panel1.Controls.Add(this.pictureEdit1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-4, -1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(-3, -1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1128, 66);
+            this.panel1.Size = new System.Drawing.Size(846, 54);
             this.panel1.TabIndex = 10;
             // 
             // pictureEdit2
             // 
             this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
-            this.pictureEdit2.Location = new System.Drawing.Point(12, -15);
-            this.pictureEdit2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureEdit2.Location = new System.Drawing.Point(9, -12);
+            this.pictureEdit2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
@@ -221,14 +223,14 @@
             this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit2.Properties.ZoomAcceleration = 1333D;
-            this.pictureEdit2.Size = new System.Drawing.Size(126, 98);
+            this.pictureEdit2.Size = new System.Drawing.Size(94, 80);
             this.pictureEdit2.TabIndex = 14;
             // 
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(1002, -15);
-            this.pictureEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureEdit1.Location = new System.Drawing.Point(752, -12);
+            this.pictureEdit1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
@@ -237,7 +239,7 @@
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit1.Properties.ZoomAcceleration = 1333D;
-            this.pictureEdit1.Size = new System.Drawing.Size(126, 98);
+            this.pictureEdit1.Size = new System.Drawing.Size(94, 80);
             this.pictureEdit1.TabIndex = 13;
             // 
             // label1
@@ -245,9 +247,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.OldLace;
-            this.label1.Location = new System.Drawing.Point(491, 20);
+            this.label1.Location = new System.Drawing.Point(368, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 33);
+            this.label1.Size = new System.Drawing.Size(165, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "PRESTAMOS";
             // 
@@ -266,10 +269,10 @@
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(-1, 92);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Location = new System.Drawing.Point(-1, 75);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(267, 457);
+            this.panel3.Size = new System.Drawing.Size(200, 371);
             this.panel3.TabIndex = 12;
             // 
             // dtpFechaLimite
@@ -277,10 +280,10 @@
             this.dtpFechaLimite.CustomFormat = "dd/MM/yyyy";
             this.dtpFechaLimite.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
             this.dtpFechaLimite.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaLimite.Location = new System.Drawing.Point(18, 236);
-            this.dtpFechaLimite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpFechaLimite.Location = new System.Drawing.Point(14, 192);
+            this.dtpFechaLimite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpFechaLimite.Name = "dtpFechaLimite";
-            this.dtpFechaLimite.Size = new System.Drawing.Size(213, 32);
+            this.dtpFechaLimite.Size = new System.Drawing.Size(161, 27);
             this.dtpFechaLimite.TabIndex = 16;
             this.dtpFechaLimite.Value = new System.DateTime(2026, 3, 27, 0, 0, 0, 0);
             // 
@@ -289,10 +292,10 @@
             this.dtpFechaSalida.CustomFormat = "dd/MM/yyyy";
             this.dtpFechaSalida.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
             this.dtpFechaSalida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaSalida.Location = new System.Drawing.Point(18, 178);
-            this.dtpFechaSalida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpFechaSalida.Location = new System.Drawing.Point(14, 145);
+            this.dtpFechaSalida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpFechaSalida.Name = "dtpFechaSalida";
-            this.dtpFechaSalida.Size = new System.Drawing.Size(213, 32);
+            this.dtpFechaSalida.Size = new System.Drawing.Size(161, 27);
             this.dtpFechaSalida.TabIndex = 15;
             this.dtpFechaSalida.Value = new System.DateTime(2026, 3, 27, 0, 0, 0, 0);
             // 
@@ -301,9 +304,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.label3.Location = new System.Drawing.Point(12, 272);
+            this.label3.Location = new System.Drawing.Point(9, 221);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 27);
+            this.label3.Size = new System.Drawing.Size(110, 22);
             this.label3.TabIndex = 14;
             this.label3.Text = "ESTATUS:";
             // 
@@ -312,9 +316,10 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.label8.Location = new System.Drawing.Point(12, 150);
+            this.label8.Location = new System.Drawing.Point(9, 122);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(198, 27);
+            this.label8.Size = new System.Drawing.Size(163, 22);
             this.label8.TabIndex = 12;
             this.label8.Text = "FECHA SALIDA";
             // 
@@ -331,12 +336,12 @@
             this.btnEliminar.Appearance.Options.UseForeColor = true;
             this.btnEliminar.Appearance.Options.UseTextOptions = true;
             this.btnEliminar.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnEliminar.Location = new System.Drawing.Point(18, 401);
+            this.btnEliminar.Location = new System.Drawing.Point(14, 326);
             this.btnEliminar.LookAndFeel.SkinName = "Office 2013";
             this.btnEliminar.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(212, 38);
+            this.btnEliminar.Size = new System.Drawing.Size(159, 31);
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -355,44 +360,45 @@
             this.btnGuardar.Appearance.Options.UseTextOptions = true;
             this.btnGuardar.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btnGuardar.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.btnGuardar.Location = new System.Drawing.Point(17, 347);
+            this.btnGuardar.Location = new System.Drawing.Point(13, 282);
             this.btnGuardar.LookAndFeel.SkinName = "Office 2013";
             this.btnGuardar.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(212, 38);
+            this.btnGuardar.Size = new System.Drawing.Size(159, 31);
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // cbeEstatus
             // 
-            this.cbeEstatus.Location = new System.Drawing.Point(18, 299);
-            this.cbeEstatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbeEstatus.Location = new System.Drawing.Point(14, 243);
+            this.cbeEstatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbeEstatus.Name = "cbeEstatus";
             this.cbeEstatus.Properties.Appearance.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
             this.cbeEstatus.Properties.Appearance.Options.UseFont = true;
             this.cbeEstatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbeEstatus.Size = new System.Drawing.Size(212, 30);
+            this.cbeEstatus.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.cbeEstatus.Size = new System.Drawing.Size(159, 26);
             this.cbeEstatus.TabIndex = 5;
             // 
             // txtLibro
             // 
             this.txtLibro.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
-            this.txtLibro.Location = new System.Drawing.Point(18, 122);
-            this.txtLibro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtLibro.Location = new System.Drawing.Point(14, 99);
+            this.txtLibro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtLibro.Name = "txtLibro";
-            this.txtLibro.Size = new System.Drawing.Size(213, 32);
+            this.txtLibro.Size = new System.Drawing.Size(161, 27);
             this.txtLibro.TabIndex = 9;
             // 
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
-            this.txtUsuario.Location = new System.Drawing.Point(18, 61);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsuario.Location = new System.Drawing.Point(14, 50);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(213, 32);
+            this.txtUsuario.Size = new System.Drawing.Size(161, 27);
             this.txtUsuario.TabIndex = 5;
             // 
             // label6
@@ -400,9 +406,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.label6.Location = new System.Drawing.Point(12, 209);
+            this.label6.Location = new System.Drawing.Point(9, 170);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(203, 27);
+            this.label6.Size = new System.Drawing.Size(167, 22);
             this.label6.TabIndex = 8;
             this.label6.Text = "FECHA LIMITE:";
             // 
@@ -411,9 +418,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.label5.Location = new System.Drawing.Point(12, 94);
+            this.label5.Location = new System.Drawing.Point(9, 76);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 27);
+            this.label5.Size = new System.Drawing.Size(80, 22);
             this.label5.TabIndex = 7;
             this.label5.Text = "LIBRO:";
             // 
@@ -422,22 +430,23 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.label4.Location = new System.Drawing.Point(12, 34);
+            this.label4.Location = new System.Drawing.Point(9, 28);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 27);
+            this.label4.Size = new System.Drawing.Size(111, 22);
             this.label4.TabIndex = 6;
             this.label4.Text = "USUARIO:";
             // 
             // GestioDePrestamos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 547);
+            this.ClientSize = new System.Drawing.Size(841, 444);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GestioDePrestamos";
             this.Text = "GestioDePrestamos";
             this.Load += new System.EventHandler(this.GestioDePrestamos_Load);

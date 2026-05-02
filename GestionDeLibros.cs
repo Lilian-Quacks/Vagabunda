@@ -34,11 +34,12 @@ namespace Vagabunda
             {
                 using (SqlConnection conexion = new SqlConnection(cadena))
                 {
-                    string query = "SELECT Libros_ID, ISBN, Titulo, Autor, Editorial, Estado_Fisico, Fecha_Publicacion FROM Libros";
+                    string query = "SELECT Libros_ID, ISBN, Titulo, Autor, Editorial, Estado_Fisico, Fecha_Publicacion " +
+                           "FROM Libros WHERE Estatus_Operativo != 'Baja'";
 
                     if (!string.IsNullOrEmpty(filtro))
                     {
-                        query += " WHERE Titulo LIKE @filtro OR Autor LIKE @filtro OR ISBN LIKE @filtro";
+                        query += " AND (Titulo LIKE @filtro OR Autor LIKE @filtro OR ISBN LIKE @filtro)";
                     }
 
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conexion);
