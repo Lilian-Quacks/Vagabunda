@@ -41,7 +41,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -52,14 +51,15 @@
             this.txtLibro = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBajas)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbeMotivo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -69,7 +69,7 @@
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.dgvBajas);
             this.panel4.Location = new System.Drawing.Point(196, 52);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(647, 394);
             this.panel4.TabIndex = 13;
@@ -78,7 +78,7 @@
             // 
             this.txtBusqueda.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
             this.txtBusqueda.Location = new System.Drawing.Point(167, 15);
-            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(271, 27);
             this.txtBusqueda.TabIndex = 12;
@@ -118,7 +118,7 @@
             this.Email});
             this.dgvBajas.EnableHeadersVisualStyles = false;
             this.dgvBajas.Location = new System.Drawing.Point(14, 50);
-            this.dgvBajas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvBajas.Margin = new System.Windows.Forms.Padding(2);
             this.dgvBajas.Name = "dgvBajas";
             this.dgvBajas.RowHeadersVisible = false;
             this.dgvBajas.RowHeadersWidth = 62;
@@ -155,7 +155,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(207)))));
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(-3, 52);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(202, 41);
             this.panel2.TabIndex = 11;
@@ -179,32 +179,16 @@
             this.panel1.Controls.Add(this.pictureEdit1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-3, -1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(846, 54);
             this.panel1.TabIndex = 10;
-            // 
-            // pictureEdit2
-            // 
-            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
-            this.pictureEdit2.Location = new System.Drawing.Point(9, -12);
-            this.pictureEdit2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureEdit2.Name = "pictureEdit2";
-            this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit2.Properties.InitialImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("pictureEdit2.Properties.InitialImageOptions.Image")));
-            this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit2.Properties.ZoomAcceleration = 1333D;
-            this.pictureEdit2.Size = new System.Drawing.Size(94, 80);
-            this.pictureEdit2.TabIndex = 14;
             // 
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(752, -12);
-            this.pictureEdit1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureEdit1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
@@ -239,7 +223,7 @@
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Location = new System.Drawing.Point(-1, 75);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 371);
             this.panel3.TabIndex = 12;
@@ -247,7 +231,7 @@
             // cbeMotivo
             // 
             this.cbeMotivo.Location = new System.Drawing.Point(14, 114);
-            this.cbeMotivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbeMotivo.Margin = new System.Windows.Forms.Padding(2);
             this.cbeMotivo.Name = "cbeMotivo";
             this.cbeMotivo.Properties.Appearance.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
             this.cbeMotivo.Properties.Appearance.Options.UseFont = true;
@@ -262,7 +246,7 @@
             this.dtpFecha.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFecha.Location = new System.Drawing.Point(14, 166);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(161, 27);
             this.dtpFecha.TabIndex = 16;
@@ -297,7 +281,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(13, 219);
             this.btnEliminar.LookAndFeel.SkinName = "Office 2013";
             this.btnEliminar.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(159, 31);
             this.btnEliminar.TabIndex = 5;
@@ -308,7 +292,7 @@
             // 
             this.txtLibro.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
             this.txtLibro.Location = new System.Drawing.Point(14, 66);
-            this.txtLibro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLibro.Margin = new System.Windows.Forms.Padding(2);
             this.txtLibro.Name = "txtLibro";
             this.txtLibro.Size = new System.Drawing.Size(161, 27);
             this.txtLibro.TabIndex = 10;
@@ -337,6 +321,22 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "LIBRO:";
             // 
+            // pictureEdit2
+            // 
+            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
+            this.pictureEdit2.Location = new System.Drawing.Point(5, -12);
+            this.pictureEdit2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureEdit2.Name = "pictureEdit2";
+            this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit2.Properties.InitialImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("pictureEdit2.Properties.InitialImageOptions.Image")));
+            this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit2.Properties.ZoomAcceleration = 1333D;
+            this.pictureEdit2.Size = new System.Drawing.Size(94, 80);
+            this.pictureEdit2.TabIndex = 15;
+            // 
             // Bajas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,7 +346,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Bajas";
             this.Text = "Bajas";
             this.panel4.ResumeLayout(false);
@@ -356,11 +356,11 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbeMotivo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -374,7 +374,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit2;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
@@ -389,5 +388,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private DevExpress.XtraEditors.ComboBoxEdit cbeMotivo;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit2;
     }
 }
