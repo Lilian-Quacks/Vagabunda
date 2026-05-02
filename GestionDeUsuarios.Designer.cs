@@ -31,9 +31,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionDeUsuarios));
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +49,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.cmbAdeudo = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
@@ -69,23 +69,24 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(229)))), ((int)(((byte)(213)))));
-            this.panel4.Controls.Add(this.textBox3);
+            this.panel4.Controls.Add(this.txtBusqueda);
             this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.dataGridView1);
+            this.panel4.Controls.Add(this.dgvUsuarios);
             this.panel4.Location = new System.Drawing.Point(261, 64);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(995, 485);
             this.panel4.TabIndex = 9;
             // 
-            // textBox3
+            // txtBusqueda
             // 
-            this.textBox3.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox3.Location = new System.Drawing.Point(223, 18);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(415, 33);
-            this.textBox3.TabIndex = 12;
+            this.txtBusqueda.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
+            this.txtBusqueda.Location = new System.Drawing.Point(223, 18);
+            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(415, 32);
+            this.txtBusqueda.TabIndex = 12;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // label7
             // 
@@ -94,16 +95,16 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.label7.Location = new System.Drawing.Point(42, 22);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(166, 28);
+            this.label7.Size = new System.Drawing.Size(159, 27);
             this.label7.TabIndex = 12;
             this.label7.Text = "BUSQUEDA:";
             // 
-            // dataGridView1
+            // dgvUsuarios
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(225)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvUsuarios.AllowUserToAddRows = false;
+            this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(225)))));
+            this.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(181)))), ((int)(((byte)(181)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
@@ -111,24 +112,24 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(218)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeight = 56;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvUsuarios.ColumnHeadersHeight = 56;
+            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdUsuario,
             this.NombreUsuario,
             this.NumTel,
             this.Email,
             this.Adeudo,
             this.Column1});
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 62);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(935, 406);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvUsuarios.EnableHeadersVisualStyles = false;
+            this.dgvUsuarios.Location = new System.Drawing.Point(19, 62);
+            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.RowHeadersVisible = false;
+            this.dgvUsuarios.RowHeadersWidth = 62;
+            this.dgvUsuarios.RowTemplate.Height = 28;
+            this.dgvUsuarios.Size = new System.Drawing.Size(935, 406);
+            this.dgvUsuarios.TabIndex = 0;
             // 
             // IdUsuario
             // 
@@ -183,7 +184,7 @@
             this.label2.ForeColor = System.Drawing.Color.Olive;
             this.label2.Location = new System.Drawing.Point(44, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 33);
+            this.label2.Size = new System.Drawing.Size(175, 33);
             this.label2.TabIndex = 1;
             this.label2.Text = "DETALLES";
             // 
@@ -238,7 +239,7 @@
             this.label1.ForeColor = System.Drawing.Color.OldLace;
             this.label1.Location = new System.Drawing.Point(554, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 33);
+            this.label1.Size = new System.Drawing.Size(173, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "USUARIOS";
             // 
@@ -247,7 +248,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(207)))));
             this.panel3.Controls.Add(this.txtCorreo);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.simpleButton1);
+            this.panel3.Controls.Add(this.btnGuardar);
             this.panel3.Controls.Add(this.cmbAdeudo);
             this.panel3.Controls.Add(this.txtTelefono);
             this.panel3.Controls.Add(this.txtNombre);
@@ -266,7 +267,7 @@
             this.txtCorreo.Location = new System.Drawing.Point(16, 194);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(213, 33);
+            this.txtCorreo.Size = new System.Drawing.Size(213, 32);
             this.txtCorreo.TabIndex = 13;
             // 
             // label8
@@ -276,32 +277,33 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.label8.Location = new System.Drawing.Point(11, 167);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 28);
+            this.label8.Size = new System.Drawing.Size(123, 27);
             this.label8.TabIndex = 12;
             this.label8.Text = "CORREO:";
             // 
-            // simpleButton1
+            // btnGuardar
             // 
-            this.simpleButton1.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(196)))), ((int)(((byte)(195)))));
-            this.simpleButton1.Appearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.SystemColors.Window;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseBorderColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.Appearance.Options.UseTextOptions = true;
-            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton1.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.simpleButton1.Location = new System.Drawing.Point(17, 361);
-            this.simpleButton1.LookAndFeel.SkinName = "Office 2013";
-            this.simpleButton1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(212, 38);
-            this.simpleButton1.TabIndex = 5;
-            this.simpleButton1.Text = "GUARDAR";
+            this.btnGuardar.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
+            this.btnGuardar.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(196)))), ((int)(((byte)(195)))));
+            this.btnGuardar.Appearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnGuardar.Appearance.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
+            this.btnGuardar.Appearance.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnGuardar.Appearance.Options.UseBackColor = true;
+            this.btnGuardar.Appearance.Options.UseBorderColor = true;
+            this.btnGuardar.Appearance.Options.UseFont = true;
+            this.btnGuardar.Appearance.Options.UseForeColor = true;
+            this.btnGuardar.Appearance.Options.UseTextOptions = true;
+            this.btnGuardar.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnGuardar.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.btnGuardar.Location = new System.Drawing.Point(17, 361);
+            this.btnGuardar.LookAndFeel.SkinName = "Office 2013";
+            this.btnGuardar.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(212, 38);
+            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Text = "GUARDAR";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // cmbAdeudo
             // 
@@ -312,7 +314,7 @@
             this.cmbAdeudo.Properties.Appearance.Options.UseFont = true;
             this.cmbAdeudo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbAdeudo.Size = new System.Drawing.Size(212, 32);
+            this.cmbAdeudo.Size = new System.Drawing.Size(212, 30);
             this.cmbAdeudo.TabIndex = 5;
             // 
             // txtTelefono
@@ -321,7 +323,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(17, 136);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(213, 33);
+            this.txtTelefono.Size = new System.Drawing.Size(213, 32);
             this.txtTelefono.TabIndex = 10;
             // 
             // txtNombre
@@ -330,7 +332,7 @@
             this.txtNombre.Location = new System.Drawing.Point(17, 80);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(213, 33);
+            this.txtNombre.Size = new System.Drawing.Size(213, 32);
             this.txtNombre.TabIndex = 9;
             // 
             // label6
@@ -340,7 +342,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.label6.Location = new System.Drawing.Point(12, 230);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(132, 28);
+            this.label6.Size = new System.Drawing.Size(126, 27);
             this.label6.TabIndex = 8;
             this.label6.Text = "ADEUDO:";
             // 
@@ -351,7 +353,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.label5.Location = new System.Drawing.Point(12, 109);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 28);
+            this.label5.Size = new System.Drawing.Size(156, 27);
             this.label5.TabIndex = 7;
             this.label5.Text = "TELEFONO:";
             // 
@@ -362,7 +364,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.label4.Location = new System.Drawing.Point(12, 53);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 28);
+            this.label4.Size = new System.Drawing.Size(129, 27);
             this.label4.TabIndex = 6;
             this.label4.Text = "NOMBRE:";
             // 
@@ -379,9 +381,10 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "GestionDeUsuarios";
             this.Text = "GestionDeUsuarios";
+            this.Load += new System.EventHandler(this.GestionDeUsuarios_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -398,9 +401,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
@@ -408,7 +411,7 @@
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnGuardar;
         private DevExpress.XtraEditors.ComboBoxEdit cmbAdeudo;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtNombre;
