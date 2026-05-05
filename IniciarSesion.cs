@@ -90,5 +90,6 @@ namespace Vagabunda
             Contraseña pantallaRecuperar = new Contraseña();
             pantallaRecuperar.ShowDialog();
         }
+
     }
 }

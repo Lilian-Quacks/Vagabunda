@@ -55,6 +55,7 @@
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.ReadOnly = true;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit1.Size = new System.Drawing.Size(175, 164);
             this.pictureEdit1.TabIndex = 0;
             // 
@@ -182,7 +183,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(234)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(349, 482);
+            this.ClientSize = new System.Drawing.Size(340, 482);
             this.Controls.Add(this.CBRecordar);
             this.Controls.Add(this.LLOlvideContra);
             this.Controls.Add(this.Sesion);

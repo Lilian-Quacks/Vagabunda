@@ -68,7 +68,7 @@
             this.TXTCorreo.Location = new System.Drawing.Point(35, 332);
             this.TXTCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTCorreo.Name = "TXTCorreo";
-            this.TXTCorreo.Size = new System.Drawing.Size(340, 33);
+            this.TXTCorreo.Size = new System.Drawing.Size(340, 32);
             this.TXTCorreo.TabIndex = 14;
             // 
             // label3
@@ -78,7 +78,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.label3.Location = new System.Drawing.Point(30, 246);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(341, 50);
+            this.label3.Size = new System.Drawing.Size(324, 46);
             this.label3.TabIndex = 13;
             this.label3.Text = "INGRESA TU CORREO PARA \r\nENVIARTE INFORMACION:\r\n";
             // 
@@ -108,7 +108,7 @@
             this.label1.ForeColor = System.Drawing.Color.OldLace;
             this.label1.Location = new System.Drawing.Point(15, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(385, 29);
+            this.label1.Size = new System.Drawing.Size(369, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "RECUPERAR CONTRASEÑA";
             // 
@@ -135,7 +135,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.label2.Location = new System.Drawing.Point(30, 308);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 23);
+            this.label2.Size = new System.Drawing.Size(108, 23);
             this.label2.TabIndex = 27;
             this.label2.Text = "CORREO:";
             // 
@@ -147,10 +147,11 @@
             this.linkLabel1.LinkColor = System.Drawing.Color.Black;
             this.linkLabel1.Location = new System.Drawing.Point(112, 404);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(162, 16);
+            this.linkLabel1.Size = new System.Drawing.Size(154, 16);
             this.linkLabel1.TabIndex = 28;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Volver al inciar sesion";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Contraseña
             // 

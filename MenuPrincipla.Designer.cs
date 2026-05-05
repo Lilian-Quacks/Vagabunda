@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipla));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureEdit4 = new DevExpress.XtraEditors.PictureEdit();
             this.LBLLIBROS = new System.Windows.Forms.Label();
             this.LBLPerfil = new System.Windows.Forms.Label();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
@@ -37,17 +38,16 @@
             this.LBLBAJAS = new System.Windows.Forms.Label();
             this.pictureEdit6 = new DevExpress.XtraEditors.PictureEdit();
             this.LBLREPORTES = new System.Windows.Forms.Label();
-            this.pictureEdit4 = new DevExpress.XtraEditors.PictureEdit();
             this.LBLPRESTAMOS = new System.Windows.Forms.Label();
             this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
             this.LBLUSUARIOS = new System.Windows.Forms.Label();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit7 = new DevExpress.XtraEditors.PictureEdit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PE_Bibliotecario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
@@ -73,6 +73,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1433, 114);
             this.panel1.TabIndex = 2;
+            // 
+            // pictureEdit4
+            // 
+            this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
+            this.pictureEdit4.Location = new System.Drawing.Point(860, 8);
+            this.pictureEdit4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureEdit4.Name = "pictureEdit4";
+            this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit4.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit4.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit4.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit4.Properties.ZoomAcceleration = 1333D;
+            this.pictureEdit4.Size = new System.Drawing.Size(76, 67);
+            this.pictureEdit4.TabIndex = 8;
+            this.pictureEdit4.Click += new System.EventHandler(this.LBLREPORTES_Click);
             // 
             // LBLLIBROS
             // 
@@ -172,22 +188,6 @@
             this.LBLREPORTES.Text = "REPORTES";
             this.LBLREPORTES.Click += new System.EventHandler(this.LBLREPORTES_Click);
             // 
-            // pictureEdit4
-            // 
-            this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
-            this.pictureEdit4.Location = new System.Drawing.Point(860, 8);
-            this.pictureEdit4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureEdit4.Name = "pictureEdit4";
-            this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.pictureEdit4.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit4.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit4.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit4.Properties.ZoomAcceleration = 1333D;
-            this.pictureEdit4.Size = new System.Drawing.Size(76, 67);
-            this.pictureEdit4.TabIndex = 8;
-            this.pictureEdit4.Click += new System.EventHandler(this.LBLREPORTES_Click);
-            // 
             // LBLPRESTAMOS
             // 
             this.LBLPRESTAMOS.AutoSize = true;
@@ -273,10 +273,10 @@
             this.Text = "MenuPrincipla";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PE_Bibliotecario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();

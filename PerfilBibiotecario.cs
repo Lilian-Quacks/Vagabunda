@@ -125,5 +125,10 @@ namespace Vagabunda
                 MessageBox.Show("Las contraseñas no coinciden.");
             }
         }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

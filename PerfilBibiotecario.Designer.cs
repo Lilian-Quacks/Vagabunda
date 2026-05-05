@@ -80,7 +80,7 @@
             this.label1.ForeColor = System.Drawing.Color.OldLace;
             this.label1.Location = new System.Drawing.Point(172, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(439, 33);
+            this.label1.Size = new System.Drawing.Size(431, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "PERFIL DE BIBLIOTECARIO";
             // 
@@ -152,7 +152,7 @@
             this.label6.ForeColor = System.Drawing.Color.Olive;
             this.label6.Location = new System.Drawing.Point(500, 27);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(202, 33);
+            this.label6.Size = new System.Drawing.Size(197, 33);
             this.label6.TabIndex = 44;
             this.label6.Text = "SEGURIDAD";
             // 
@@ -181,9 +181,9 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.label8.Location = new System.Drawing.Point(432, 232);
+            this.label8.Location = new System.Drawing.Point(432, 240);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(335, 20);
+            this.label8.Size = new System.Drawing.Size(312, 18);
             this.label8.TabIndex = 41;
             this.label8.Text = "CONFIRMAR NUEVA CONTRASEÑA:";
             // 
@@ -192,7 +192,7 @@
             this.SB_Contra.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
             this.SB_Contra.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(196)))), ((int)(((byte)(195)))));
             this.SB_Contra.Appearance.BorderColor = System.Drawing.SystemColors.ControlText;
-            this.SB_Contra.Appearance.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Bold);
+            this.SB_Contra.Appearance.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SB_Contra.Appearance.ForeColor = System.Drawing.Color.Black;
             this.SB_Contra.Appearance.Options.UseBackColor = true;
             this.SB_Contra.Appearance.Options.UseBorderColor = true;
@@ -200,12 +200,12 @@
             this.SB_Contra.Appearance.Options.UseForeColor = true;
             this.SB_Contra.Appearance.Options.UseTextOptions = true;
             this.SB_Contra.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.SB_Contra.Location = new System.Drawing.Point(466, 378);
+            this.SB_Contra.Location = new System.Drawing.Point(466, 384);
             this.SB_Contra.LookAndFeel.SkinName = "Office 2013";
             this.SB_Contra.LookAndFeel.UseDefaultLookAndFeel = false;
             this.SB_Contra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SB_Contra.Name = "SB_Contra";
-            this.SB_Contra.Size = new System.Drawing.Size(229, 43);
+            this.SB_Contra.Size = new System.Drawing.Size(336, 43);
             this.SB_Contra.TabIndex = 40;
             this.SB_Contra.Text = "CONFIRMAR CAMBIO \r\nDE CONTRASEÑA\r\n";
             this.SB_Contra.Click += new System.EventHandler(this.SB_Contra_Click);
@@ -215,7 +215,7 @@
             this.SB_Actualizar.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
             this.SB_Actualizar.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(196)))), ((int)(((byte)(195)))));
             this.SB_Actualizar.Appearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.SB_Actualizar.Appearance.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Bold);
+            this.SB_Actualizar.Appearance.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SB_Actualizar.Appearance.ForeColor = System.Drawing.SystemColors.Window;
             this.SB_Actualizar.Appearance.Options.UseBackColor = true;
             this.SB_Actualizar.Appearance.Options.UseBorderColor = true;
@@ -251,7 +251,7 @@
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.label13.Location = new System.Drawing.Point(432, 159);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(215, 20);
+            this.label13.Size = new System.Drawing.Size(200, 18);
             this.label13.TabIndex = 39;
             this.label13.Text = "NUEVA CONTRASEÑA:";
             // 
@@ -260,11 +260,12 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.label14.Location = new System.Drawing.Point(432, 78);
+            this.label14.Location = new System.Drawing.Point(433, 85);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(225, 20);
+            this.label14.Size = new System.Drawing.Size(209, 18);
             this.label14.TabIndex = 38;
             this.label14.Text = "CONTRASEÑA ACTUAL:";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // panel2
             // 
@@ -291,7 +292,7 @@
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.label12.Location = new System.Drawing.Point(7, 421);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(111, 23);
+            this.label12.Size = new System.Drawing.Size(108, 23);
             this.label12.TabIndex = 32;
             this.label12.Text = "CORREO:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -312,7 +313,7 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.label11.Location = new System.Drawing.Point(7, 360);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 23);
+            this.label11.Size = new System.Drawing.Size(61, 23);
             this.label11.TabIndex = 30;
             this.label11.Text = "ROL:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -333,7 +334,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.label7.Location = new System.Drawing.Point(7, 295);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 23);
+            this.label7.Size = new System.Drawing.Size(116, 23);
             this.label7.TabIndex = 28;
             this.label7.Text = "USUARIO:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -354,7 +355,7 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.label9.Location = new System.Drawing.Point(6, 235);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(249, 23);
+            this.label9.Size = new System.Drawing.Size(241, 23);
             this.label9.TabIndex = 27;
             this.label9.Text = "NOMBRE COMPLETO:";
             // 
@@ -365,7 +366,7 @@
             this.label10.ForeColor = System.Drawing.Color.Olive;
             this.label10.Location = new System.Drawing.Point(5, 194);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(339, 33);
+            this.label10.Size = new System.Drawing.Size(329, 33);
             this.label10.TabIndex = 24;
             this.label10.Text = "DATOS PERSONALES";
             // 
