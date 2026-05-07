@@ -63,7 +63,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(213)))), ((int)(((byte)(186)))));
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureEdit2);
             this.panel1.Controls.Add(this.pictureEdit1);
@@ -76,11 +76,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.OldLace;
-            this.label1.Location = new System.Drawing.Point(172, 19);
+            this.label1.Location = new System.Drawing.Point(144, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(431, 33);
+            this.label1.Size = new System.Drawing.Size(469, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "PERFIL DE BIBLIOTECARIO";
             // 
@@ -103,7 +103,7 @@
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(653, -15);
+            this.pictureEdit1.Location = new System.Drawing.Point(639, -15);
             this.pictureEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -118,7 +118,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(207)))));
+            this.panel3.BackColor = System.Drawing.Color.LightBlue;
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.TXTConfNuevContra);
             this.panel3.Controls.Add(this.TXTNuevaContra);
@@ -149,8 +149,8 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Olive;
-            this.label6.Location = new System.Drawing.Point(500, 27);
+            this.label6.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label6.Location = new System.Drawing.Point(489, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(197, 33);
             this.label6.TabIndex = 44;
@@ -200,12 +200,12 @@
             this.SB_Contra.Appearance.Options.UseForeColor = true;
             this.SB_Contra.Appearance.Options.UseTextOptions = true;
             this.SB_Contra.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.SB_Contra.Location = new System.Drawing.Point(466, 384);
+            this.SB_Contra.Location = new System.Drawing.Point(466, 401);
             this.SB_Contra.LookAndFeel.SkinName = "Office 2013";
             this.SB_Contra.LookAndFeel.UseDefaultLookAndFeel = false;
             this.SB_Contra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SB_Contra.Name = "SB_Contra";
-            this.SB_Contra.Size = new System.Drawing.Size(336, 43);
+            this.SB_Contra.Size = new System.Drawing.Size(278, 43);
             this.SB_Contra.TabIndex = 40;
             this.SB_Contra.Text = "CONFIRMAR CAMBIO \r\nDE CONTRASEÑA\r\n";
             this.SB_Contra.Click += new System.EventHandler(this.SB_Contra_Click);
@@ -229,7 +229,7 @@
             this.SB_Actualizar.LookAndFeel.UseDefaultLookAndFeel = false;
             this.SB_Actualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SB_Actualizar.Name = "SB_Actualizar";
-            this.SB_Actualizar.Size = new System.Drawing.Size(229, 44);
+            this.SB_Actualizar.Size = new System.Drawing.Size(278, 44);
             this.SB_Actualizar.TabIndex = 36;
             this.SB_Actualizar.Text = "ACTUALIZAR PERFIL";
             this.SB_Actualizar.Click += new System.EventHandler(this.SB_Actualizar_Click);
@@ -269,7 +269,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(213)))), ((int)(((byte)(186)))));
+            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
             this.panel2.Location = new System.Drawing.Point(394, -50);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
@@ -363,7 +363,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Olive;
+            this.label10.ForeColor = System.Drawing.Color.DarkCyan;
             this.label10.Location = new System.Drawing.Point(5, 194);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(329, 33);
@@ -373,7 +373,7 @@
             // pictureEdit3
             // 
             this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
-            this.pictureEdit3.Location = new System.Drawing.Point(90, 11);
+            this.pictureEdit3.Location = new System.Drawing.Point(75, 2);
             this.pictureEdit3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -381,9 +381,9 @@
             this.pictureEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit3.Properties.InitialImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("pictureEdit3.Properties.InitialImageOptions.Image")));
             this.pictureEdit3.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit3.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit3.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
             this.pictureEdit3.Properties.ZoomAcceleration = 1333D;
-            this.pictureEdit3.Size = new System.Drawing.Size(234, 184);
+            this.pictureEdit3.Size = new System.Drawing.Size(234, 195);
             this.pictureEdit3.TabIndex = 25;
             // 
             // PerfilBibiotecario

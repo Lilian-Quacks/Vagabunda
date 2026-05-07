@@ -1,4 +1,7 @@
-﻿namespace Vagabunda
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace Vagabunda
 {
     partial class GestionDeLibros
     {
@@ -29,7 +32,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionDeLibros));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
@@ -73,7 +76,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(213)))), ((int)(((byte)(186)))));
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.pictureEdit2);
             this.panel1.Controls.Add(this.pictureEdit1);
             this.panel1.Controls.Add(this.label1);
@@ -118,17 +121,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.OldLace;
-            this.label1.Location = new System.Drawing.Point(662, 21);
+            this.label1.Location = new System.Drawing.Point(630, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 33);
+            this.label1.Size = new System.Drawing.Size(153, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "LIBROS";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(207)))));
+            this.panel2.BackColor = System.Drawing.Color.LightBlue;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(-4, 63);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -140,8 +143,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Olive;
-            this.label2.Location = new System.Drawing.Point(40, 10);
+            this.label2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label2.Location = new System.Drawing.Point(60, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(175, 33);
             this.label2.TabIndex = 2;
@@ -149,7 +152,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(207)))));
+            this.panel3.BackColor = System.Drawing.Color.LightBlue;
             this.panel3.Controls.Add(this.dtpFechaPublicacion);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.txtEditorial);
@@ -215,7 +218,6 @@
             // btnGuardar
             // 
             this.btnGuardar.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
-            this.btnGuardar.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(196)))), ((int)(((byte)(195)))));
             this.btnGuardar.Appearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnGuardar.Appearance.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.Appearance.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -226,8 +228,8 @@
             this.btnGuardar.Appearance.Options.UseTextOptions = true;
             this.btnGuardar.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btnGuardar.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.btnGuardar.Location = new System.Drawing.Point(30, 386);
-            this.btnGuardar.LookAndFeel.SkinName = "Office 2013";
+            this.btnGuardar.Location = new System.Drawing.Point(30, 393);
+            this.btnGuardar.LookAndFeel.SkinName = "Stardust";
             this.btnGuardar.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
@@ -322,7 +324,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(229)))), ((int)(((byte)(213)))));
+            this.panel4.BackColor = System.Drawing.Color.LightBlue;
             this.panel4.Controls.Add(this.txtBusquedaDeLibros);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.dgvLibros);
@@ -357,16 +359,15 @@
             // 
             this.dgvLibros.AllowUserToAddRows = false;
             this.dgvLibros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvLibros.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(225)))));
+            this.dgvLibros.BackgroundColor = System.Drawing.Color.LightCyan;
             this.dgvLibros.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(181)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLibros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century", 8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLibros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLibros.ColumnHeadersHeight = 58;
             this.dgvLibros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,

@@ -16,6 +16,7 @@ namespace Vagabunda
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            DevExpress.Skins.SkinManager.EnableFormSkins();
             Application.Run(new IniciarSesion());
         }
     }

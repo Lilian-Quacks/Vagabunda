@@ -47,7 +47,7 @@
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(79, 58);
+            this.pictureEdit1.Location = new System.Drawing.Point(79, 63);
             this.pictureEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(231)))), ((int)(((byte)(244)))));
@@ -61,7 +61,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(213)))), ((int)(((byte)(186)))));
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-2, -1);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -73,16 +73,16 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.OldLace;
+            this.label1.ForeColor = System.Drawing.Color.MintCream;
             this.label1.Location = new System.Drawing.Point(48, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(260, 33);
             this.label1.TabIndex = 0;
-            this.label1.Text = "INICIAR SESION";
+            this.label1.Text = "INICIAR SESIÓN";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(213)))), ((int)(((byte)(186)))));
+            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
             this.panel2.Location = new System.Drawing.Point(-2, 434);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
@@ -140,15 +140,15 @@
             this.Sesion.Appearance.Options.UseFont = true;
             this.Sesion.Appearance.Options.UseForeColor = true;
             this.Sesion.Appearance.Options.UseTextOptions = true;
-            this.Sesion.Location = new System.Drawing.Point(89, 398);
+            this.Sesion.Location = new System.Drawing.Point(79, 398);
             this.Sesion.LookAndFeel.SkinName = "Office 2013";
             this.Sesion.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Sesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Sesion.Name = "Sesion";
             this.Sesion.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.Sesion.Size = new System.Drawing.Size(180, 32);
+            this.Sesion.Size = new System.Drawing.Size(175, 32);
             this.Sesion.TabIndex = 6;
-            this.Sesion.Text = "INICIAR SESION";
+            this.Sesion.Text = "INICIAR SESIÓN";
             this.Sesion.Click += new System.EventHandler(this.Sesion_Click);
             // 
             // LLOlvideContra
@@ -156,8 +156,8 @@
             this.LLOlvideContra.AutoSize = true;
             this.LLOlvideContra.Font = new System.Drawing.Font("Century", 7F, System.Drawing.FontStyle.Bold);
             this.LLOlvideContra.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.LLOlvideContra.LinkColor = System.Drawing.Color.Black;
-            this.LLOlvideContra.Location = new System.Drawing.Point(167, 367);
+            this.LLOlvideContra.LinkColor = System.Drawing.Color.DarkSlateGray;
+            this.LLOlvideContra.Location = new System.Drawing.Point(174, 368);
             this.LLOlvideContra.Name = "LLOlvideContra";
             this.LLOlvideContra.Size = new System.Drawing.Size(145, 16);
             this.LLOlvideContra.TabIndex = 30;
@@ -182,8 +182,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(234)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(340, 482);
+            this.BackColor = System.Drawing.Color.LightBlue;
+            this.ClientSize = new System.Drawing.Size(355, 482);
             this.Controls.Add(this.CBRecordar);
             this.Controls.Add(this.LLOlvideContra);
             this.Controls.Add(this.Sesion);

@@ -46,6 +46,7 @@
             // 
             this.SB_Enviar.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(144)))), ((int)(((byte)(162)))));
             this.SB_Enviar.Appearance.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Bold);
+            this.SB_Enviar.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
             this.SB_Enviar.Appearance.Options.UseBackColor = true;
             this.SB_Enviar.Appearance.Options.UseBorderColor = true;
             this.SB_Enviar.Appearance.Options.UseFont = true;
@@ -76,15 +77,15 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            this.label3.Location = new System.Drawing.Point(30, 246);
+            this.label3.Location = new System.Drawing.Point(31, 246);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(324, 46);
+            this.label3.Size = new System.Drawing.Size(352, 46);
             this.label3.TabIndex = 13;
-            this.label3.Text = "INGRESA TU CORREO PARA \r\nENVIARTE INFORMACION:\r\n";
+            this.label3.Text = "INGRESE SU CORREO PARA\r\nRECUPERAR SU CONTRASEÑA:";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(213)))), ((int)(((byte)(186)))));
+            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
             this.panel2.Location = new System.Drawing.Point(-4, 434);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
@@ -93,7 +94,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(213)))), ((int)(((byte)(186)))));
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-4, -2);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -106,7 +107,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 14F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.OldLace;
-            this.label1.Location = new System.Drawing.Point(15, 9);
+            this.label1.Location = new System.Drawing.Point(25, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(369, 28);
             this.label1.TabIndex = 0;
@@ -115,7 +116,7 @@
             // pictureEdit3
             // 
             this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
-            this.pictureEdit3.Location = new System.Drawing.Point(105, 66);
+            this.pictureEdit3.Location = new System.Drawing.Point(120, 51);
             this.pictureEdit3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -125,7 +126,7 @@
             this.pictureEdit3.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit3.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit3.Properties.ZoomAcceleration = 1333D;
-            this.pictureEdit3.Size = new System.Drawing.Size(195, 169);
+            this.pictureEdit3.Size = new System.Drawing.Size(216, 184);
             this.pictureEdit3.TabIndex = 26;
             // 
             // label2
@@ -145,7 +146,7 @@
             this.linkLabel1.Font = new System.Drawing.Font("Century", 7F, System.Drawing.FontStyle.Bold);
             this.linkLabel1.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(112, 404);
+            this.linkLabel1.Location = new System.Drawing.Point(117, 404);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(154, 16);
             this.linkLabel1.TabIndex = 28;
@@ -157,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(234)))), ((int)(((byte)(224)))));
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(402, 482);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label2);

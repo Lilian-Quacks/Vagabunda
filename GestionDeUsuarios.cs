@@ -80,7 +80,7 @@ namespace Vagabunda
             }
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
                 string.IsNullOrWhiteSpace(txtTelefono.Text) ||
@@ -95,8 +95,8 @@ namespace Vagabunda
                 using (SqlConnection con = new SqlConnection(cadena))
                 {
                     string query = @"INSERT INTO Usuarios 
-                                    (Nombre, Telefono, Email, Adeudo_Pendiente, Prestamos_Activos)
-                                    VALUES (@nombre, @tel, @mail, @adeudo, 0)";
+                         (Nombre, Telefono, Email, Adeudo_Pendiente, Prestamos_Activos)
+                         VALUES (@nombre, @tel, @mail, @adeudo, 0)";
 
                     SqlCommand cmd = new SqlCommand(query, con);
 
@@ -134,6 +134,11 @@ namespace Vagabunda
             txtTelefono.Clear();
             txtCorreo.Clear();
             cmbAdeudo.SelectedIndex = -1;
+        }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
