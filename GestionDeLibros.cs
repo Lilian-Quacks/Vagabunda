@@ -17,12 +17,12 @@ namespace Vagabunda
 
         private void GestionDeLibros_Load(object sender, EventArgs e)
         {
-            if (cbeEstadoFisico.Properties.Items.Count == 0)
+            if (cbeEstadoFisico.Items.Count == 0)
             {
-                cbeEstadoFisico.Properties.Items.Add("Nuevo");
-                cbeEstadoFisico.Properties.Items.Add("Buen Estado");
-                cbeEstadoFisico.Properties.Items.Add("Dañado");
-                cbeEstadoFisico.Properties.Items.Add("Restauración");
+                cbeEstadoFisico.Items.Add("Nuevo");
+                cbeEstadoFisico.Items.Add("Buen Estado");
+                cbeEstadoFisico.Items.Add("Dañado");
+                cbeEstadoFisico.Items.Add("Restauración");
             }
 
             ConsultarLibros();
