@@ -47,7 +47,7 @@ create table BajaLibros
     Libros_ID int,
     Bibliotecario_ID int,
 
-    foreign key (Libros_ID) references Libros(Libros_ID)
+    foreign key (Libros_ID) references Libros(Libros_ID),
     foreign key (Bibliotecario_ID) references Bibliotecario(Bibliotecario_ID)
 )
 
@@ -68,6 +68,22 @@ create table Prestramos
     foreign key (Bibliotecario_ID) references Bibliotecario(Bibliotecario_ID)
 )
 
+create table Reporte
+(
+    Reporte_ID int Primary key identity(1,1),
+    Nombre_Miembro Varchar(50),
+    Libros_ID int,
+    Prestramo_ID int,
+    Baja_ID int,
+    Penalizacion_ID int,
+	Fecha_Registro DATETIME DEFAULT GETDATE(),
+
+    foreign key (Libros_ID) references Libros(Libros_ID),
+    foreign key (Prestramo_ID) references Prestramos(Prestramo_ID),
+    foreign key (Baja_ID) references BajaLibros(Baja_ID),
+    foreign key (Penalizacion_ID) references Penalizacion(Penalizacion_ID)
+)
+
 create table Penalizacion
 (
     Penalizacion_ID int Primary key identity(1,1),
@@ -78,44 +94,25 @@ create table Penalizacion
     foreign key (Prestramo_ID) references Prestramos(Prestramo_ID)
 )
 
-create table Reporte
-(
-    Reporte_ID int Primary key identity(1,1),
-    Nombre_Miembro Varchar(50),
-    Libros_ID int,
-    Prestramo_ID int,
-    Baja_ID int,
-    Penalizacion_ID int,
-
-    foreign key (Libros_ID) references Libros(Libros_ID)
-    foreign key (Prestramo_ID) references Prestramos(Prestramo_ID)
-    foreign key (Baja_ID) references BajaLibros(Baja_ID)
-    foreign key (Penalizacion_ID) references Penalizacion(Penalizacion_ID)
-)
-
-CREATE TRIGGER TR_CalcularPenalizacion
+CREATE TRIGGER TR_GenerarPenalizacionSemanal
 ON Prestramos
-AFTER UPDATE
+AFTER UPDATE -- Se activa cuando se actualiza la fecha de devolución o el estatus
 AS
 BEGIN
     SET NOCOUNT ON;
-    
-    -- Si la fecha de devolución es mayor a la fecha límite
-    UPDATE Penalizacion
-    SET Pagado = 0,
-        -- Calculamos semanas de retraso y multiplicamos por 50
-        -- (DATEDIFF en semanas entre la fecha limite y hoy)
-        Prestramo_ID = i.Prestramo_ID 
-    FROM Penalizacion p
-    INNER JOIN inserted i ON p.Prestramo_ID = i.Prestramo_ID
-    WHERE i.Fecha_Devolucion > i.Fecha_Limite;
-    
-    -- Actualizar el Adeudo_Pendiente en la tabla Usuarios
+
+    -- Actualizamos el adeudo del usuario
     UPDATE Usuarios
-    SET Adeudo_Pendiente = Adeudo_Pendiente + 50
+    SET Adeudo_Pendiente = ISNULL(Adeudo_Pendiente, 0) + 
+        (CASE 
+            WHEN DATEDIFF(WEEK, i.Fecha_Salida, GETDATE()) > 4 
+            THEN (DATEDIFF(WEEK, i.Fecha_Salida, GETDATE()) - 4) * 50 
+            ELSE 0 
+         END)
     FROM Usuarios u
     INNER JOIN inserted i ON u.Usuario_ID = i.Usuario_ID
-    WHERE DATEDIFF(WEEK, i.Fecha_Limite, GETDATE()) >= 1;
+    WHERE i.Fecha_Devolucion IS NULL -- Solo si aún no lo entrega
+      AND DATEDIFF(MONTH, i.Fecha_Salida, GETDATE()) >= 1;
 END
 
 CREATE TRIGGER TR_LimpiarReportesAntiguos
@@ -123,31 +120,24 @@ ON Reporte
 AFTER INSERT
 AS
 BEGIN
-    -- Borra reportes que fueron creados hace más de 30 días
-    -- Nota: Asumimos que quieres borrar registros viejos al generar uno nuevo
-    DELETE FROM Reporte
-    WHERE Reporte_ID IN (
-        SELECT Reporte_ID 
-        FROM Reporte 
-        -- Si no tienes columna 'Fecha' en Reporte, considera agregarla.
-        -- Aquí intentaremos relacionarlo con la fecha del préstamo.
-    );
+    SET NOCOUNT ON;
     
-    PRINT 'Limpieza de reportes antiguos ejecutada.';
+    -- Borra registros con más de 30 días de antigüedad
+    DELETE FROM Reporte 
+    WHERE Fecha_Registro < DATEADD(DAY, -30, GETDATE());
 END
 
-CREATE TRIGGER TR_ActualizarEstadoPorBaja
+CREATE TRIGGER TR_BajaAutomaticaLibro
 ON BajaLibros
 AFTER INSERT
 AS
 BEGIN
     SET NOCOUNT ON;
 
+    -- Cambia el estado en la tabla Libros automáticamente
     UPDATE Libros
-    SET Estatus_Operativo = 'BAJA - NO DISPONIBLE',
-        Estado_Fisico = i.Motivo -- Opcional: guardar el motivo de la baja aquí
+    SET Estatus_Operativo = 'NO DISPONIBLE / BAJA',
+        Estado_Fisico = 'DEBAJA'
     FROM Libros l
     INNER JOIN inserted i ON l.Libros_ID = i.Libros_ID;
-
-    PRINT 'El libro ha sido marcado como BAJA en el inventario.';
 END
