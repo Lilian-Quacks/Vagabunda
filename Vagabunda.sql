@@ -13,21 +13,14 @@ create table Usuarios
     Prestramo_Activos int
 )
 
-create table Prestramos
+create table Bibliotecario
 (
-    Prestramo_ID int Primary key identity(1,1),
-    Fecha_Salida datetime,
-    Fecha_Limite datetime,
-    Fecha_Devolucion datetime,
-    Penalizacion_Generada Varchar(100),
-    Estatus Varchar,
-    Usuario_ID int,
-    Libros_ID int,
-    Bibliotecario_ID int,
-
-    foreign key (Usuario_ID) references Usuarios(Usuario_ID),
-    foreign key (Libros_ID) references Libros(Libros_ID),
-    foreign key (Bibliotecario_ID) references Bibliotecario(Bibliotecario_ID)
+    Bibliotecario_ID int Primary key identity(1,1),
+    Nombre Varchar(50),
+    Usuario_Login Varchar(20),
+    Contraseña Varchar(20),
+    Correo Varchar(50),
+    Rol Varchar(50),
 )
 
 create table Libros
@@ -46,14 +39,33 @@ create table Libros
     foreign key (Bibliotecario_ID) references Bibliotecario(Bibliotecario_ID)
 )
 
-create table Bibliotecario
+create table BajaLibros
 (
-    Bibliotecario_ID int Primary key identity(1,1),
-    Nombre Varchar(50),
-    Usuario_Login Varchar(20),
-    Contraseña Varchar(20),
-    Correo Varchar(50),
-    Rol Varchar(50),
+    Baja_ID int Primary key identity(1,1),
+    Fecha datetime,
+    Motivo Varchar(100),
+    Libros_ID int,
+    Bibliotecario_ID int,
+
+    foreign key (Libros_ID) references Libros(Libros_ID)
+    foreign key (Bibliotecario_ID) references Bibliotecario(Bibliotecario_ID)
+)
+
+create table Prestramos
+(
+    Prestramo_ID int Primary key identity(1,1),
+    Fecha_Salida datetime,
+    Fecha_Limite datetime,
+    Fecha_Devolucion datetime,
+    Penalizacion_Generada Varchar(100),
+    Estatus Varchar,
+    Usuario_ID int,
+    Libros_ID int,
+    Bibliotecario_ID int,
+
+    foreign key (Usuario_ID) references Usuarios(Usuario_ID),
+    foreign key (Libros_ID) references Libros(Libros_ID),
+    foreign key (Bibliotecario_ID) references Bibliotecario(Bibliotecario_ID)
 )
 
 create table Reporte
@@ -69,18 +81,6 @@ create table Reporte
     foreign key (Prestramo_ID) references Prestramos(Prestramo_ID)
     foreign key (Baja_ID) references BajaLibros(Baja_ID)
     foreign key (Penalizacion_ID) references Penalizacion(Penalizacion_ID)
-)
-
-create table BajaLibros
-(
-    Baja_ID int Primary key identity(1,1),
-    Fecha datetime,
-    Motivo Varchar(100),
-    Libros_ID int,
-    Bibliotecario_ID int,
-
-    foreign key (Libros_ID) references Libros(Libros_ID)
-    foreign key (Bibliotecario_ID) references Bibliotecario(Bibliotecario_ID)
 )
 
 create table Penalizacion
