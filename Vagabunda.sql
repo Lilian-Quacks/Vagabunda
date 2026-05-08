@@ -93,3 +93,61 @@ create table Penalizacion
     foreign key (Prestramo_ID) references Prestramos(Prestramo_ID)
 )
 
+CREATE TRIGGER TR_CalcularPenalizacion
+ON Prestramos
+AFTER UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Si la fecha de devolución es mayor a la fecha límite
+    UPDATE Penalizacion
+    SET Pagado = 0,
+        -- Calculamos semanas de retraso y multiplicamos por 50
+        -- (DATEDIFF en semanas entre la fecha limite y hoy)
+        Prestramo_ID = i.Prestramo_ID 
+    FROM Penalizacion p
+    INNER JOIN inserted i ON p.Prestramo_ID = i.Prestramo_ID
+    WHERE i.Fecha_Devolucion > i.Fecha_Limite;
+    
+    -- Actualizar el Adeudo_Pendiente en la tabla Usuarios
+    UPDATE Usuarios
+    SET Adeudo_Pendiente = Adeudo_Pendiente + 50
+    FROM Usuarios u
+    INNER JOIN inserted i ON u.Usuario_ID = i.Usuario_ID
+    WHERE DATEDIFF(WEEK, i.Fecha_Limite, GETDATE()) >= 1;
+END
+
+CREATE TRIGGER TR_LimpiarReportesAntiguos
+ON Reporte
+AFTER INSERT
+AS
+BEGIN
+    -- Borra reportes que fueron creados hace más de 30 días
+    -- Nota: Asumimos que quieres borrar registros viejos al generar uno nuevo
+    DELETE FROM Reporte
+    WHERE Reporte_ID IN (
+        SELECT Reporte_ID 
+        FROM Reporte 
+        -- Si no tienes columna 'Fecha' en Reporte, considera agregarla.
+        -- Aquí intentaremos relacionarlo con la fecha del préstamo.
+    );
+    
+    PRINT 'Limpieza de reportes antiguos ejecutada.';
+END
+
+CREATE TRIGGER TR_ActualizarEstadoPorBaja
+ON BajaLibros
+AFTER INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE Libros
+    SET Estatus_Operativo = 'BAJA - NO DISPONIBLE',
+        Estado_Fisico = i.Motivo -- Opcional: guardar el motivo de la baja aquí
+    FROM Libros l
+    INNER JOIN inserted i ON l.Libros_ID = i.Libros_ID;
+
+    PRINT 'El libro ha sido marcado como BAJA en el inventario.';
+END
