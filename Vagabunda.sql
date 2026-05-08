@@ -68,6 +68,16 @@ create table Prestramos
     foreign key (Bibliotecario_ID) references Bibliotecario(Bibliotecario_ID)
 )
 
+create table Penalizacion
+(
+    Penalizacion_ID int Primary key identity(1,1),
+    Fecha_Generada datetime,
+    Pagado bit,
+    Prestramo_ID int,
+
+    foreign key (Prestramo_ID) references Prestramos(Prestramo_ID)
+)
+
 create table Reporte
 (
     Reporte_ID int Primary key identity(1,1),
@@ -77,20 +87,10 @@ create table Reporte
     Baja_ID int,
     Penalizacion_ID int,
 
-    foreign key (Bibliotecario_ID) references Libros(Libros_ID)
+    foreign key (Libros_ID) references Libros(Libros_ID)
     foreign key (Prestramo_ID) references Prestramos(Prestramo_ID)
     foreign key (Baja_ID) references BajaLibros(Baja_ID)
     foreign key (Penalizacion_ID) references Penalizacion(Penalizacion_ID)
-)
-
-create table Penalizacion
-(
-    Penalizacion_ID int Primary key identity(1,1),
-    Fecha_Generada datetime,
-    Pagado bit,
-    Prestramo_ID int,
-
-    foreign key (Prestramo_ID) references Prestramos(Prestramo_ID)
 )
 
 CREATE TRIGGER TR_CalcularPenalizacion
