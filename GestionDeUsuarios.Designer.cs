@@ -66,7 +66,7 @@ namespace Vagabunda
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label2.Location = new System.Drawing.Point(28, 130);
+            this.label2.Location = new System.Drawing.Point(32, 162);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(180, 33);
             this.label2.TabIndex = 1;
@@ -268,7 +268,7 @@ namespace Vagabunda
             this.txtBusqueda.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtBusqueda.PlaceholderText = "BUSQUEDA";
             this.txtBusqueda.SelectedText = "";
-            this.txtBusqueda.Size = new System.Drawing.Size(702, 41);
+            this.txtBusqueda.Size = new System.Drawing.Size(790, 51);
             this.txtBusqueda.TabIndex = 24;
             this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
@@ -291,7 +291,7 @@ namespace Vagabunda
             this.txtDireccion.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtDireccion.PlaceholderText = "DIRECCION";
             this.txtDireccion.SelectedText = "";
-            this.txtDireccion.Size = new System.Drawing.Size(259, 42);
+            this.txtDireccion.Size = new System.Drawing.Size(291, 52);
             this.txtDireccion.TabIndex = 25;
             // 
             // txtTelefono
@@ -313,7 +313,7 @@ namespace Vagabunda
             this.txtTelefono.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtTelefono.PlaceholderText = "TELEFONO";
             this.txtTelefono.SelectedText = "";
-            this.txtTelefono.Size = new System.Drawing.Size(259, 43);
+            this.txtTelefono.Size = new System.Drawing.Size(291, 54);
             this.txtTelefono.TabIndex = 26;
             // 
             // txtCorreo
@@ -335,7 +335,7 @@ namespace Vagabunda
             this.txtCorreo.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtCorreo.PlaceholderText = "CORREO";
             this.txtCorreo.SelectedText = "";
-            this.txtCorreo.Size = new System.Drawing.Size(259, 43);
+            this.txtCorreo.Size = new System.Drawing.Size(291, 54);
             this.txtCorreo.TabIndex = 27;
             // 
             // cmbAdeudo
@@ -368,10 +368,9 @@ namespace Vagabunda
             this.btnGuardar.FillColor = System.Drawing.Color.SteelBlue;
             this.btnGuardar.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(23, 478);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardar.Location = new System.Drawing.Point(26, 597);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(215, 37);
+            this.btnGuardar.Size = new System.Drawing.Size(242, 46);
             this.btnGuardar.TabIndex = 29;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);

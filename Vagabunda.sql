@@ -1,3 +1,7 @@
+create database Vagabunda
+
+use Vagabunda
+
 create table Usuarios
 (
     Usuario_ID Primary key identity(1,1),
@@ -6,5 +10,18 @@ create table Usuarios
     Telefono Varchar(10) not null,
     Email Varchar(255) not null,
     Adeudo_Pendiente money,
-    Pestramo_Activos int
+    Prestramo_Activos int
+)
+
+CREATE TABLE Prestramo
+(
+    Prestramo_ID Primary key identity(1,1),
+    Fecha_Salida datetime,
+    Fecha_Limite datetime,
+    Fecha_Devolucion datetime,
+    Penalizacion_Generada Varchar(100),
+    Estatus Varchar,
+    Usuario_ID int,
+    Libros_ID int,
+    Bibliotecario_ID int
 )
