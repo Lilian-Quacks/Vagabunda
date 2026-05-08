@@ -47,6 +47,7 @@
             this.lblhora = new DevExpress.XtraEditors.LabelControl();
             this.lblfecha = new DevExpress.XtraEditors.LabelControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelPrograma = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
@@ -64,7 +65,7 @@
             this.LBLLIBROS.ForeColor = System.Drawing.Color.Black;
             this.LBLLIBROS.Location = new System.Drawing.Point(196, 158);
             this.LBLLIBROS.Name = "LBLLIBROS";
-            this.LBLLIBROS.Size = new System.Drawing.Size(105, 27);
+            this.LBLLIBROS.Size = new System.Drawing.Size(108, 28);
             this.LBLLIBROS.TabIndex = 0;
             this.LBLLIBROS.Text = "LIBROS";
             this.LBLLIBROS.Click += new System.EventHandler(this.LBLLIBROS_Click);
@@ -78,7 +79,7 @@
             this.LBLPerfil.ForeColor = System.Drawing.Color.Black;
             this.LBLPerfil.Location = new System.Drawing.Point(197, 599);
             this.LBLPerfil.Name = "LBLPerfil";
-            this.LBLPerfil.Size = new System.Drawing.Size(104, 27);
+            this.LBLPerfil.Size = new System.Drawing.Size(106, 28);
             this.LBLPerfil.TabIndex = 27;
             this.LBLPerfil.Text = "PERFIL";
             this.LBLPerfil.Click += new System.EventHandler(this.LBLPerfil_Click);
@@ -92,7 +93,7 @@
             this.LBLBAJAS.ForeColor = System.Drawing.Color.Black;
             this.LBLBAJAS.Location = new System.Drawing.Point(210, 387);
             this.LBLBAJAS.Name = "LBLBAJAS";
-            this.LBLBAJAS.Size = new System.Drawing.Size(91, 27);
+            this.LBLBAJAS.Size = new System.Drawing.Size(95, 28);
             this.LBLBAJAS.TabIndex = 5;
             this.LBLBAJAS.Text = "BAJAS";
             this.LBLBAJAS.Click += new System.EventHandler(this.LBLBAJAS_Click);
@@ -106,7 +107,7 @@
             this.LBLREPORTES.ForeColor = System.Drawing.Color.Black;
             this.LBLREPORTES.Location = new System.Drawing.Point(179, 493);
             this.LBLREPORTES.Name = "LBLREPORTES";
-            this.LBLREPORTES.Size = new System.Drawing.Size(145, 27);
+            this.LBLREPORTES.Size = new System.Drawing.Size(150, 28);
             this.LBLREPORTES.TabIndex = 3;
             this.LBLREPORTES.Text = "REPORTES";
             this.LBLREPORTES.Click += new System.EventHandler(this.LBLREPORTES_Click);
@@ -120,7 +121,7 @@
             this.LBLPRESTAMOS.ForeColor = System.Drawing.Color.Black;
             this.LBLPRESTAMOS.Location = new System.Drawing.Point(176, 282);
             this.LBLPRESTAMOS.Name = "LBLPRESTAMOS";
-            this.LBLPRESTAMOS.Size = new System.Drawing.Size(165, 27);
+            this.LBLPRESTAMOS.Size = new System.Drawing.Size(170, 28);
             this.LBLPRESTAMOS.TabIndex = 2;
             this.LBLPRESTAMOS.Text = "PRESTAMOS";
             this.LBLPRESTAMOS.Click += new System.EventHandler(this.LBLPRESTAMOS_Click);
@@ -254,7 +255,7 @@
             this.LBLUSUARIOS.ForeColor = System.Drawing.Color.Black;
             this.LBLUSUARIOS.Location = new System.Drawing.Point(179, 54);
             this.LBLUSUARIOS.Name = "LBLUSUARIOS";
-            this.LBLUSUARIOS.Size = new System.Drawing.Size(142, 27);
+            this.LBLUSUARIOS.Size = new System.Drawing.Size(147, 28);
             this.LBLUSUARIOS.TabIndex = 1;
             this.LBLUSUARIOS.Text = "USUARIOS";
             this.LBLUSUARIOS.Click += new System.EventHandler(this.LBLUSUARIOS_Click);
@@ -283,7 +284,7 @@
             this.lblhora.Appearance.Options.UseFont = true;
             this.lblhora.Location = new System.Drawing.Point(1036, 641);
             this.lblhora.Name = "lblhora";
-            this.lblhora.Size = new System.Drawing.Size(9, 37);
+            this.lblhora.Size = new System.Drawing.Size(9, 38);
             this.lblhora.TabIndex = 12;
             this.lblhora.Text = ".";
             // 
@@ -293,7 +294,7 @@
             this.lblfecha.Appearance.Options.UseFont = true;
             this.lblfecha.Location = new System.Drawing.Point(1036, 598);
             this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(9, 37);
+            this.lblfecha.Size = new System.Drawing.Size(9, 38);
             this.lblfecha.TabIndex = 13;
             this.lblfecha.Text = ".";
             // 
@@ -303,6 +304,13 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panelPrograma
+            // 
+            this.panelPrograma.Location = new System.Drawing.Point(376, -1);
+            this.panelPrograma.Name = "panelPrograma";
+            this.panelPrograma.Size = new System.Drawing.Size(1041, 680);
+            this.panelPrograma.TabIndex = 14;
+            // 
             // MenuPrincipla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -310,6 +318,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1429, 691);
+            this.Controls.Add(this.panelPrograma);
             this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.lblhora);
             this.Controls.Add(this.panel1);
@@ -350,5 +359,6 @@
         private DevExpress.XtraEditors.LabelControl lblhora;
         private DevExpress.XtraEditors.LabelControl lblfecha;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panelPrograma;
     }
 }

@@ -13,7 +13,7 @@ namespace Vagabunda
 {
     public partial class GestionDeUsuarios : Form
     {
-        string cadena = @"Data Source=LOCALHOST;Initial Catalog=Gestión para Sala de Lectura;Integrated Security=True;";
+        string cadena = @"Data Source=ARKAN\SQLEXPRESS;Initial Catalog=Gestión para Sala de Lectura;Integrated Security=True;";
 
         public GestionDeUsuarios()
         {
@@ -175,6 +175,11 @@ namespace Vagabunda
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
             ConsultarUsuarios(txtBusqueda.Text.Trim());
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

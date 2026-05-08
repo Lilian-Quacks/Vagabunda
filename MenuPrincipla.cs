@@ -18,6 +18,20 @@ namespace Vagabunda
             InitializeComponent();
         }
 
+        public void abrirFormPanel(object formHijo)
+        {
+            if (this.panelPrograma.Controls.Count > 0)
+            {
+                this.panelPrograma.Controls.RemoveAt(0);
+            }
+            Form fh = formHijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            fh.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.panelPrograma.Controls.Add(fh);
+            this.panelPrograma.Tag = fh;
+            fh.Show();
+        }
         private void pictureEdit7_EditValueChanged(object sender, EventArgs e)
         {
 
@@ -30,38 +44,32 @@ namespace Vagabunda
 
         private void LBLPerfil_Click(object sender, EventArgs e)
         {
-            PerfilBibiotecario perfil = new PerfilBibiotecario();
-            perfil.ShowDialog();
+            abrirFormPanel(new PerfilBibiotecario());
         }
 
         private void LBLBAJAS_Click(object sender, EventArgs e)
         {
-            Bajas bajas = new Bajas();
-            bajas.ShowDialog();
+            abrirFormPanel(new Bajas());
         }
 
         private void LBLREPORTES_Click(object sender, EventArgs e)
         {
-            Reportes reportes = new Reportes();
-            reportes.Show();
+            abrirFormPanel(new Reportes());
         }
 
         private void LBLPRESTAMOS_Click(object sender, EventArgs e)
         {
-            GestioDePrestamos prestamos = new GestioDePrestamos();
-            prestamos.Show();
+            abrirFormPanel(new GestioDePrestamos());
         }
 
         private void LBLUSUARIOS_Click(object sender, EventArgs e)
         {
-            GestionDeUsuarios usuarios = new GestionDeUsuarios();
-            usuarios.Show();
+            abrirFormPanel(new GestionDeUsuarios());
         }
 
         private void LBLLIBROS_Click(object sender, EventArgs e)
         {
-            GestionDeLibros libros = new GestionDeLibros();
-            libros.Show();
+            abrirFormPanel(new GestionDeLibros());
         }
         private void BordesRedondos(Panel panel, int radio)
         {
