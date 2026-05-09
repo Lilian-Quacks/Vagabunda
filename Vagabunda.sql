@@ -97,24 +97,28 @@ create table Reporte
 
 CREATE TRIGGER TR_GenerarPenalizacionSemanal
 ON Prestramos
-AFTER UPDATE -- Se activa cuando se actualiza la fecha de devolución o el estatus
+AFTER UPDATE 
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    -- Actualizamos el adeudo del usuario
-    UPDATE Usuarios
-    SET Adeudo_Pendiente = ISNULL(Adeudo_Pendiente, 0) + 
-        (CASE 
-            WHEN DATEDIFF(WEEK, i.Fecha_Salida, GETDATE()) > 4 
-            THEN (DATEDIFF(WEEK, i.Fecha_Salida, GETDATE()) - 4) * 50 
-            ELSE 0 
-         END)
-    FROM Usuarios u
-    INNER JOIN inserted i ON u.Usuario_ID = i.Usuario_ID
-    WHERE i.Fecha_Devolucion IS NULL -- Solo si aún no lo entrega
-      AND DATEDIFF(MONTH, i.Fecha_Salida, GETDATE()) >= 1;
-END
+    -- Solo actualiza si el libro no se ha devuelto y ya pasó la fecha límite
+    IF EXISTS (SELECT 1 FROM inserted WHERE Fecha_Devolucion IS NULL AND GETDATE() > Fecha_Limite)
+    BEGIN
+        UPDATE Usuarios
+        SET Adeudo_Pendiente = ISNULL(Adeudo_Pendiente, 0) + 
+            (CASE 
+                -- Si ya pasó más de una semana de la fecha límite
+                WHEN DATEDIFF(DAY, i.Fecha_Limite, GETDATE()) >= 7 
+                THEN (DATEDIFF(DAY, i.Fecha_Limite, GETDATE()) / 7) * 50 
+                ELSE 0 
+             END)
+        FROM Usuarios u
+        INNER JOIN inserted i ON u.Usuario_ID = i.Usuario_ID
+        WHERE i.Fecha_Devolucion IS NULL;
+    END
+END;
+GO
 
 CREATE TRIGGER TR_LimpiarReportesAntiguos
 ON Reporte
