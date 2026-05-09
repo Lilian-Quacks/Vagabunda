@@ -23,7 +23,29 @@ namespace Vagabunda
 
         private void GestionDeUsuarios_Load(object sender, EventArgs e)
         {
+            CargarOpcionesAdeudo();
             ConsultarUsuarios();
+        }
+
+        private void CargarOpcionesAdeudo()
+        {
+            cmbAdeudo.Items.Clear();
+            cmbAdeudo.Items.Add("ADEUDO");
+            cmbAdeudo.Items.Add("0");
+            cmbAdeudo.Items.Add("50");
+            cmbAdeudo.Items.Add("100");
+            cmbAdeudo.Items.Add("200");
+            cmbAdeudo.SelectedIndex = 0;
+        }
+
+        private void cmbAdeudo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbAdeudo.SelectedIndex > 0 && cmbAdeudo.Items.Contains("ADEUDO"))
+            {
+                string valorSeleccionado = cmbAdeudo.SelectedItem.ToString();
+                cmbAdeudo.Items.RemoveAt(0);
+                cmbAdeudo.Text = valorSeleccionado;
+            }
         }
 
         private void dgvUsuarios_KeyDown(object sender, KeyEventArgs e)
@@ -80,7 +102,8 @@ namespace Vagabunda
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) ||
-                string.IsNullOrWhiteSpace(txtTelefono.Text) || string.IsNullOrWhiteSpace(txtCorreo.Text))
+                string.IsNullOrWhiteSpace(txtTelefono.Text) || string.IsNullOrWhiteSpace(txtCorreo.Text) ||
+                cmbAdeudo.Text == "ADEUDO")
             {
                 MessageBox.Show("Por favor, llena los campos de detalles.");
                 return;
@@ -92,13 +115,17 @@ namespace Vagabunda
                 {
                     con.Open();
                     string query = @"INSERT INTO Usuarios (Nombre, Direccion, Telefono, Email, Adeudo_Pendiente, Prestamos_Activos) 
-                                     VALUES (@nombre, @direccion, @tel, @mail, 0, 0)";
+                                     VALUES (@nombre, @direccion, @tel, @mail, @adeudo, 0)";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@nombre", txtNombre.Text.Trim());
                     cmd.Parameters.AddWithValue("@direccion", txtDireccion.Text.Trim());
                     cmd.Parameters.AddWithValue("@tel", txtTelefono.Text.Trim());
                     cmd.Parameters.AddWithValue("@mail", txtCorreo.Text.Trim());
+
+                    decimal montoAdeudo = 0;
+                    decimal.TryParse(cmbAdeudo.Text, out montoAdeudo);
+                    cmd.Parameters.AddWithValue("@adeudo", montoAdeudo);
 
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Usuario guardado");
@@ -142,6 +169,7 @@ namespace Vagabunda
             txtDireccion.Clear();
             txtTelefono.Clear();
             txtCorreo.Clear();
+            CargarOpcionesAdeudo();
         }
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)

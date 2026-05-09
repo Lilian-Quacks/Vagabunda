@@ -59,9 +59,9 @@ namespace Vagabunda
 
         void CargarMotivos()
         {
-            cbeMotivo.Items.Add("Dañado");
-            cbeMotivo.Items.Add("Perdido");
-            cbeMotivo.Items.Add("Obsoleto");
+            cbeMotivo.Properties.Items.Add("Dañado");
+            cbeMotivo.Properties.Items.Add("Perdido");
+            cbeMotivo.Properties.Items.Add("Obsoleto");
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
