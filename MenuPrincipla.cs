@@ -16,8 +16,50 @@ namespace Vagabunda
         public MenuPrincipla()
         {
             InitializeComponent();
+            AsignarEventos();
         }
 
+        private void AsignarEventos()
+        {
+            LBLUSUARIOS.MouseEnter += LBLUSUARIOS_MouseEnter;
+            LBLUSUARIOS.MouseLeave += LBLUSUARIOS_MouseLeave;
+            LBLUSUARIOS.Click += LBLUSUARIOS_Click;
+
+            LBLLIBROS.MouseEnter += LBLLIBROS_MouseEnter;
+            LBLLIBROS.MouseLeave += LBLLIBROS_MouseLeave;
+            LBLLIBROS.Click += LBLLIBROS_Click;
+
+            LBLPRESTAMOS.MouseEnter += LBLPRESTAMOS_MouseEnter;
+            LBLPRESTAMOS.MouseLeave += LBLPRESTAMOS_MouseLeave;
+            LBLPRESTAMOS.Click += LBLPRESTAMOS_Click;
+
+            LBLBAJAS.MouseEnter += LBLBAJAS_MouseEnter;
+            LBLBAJAS.MouseLeave += LBLBAJAS_MouseLeave;
+            LBLBAJAS.Click += LBLBAJAS_Click;
+
+            LBLREPORTES.MouseEnter += LBLREPORTES_MouseEnter;
+            LBLREPORTES.MouseLeave += LBLREPORTES_MouseLeave;
+            LBLREPORTES.Click += LBLREPORTES_Click;
+
+            LBLPerfil.MouseEnter += LBLPerfil_MouseEnter;
+            LBLPerfil.MouseLeave += LBLPerfil_MouseLeave;
+            LBLPerfil.Click += LBLPerfil_Click;
+        }
+
+        public void abrirFormPanel(object formHijo)
+        {
+            if (this.panelPrograma.Controls.Count > 0)
+            {
+                this.panelPrograma.Controls.Clear();
+            }
+            Form fh = formHijo as Form;
+            fh.TopLevel = false;
+            fh.FormBorderStyle = FormBorderStyle.None;
+            fh.Dock = DockStyle.Fill;
+            this.panelPrograma.Controls.Add(fh);
+            this.panelPrograma.Tag = fh;
+            fh.Show();
+        }
         private void pictureEdit7_EditValueChanged(object sender, EventArgs e)
         {
 
@@ -63,26 +105,23 @@ namespace Vagabunda
             GestionDeLibros libros = new GestionDeLibros();
             libros.Show();
         }
+
         private void BordesRedondos(Panel panel, int radio)
         {
             GraphicsPath path = new GraphicsPath();
-
             path.AddArc(0, 0, radio, radio, 180, 90);
             path.AddArc(panel.Width - radio, 0, radio, radio, 270, 90);
             path.AddArc(panel.Width - radio, panel.Height - radio, radio, radio, 0, 90);
             path.AddArc(0, panel.Height - radio, radio, radio, 90, 90);
-
             path.CloseAllFigures();
-
             panel.Region = new Region(path);
         }
 
         private void MenuPrincipla_Load(object sender, EventArgs e)
         {
             BordesRedondos(panel1, 30);
+            timer1.Start();
         }
-
-        ////////////////////////////Eventos del los labels////////////////////////
 
         private void LBLUSUARIOS_MouseEnter(object sender, EventArgs e)
         {
@@ -173,6 +212,10 @@ namespace Vagabunda
             lblhora.Text = DateTime.Now.ToString("hh:mm:ss tt");
             string fecha = DateTime.Now.ToString("dddd dd MMMM yyyy");
             lblfecha.Text = char.ToUpper(fecha[0]) + fecha.Substring(1);
+        }
+
+        private void panelPrograma_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }

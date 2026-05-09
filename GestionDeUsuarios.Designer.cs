@@ -52,7 +52,6 @@ namespace Vagabunda
             this.txtDireccion = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTelefono = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCorreo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cmbAdeudo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
@@ -66,7 +65,7 @@ namespace Vagabunda
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label2.Location = new System.Drawing.Point(32, 162);
+            this.label2.Location = new System.Drawing.Point(61, 188);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(202, 38);
             this.label2.TabIndex = 1;
@@ -220,7 +219,7 @@ namespace Vagabunda
             this.panel4.BackColor = System.Drawing.Color.LightBlue;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.dgvUsuarios);
-            this.panel4.Location = new System.Drawing.Point(320, 193);
+            this.panel4.Location = new System.Drawing.Point(320, 192);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1124, 480);
@@ -239,7 +238,7 @@ namespace Vagabunda
             this.txtNombre.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombre.Location = new System.Drawing.Point(6, 228);
+            this.txtNombre.Location = new System.Drawing.Point(10, 255);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -261,13 +260,13 @@ namespace Vagabunda
             this.txtBusqueda.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.txtBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtBusqueda.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBusqueda.Location = new System.Drawing.Point(489, 115);
+            this.txtBusqueda.Location = new System.Drawing.Point(440, 125);
             this.txtBusqueda.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtBusqueda.PlaceholderText = "BUSQUEDA";
             this.txtBusqueda.SelectedText = "";
-            this.txtBusqueda.Size = new System.Drawing.Size(790, 51);
+            this.txtBusqueda.Size = new System.Drawing.Size(864, 49);
             this.txtBusqueda.TabIndex = 24;
             this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
@@ -284,13 +283,13 @@ namespace Vagabunda
             this.txtDireccion.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.txtDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtDireccion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDireccion.Location = new System.Drawing.Point(6, 294);
+            this.txtDireccion.Location = new System.Drawing.Point(10, 321);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtDireccion.PlaceholderText = "DIRECCION";
             this.txtDireccion.SelectedText = "";
-            this.txtDireccion.Size = new System.Drawing.Size(291, 52);
+            this.txtDireccion.Size = new System.Drawing.Size(291, 54);
             this.txtDireccion.TabIndex = 25;
             // 
             // txtTelefono
@@ -306,7 +305,7 @@ namespace Vagabunda
             this.txtTelefono.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtTelefono.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTelefono.Location = new System.Drawing.Point(6, 366);
+            this.txtTelefono.Location = new System.Drawing.Point(10, 396);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -328,7 +327,7 @@ namespace Vagabunda
             this.txtCorreo.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.txtCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtCorreo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCorreo.Location = new System.Drawing.Point(6, 441);
+            this.txtCorreo.Location = new System.Drawing.Point(10, 471);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -336,25 +335,6 @@ namespace Vagabunda
             this.txtCorreo.SelectedText = "";
             this.txtCorreo.Size = new System.Drawing.Size(291, 54);
             this.txtCorreo.TabIndex = 27;
-            // 
-            // cmbAdeudo
-            // 
-            this.cmbAdeudo.AutoRoundedCorners = true;
-            this.cmbAdeudo.BackColor = System.Drawing.Color.Transparent;
-            this.cmbAdeudo.BorderColor = System.Drawing.Color.White;
-            this.cmbAdeudo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbAdeudo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbAdeudo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbAdeudo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbAdeudo.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
-            this.cmbAdeudo.ForeColor = System.Drawing.Color.Black;
-            this.cmbAdeudo.ItemHeight = 30;
-            this.cmbAdeudo.Items.AddRange(new object[] {
-            ""});
-            this.cmbAdeudo.Location = new System.Drawing.Point(6, 514);
-            this.cmbAdeudo.Name = "cmbAdeudo";
-            this.cmbAdeudo.Size = new System.Drawing.Size(291, 36);
-            this.cmbAdeudo.TabIndex = 28;
             // 
             // btnGuardar
             // 
@@ -366,9 +346,10 @@ namespace Vagabunda
             this.btnGuardar.FillColor = System.Drawing.Color.SteelBlue;
             this.btnGuardar.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(26, 597);
+            this.btnGuardar.Location = new System.Drawing.Point(23, 564);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(242, 46);
+            this.btnGuardar.Size = new System.Drawing.Size(258, 54);
             this.btnGuardar.TabIndex = 29;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -379,9 +360,8 @@ namespace Vagabunda
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1463, 684);
+            this.ClientSize = new System.Drawing.Size(1462, 688);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.cmbAdeudo);
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtDireccion);
@@ -425,7 +405,6 @@ namespace Vagabunda
         private Guna.UI2.WinForms.Guna2TextBox txtDireccion;
         private Guna.UI2.WinForms.Guna2TextBox txtTelefono;
         private Guna.UI2.WinForms.Guna2TextBox txtCorreo;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbAdeudo;
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
     }
 }

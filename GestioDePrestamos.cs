@@ -26,11 +26,11 @@ namespace Vagabunda
 
         private void GestioDePrestamos_Load(object sender, EventArgs e)
         {
-            if (cbeEstatus.Properties.Items.Count == 0)
+            if (cbeEstatus.Items.Count == 0)
             {
-                cbeEstatus.Properties.Items.Add("Activo");
-                cbeEstatus.Properties.Items.Add("Devuelto");
-                cbeEstatus.Properties.Items.Add("Retrasado");
+                cbeEstatus.Items.Add("Activo");
+                cbeEstatus.Items.Add("Devuelto");
+                cbeEstatus.Items.Add("Retrasado");
             }
 
             ConsultarPrestamos();
