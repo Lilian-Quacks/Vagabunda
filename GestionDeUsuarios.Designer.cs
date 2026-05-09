@@ -31,8 +31,8 @@ namespace Vagabunda
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionDeUsuarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
@@ -65,7 +65,7 @@ namespace Vagabunda
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label2.Location = new System.Drawing.Point(61, 188);
+            this.label2.Location = new System.Drawing.Point(44, 167);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(202, 38);
             this.label2.TabIndex = 1;
@@ -133,14 +133,14 @@ namespace Vagabunda
             this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsuarios.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdUsuario,
@@ -150,14 +150,14 @@ namespace Vagabunda
             this.Email,
             this.Adeudo,
             this.Column1});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(178)))), ((int)(((byte)(211)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(178)))), ((int)(((byte)(211)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUsuarios.EnableHeadersVisualStyles = false;
             this.dgvUsuarios.Location = new System.Drawing.Point(0, 0);
@@ -219,7 +219,7 @@ namespace Vagabunda
             this.panel4.BackColor = System.Drawing.Color.LightBlue;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.dgvUsuarios);
-            this.panel4.Location = new System.Drawing.Point(320, 192);
+            this.panel4.Location = new System.Drawing.Point(320, 193);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1124, 480);
@@ -238,7 +238,7 @@ namespace Vagabunda
             this.txtNombre.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombre.Location = new System.Drawing.Point(10, 255);
+            this.txtNombre.Location = new System.Drawing.Point(10, 229);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -260,7 +260,7 @@ namespace Vagabunda
             this.txtBusqueda.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.txtBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtBusqueda.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBusqueda.Location = new System.Drawing.Point(440, 125);
+            this.txtBusqueda.Location = new System.Drawing.Point(461, 126);
             this.txtBusqueda.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -283,7 +283,7 @@ namespace Vagabunda
             this.txtDireccion.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.txtDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtDireccion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDireccion.Location = new System.Drawing.Point(10, 321);
+            this.txtDireccion.Location = new System.Drawing.Point(10, 295);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -305,7 +305,7 @@ namespace Vagabunda
             this.txtTelefono.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtTelefono.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTelefono.Location = new System.Drawing.Point(10, 396);
+            this.txtTelefono.Location = new System.Drawing.Point(10, 361);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -327,8 +327,8 @@ namespace Vagabunda
             this.txtCorreo.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.txtCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtCorreo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCorreo.Location = new System.Drawing.Point(10, 471);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.txtCorreo.Location = new System.Drawing.Point(10, 426);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtCorreo.PlaceholderText = "CORREO";
@@ -360,7 +360,7 @@ namespace Vagabunda
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1462, 688);
+            this.ClientSize = new System.Drawing.Size(1464, 701);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.txtTelefono);

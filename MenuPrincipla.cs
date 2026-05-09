@@ -48,16 +48,16 @@ namespace Vagabunda
 
         public void abrirFormPanel(object formHijo)
         {
-            if (this.panelPrograma.Controls.Count > 0)
+            if (this.PNLPrograma.Controls.Count > 0)
             {
-                this.panelPrograma.Controls.Clear();
+                this.PNLPrograma.Controls.Clear();
             }
             Form fh = formHijo as Form;
             fh.TopLevel = false;
             fh.FormBorderStyle = FormBorderStyle.None;
             fh.Dock = DockStyle.Fill;
-            this.panelPrograma.Controls.Add(fh);
-            this.panelPrograma.Tag = fh;
+            this.PNLPrograma.Controls.Add(fh);
+            this.PNLPrograma.Tag = fh;
             fh.Show();
         }
         private void pictureEdit7_EditValueChanged(object sender, EventArgs e)
@@ -209,9 +209,9 @@ namespace Vagabunda
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblhora.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            LBLTIEMPO1.Text = DateTime.Now.ToString("hh:mm:ss tt");
             string fecha = DateTime.Now.ToString("dddd dd MMMM yyyy");
-            lblfecha.Text = char.ToUpper(fecha[0]) + fecha.Substring(1);
+            LBLFECHAA.Text = char.ToUpper(fecha[0]) + fecha.Substring(1);
         }
 
         private void panelPrograma_Paint(object sender, PaintEventArgs e)

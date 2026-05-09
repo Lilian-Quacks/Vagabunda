@@ -35,7 +35,6 @@
             this.LBLBAJAS = new System.Windows.Forms.Label();
             this.LBLREPORTES = new System.Windows.Forms.Label();
             this.LBLPRESTAMOS = new System.Windows.Forms.Label();
-            this.pictureEdit7 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit6 = new DevExpress.XtraEditors.PictureEdit();
             this.PE_Bibliotecario = new DevExpress.XtraEditors.PictureEdit();
@@ -44,10 +43,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.LBLUSUARIOS = new System.Windows.Forms.Label();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
-            this.lblhora = new DevExpress.XtraEditors.LabelControl();
-            this.lblfecha = new DevExpress.XtraEditors.LabelControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
+            this.PNLPrograma = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureEdit7 = new DevExpress.XtraEditors.PictureEdit();
+            this.LBLTIEMPO1 = new System.Windows.Forms.Label();
+            this.LBLFECHAA = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PE_Bibliotecario.Properties)).BeginInit();
@@ -55,6 +55,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
+            this.PNLPrograma.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // LBLLIBROS
@@ -126,21 +128,6 @@
             this.LBLPRESTAMOS.Click += new System.EventHandler(this.LBLPRESTAMOS_Click);
             this.LBLPRESTAMOS.MouseEnter += new System.EventHandler(this.LBLPRESTAMOS_MouseEnter);
             this.LBLPRESTAMOS.MouseLeave += new System.EventHandler(this.LBLPRESTAMOS_MouseLeave);
-            // 
-            // pictureEdit7
-            // 
-            this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
-            this.pictureEdit7.Location = new System.Drawing.Point(637, 96);
-            this.pictureEdit7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureEdit7.Name = "pictureEdit7";
-            this.pictureEdit7.Properties.AllowFocused = false;
-            this.pictureEdit7.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.pictureEdit7.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit7.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit7.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit7.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit7.Size = new System.Drawing.Size(945, 631);
-            this.pictureEdit7.TabIndex = 11;
             // 
             // pictureEdit3
             // 
@@ -275,33 +262,59 @@
             this.pictureEdit2.TabIndex = 6;
             this.pictureEdit2.Click += new System.EventHandler(this.LBLUSUARIOS_Click);
             // 
-            // lblhora
-            // 
-            this.lblhora.Appearance.Font = new System.Drawing.Font("Segoe UI Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblhora.Appearance.Options.UseFont = true;
-            this.lblhora.Location = new System.Drawing.Point(1166, 801);
-            this.lblhora.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lblhora.Name = "lblhora";
-            this.lblhora.Size = new System.Drawing.Size(10, 45);
-            this.lblhora.TabIndex = 12;
-            this.lblhora.Text = ".";
-            // 
-            // lblfecha
-            // 
-            this.lblfecha.Appearance.Font = new System.Drawing.Font("Segoe UI Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfecha.Appearance.Options.UseFont = true;
-            this.lblfecha.Location = new System.Drawing.Point(1166, 748);
-            this.lblfecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(10, 45);
-            this.lblfecha.TabIndex = 13;
-            this.lblfecha.Text = ".";
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // PNLPrograma
+            // 
+            this.PNLPrograma.Controls.Add(this.LBLFECHAA);
+            this.PNLPrograma.Controls.Add(this.LBLTIEMPO1);
+            this.PNLPrograma.Controls.Add(this.pictureEdit7);
+            this.PNLPrograma.Location = new System.Drawing.Point(240, -1);
+            this.PNLPrograma.Name = "PNLPrograma";
+            this.PNLPrograma.Size = new System.Drawing.Size(1597, 967);
+            this.PNLPrograma.TabIndex = 3;
+            // 
+            // pictureEdit7
+            // 
+            this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
+            this.pictureEdit7.Location = new System.Drawing.Point(284, 99);
+            this.pictureEdit7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureEdit7.Name = "pictureEdit7";
+            this.pictureEdit7.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit7.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit7.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit7.Properties.InitialImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("pictureEdit7.Properties.InitialImageOptions.Image")));
+            this.pictureEdit7.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit7.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit7.Properties.ZoomAcceleration = 1333D;
+            this.pictureEdit7.Size = new System.Drawing.Size(1086, 680);
+            this.pictureEdit7.TabIndex = 15;
+            // 
+            // LBLTIEMPO1
+            // 
+            this.LBLTIEMPO1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LBLTIEMPO1.AutoSize = true;
+            this.LBLTIEMPO1.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLTIEMPO1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.LBLTIEMPO1.Location = new System.Drawing.Point(1110, 888);
+            this.LBLTIEMPO1.Name = "LBLTIEMPO1";
+            this.LBLTIEMPO1.Size = new System.Drawing.Size(0, 38);
+            this.LBLTIEMPO1.TabIndex = 16;
+            // 
+            // LBLFECHAA
+            // 
+            this.LBLFECHAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LBLFECHAA.AutoSize = true;
+            this.LBLFECHAA.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLFECHAA.ForeColor = System.Drawing.Color.DarkCyan;
+            this.LBLFECHAA.Location = new System.Drawing.Point(1110, 840);
+            this.LBLFECHAA.Name = "LBLFECHAA";
+            this.LBLFECHAA.Size = new System.Drawing.Size(0, 38);
+            this.LBLFECHAA.TabIndex = 17;
             // 
             // MenuPrincipla
             // 
@@ -309,16 +322,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1791, 973);
-            this.Controls.Add(this.lblfecha);
-            this.Controls.Add(this.lblhora);
+            this.ClientSize = new System.Drawing.Size(1829, 967);
+            this.Controls.Add(this.PNLPrograma);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureEdit7);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MenuPrincipla";
             this.Text = "MenuPrincipla";
             this.Load += new System.EventHandler(this.MenuPrincipla_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PE_Bibliotecario.Properties)).EndInit();
@@ -327,8 +337,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
+            this.PNLPrograma.ResumeLayout(false);
+            this.PNLPrograma.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -336,7 +348,6 @@
         private System.Windows.Forms.Label LBLBAJAS;
         private System.Windows.Forms.Label LBLREPORTES;
         private System.Windows.Forms.Label LBLPRESTAMOS;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit7;
         private System.Windows.Forms.Label LBLPerfil;
         private System.Windows.Forms.Label LBLLIBROS;
         private DevExpress.XtraEditors.PictureEdit pictureEdit3;
@@ -347,8 +358,10 @@
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;
         private System.Windows.Forms.Label LBLUSUARIOS;
-        private DevExpress.XtraEditors.LabelControl lblhora;
-        private DevExpress.XtraEditors.LabelControl lblfecha;
         private System.Windows.Forms.Timer timer1;
+        private Guna.UI2.WinForms.Guna2Panel PNLPrograma;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit7;
+        private System.Windows.Forms.Label LBLTIEMPO1;
+        private System.Windows.Forms.Label LBLFECHAA;
     }
 }
