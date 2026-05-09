@@ -45,7 +45,6 @@ namespace Vagabunda
             this.txtLibro = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtUsuario = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dtpFechaLimite = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -57,6 +56,7 @@ namespace Vagabunda
             this.FechLimite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstFisico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBusqueda = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dtpFechaLimite = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -242,24 +242,6 @@ namespace Vagabunda
             this.label4.TabIndex = 43;
             this.label4.Text = "FECHA PUBLICACION";
             // 
-            // dtpFechaLimite
-            // 
-            this.dtpFechaLimite.AutoRoundedCorners = true;
-            this.dtpFechaLimite.BackColor = System.Drawing.Color.Transparent;
-            this.dtpFechaLimite.BorderColor = System.Drawing.Color.Transparent;
-            this.dtpFechaLimite.Checked = true;
-            this.dtpFechaLimite.FillColor = System.Drawing.Color.White;
-            this.dtpFechaLimite.FocusedColor = System.Drawing.Color.White;
-            this.dtpFechaLimite.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
-            this.dtpFechaLimite.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaLimite.Location = new System.Drawing.Point(16, 394);
-            this.dtpFechaLimite.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFechaLimite.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFechaLimite.Name = "dtpFechaLimite";
-            this.dtpFechaLimite.Size = new System.Drawing.Size(285, 43);
-            this.dtpFechaLimite.TabIndex = 37;
-            this.dtpFechaLimite.Value = new System.DateTime(2026, 5, 7, 9, 57, 53, 274);
-            // 
             // btnGuardar
             // 
             this.btnGuardar.AutoRoundedCorners = true;
@@ -407,6 +389,24 @@ namespace Vagabunda
             this.txtBusqueda.Size = new System.Drawing.Size(790, 51);
             this.txtBusqueda.TabIndex = 41;
             // 
+            // dtpFechaLimite
+            // 
+            this.dtpFechaLimite.AutoRoundedCorners = true;
+            this.dtpFechaLimite.BackColor = System.Drawing.Color.Transparent;
+            this.dtpFechaLimite.BorderColor = System.Drawing.Color.Transparent;
+            this.dtpFechaLimite.Checked = true;
+            this.dtpFechaLimite.FillColor = System.Drawing.Color.White;
+            this.dtpFechaLimite.FocusedColor = System.Drawing.Color.White;
+            this.dtpFechaLimite.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
+            this.dtpFechaLimite.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaLimite.Location = new System.Drawing.Point(16, 394);
+            this.dtpFechaLimite.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFechaLimite.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFechaLimite.Name = "dtpFechaLimite";
+            this.dtpFechaLimite.Size = new System.Drawing.Size(285, 43);
+            this.dtpFechaLimite.TabIndex = 37;
+            this.dtpFechaLimite.Value = new System.DateTime(2026, 5, 7, 9, 57, 53, 274);
+            // 
             // GestioDePrestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -455,7 +455,6 @@ namespace Vagabunda
         private Guna.UI2.WinForms.Guna2TextBox txtLibro;
         private Guna.UI2.WinForms.Guna2TextBox txtUsuario;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFechaLimite;
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
         private Guna.UI2.WinForms.Guna2Button btnEliminar;
         private System.Windows.Forms.Panel panel4;
@@ -467,5 +466,6 @@ namespace Vagabunda
         private System.Windows.Forms.DataGridViewTextBoxColumn FechLimite;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstFisico;
         private Guna.UI2.WinForms.Guna2TextBox txtBusqueda;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFechaLimite;
     }
 }

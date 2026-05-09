@@ -45,9 +45,9 @@
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.PNLPrograma = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureEdit7 = new DevExpress.XtraEditors.PictureEdit();
-            this.LBLTIEMPO1 = new System.Windows.Forms.Label();
             this.LBLFECHAA = new System.Windows.Forms.Label();
+            this.LBLTIEMPO1 = new System.Windows.Forms.Label();
+            this.pictureEdit7 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PE_Bibliotecario.Properties)).BeginInit();
@@ -278,6 +278,28 @@
             this.PNLPrograma.Size = new System.Drawing.Size(1597, 967);
             this.PNLPrograma.TabIndex = 3;
             // 
+            // LBLFECHAA
+            // 
+            this.LBLFECHAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LBLFECHAA.AutoSize = true;
+            this.LBLFECHAA.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLFECHAA.ForeColor = System.Drawing.Color.DarkCyan;
+            this.LBLFECHAA.Location = new System.Drawing.Point(1110, 840);
+            this.LBLFECHAA.Name = "LBLFECHAA";
+            this.LBLFECHAA.Size = new System.Drawing.Size(0, 38);
+            this.LBLFECHAA.TabIndex = 17;
+            // 
+            // LBLTIEMPO1
+            // 
+            this.LBLTIEMPO1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LBLTIEMPO1.AutoSize = true;
+            this.LBLTIEMPO1.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLTIEMPO1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.LBLTIEMPO1.Location = new System.Drawing.Point(1110, 888);
+            this.LBLTIEMPO1.Name = "LBLTIEMPO1";
+            this.LBLTIEMPO1.Size = new System.Drawing.Size(0, 38);
+            this.LBLTIEMPO1.TabIndex = 16;
+            // 
             // pictureEdit7
             // 
             this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
@@ -293,28 +315,6 @@
             this.pictureEdit7.Properties.ZoomAcceleration = 1333D;
             this.pictureEdit7.Size = new System.Drawing.Size(1086, 680);
             this.pictureEdit7.TabIndex = 15;
-            // 
-            // LBLTIEMPO1
-            // 
-            this.LBLTIEMPO1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.LBLTIEMPO1.AutoSize = true;
-            this.LBLTIEMPO1.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLTIEMPO1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.LBLTIEMPO1.Location = new System.Drawing.Point(1110, 888);
-            this.LBLTIEMPO1.Name = "LBLTIEMPO1";
-            this.LBLTIEMPO1.Size = new System.Drawing.Size(0, 38);
-            this.LBLTIEMPO1.TabIndex = 16;
-            // 
-            // LBLFECHAA
-            // 
-            this.LBLFECHAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.LBLFECHAA.AutoSize = true;
-            this.LBLFECHAA.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBLFECHAA.ForeColor = System.Drawing.Color.DarkCyan;
-            this.LBLFECHAA.Location = new System.Drawing.Point(1110, 840);
-            this.LBLFECHAA.Name = "LBLFECHAA";
-            this.LBLFECHAA.Size = new System.Drawing.Size(0, 38);
-            this.LBLFECHAA.TabIndex = 17;
             // 
             // MenuPrincipla
             // 

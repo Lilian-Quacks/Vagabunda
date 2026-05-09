@@ -60,50 +60,35 @@ namespace Vagabunda
             this.PNLPrograma.Tag = fh;
             fh.Show();
         }
-        private void pictureEdit7_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PE_Bibliotecario_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void LBLPerfil_Click(object sender, EventArgs e)
         {
-            PerfilBibiotecario perfil = new PerfilBibiotecario();
-            perfil.ShowDialog();
+            abrirFormPanel(new PerfilBibiotecario());
         }
 
         private void LBLBAJAS_Click(object sender, EventArgs e)
         {
-            Bajas bajas = new Bajas();
-            bajas.ShowDialog();
+            abrirFormPanel(new Bajas());
         }
 
         private void LBLREPORTES_Click(object sender, EventArgs e)
         {
-            Reportes reportes = new Reportes();
-            reportes.Show();
+            abrirFormPanel(new Reportes());
         }
 
         private void LBLPRESTAMOS_Click(object sender, EventArgs e)
         {
-            GestioDePrestamos prestamos = new GestioDePrestamos();
-            prestamos.Show();
+            abrirFormPanel(new GestioDePrestamos());
         }
 
         private void LBLUSUARIOS_Click(object sender, EventArgs e)
         {
-            GestionDeUsuarios usuarios = new GestionDeUsuarios();
-            usuarios.Show();
+            abrirFormPanel(new GestionDeUsuarios());
         }
 
         private void LBLLIBROS_Click(object sender, EventArgs e)
         {
-            GestionDeLibros libros = new GestionDeLibros();
-            libros.Show();
+            abrirFormPanel(new GestionDeLibros());
         }
 
         private void BordesRedondos(Panel panel, int radio)
