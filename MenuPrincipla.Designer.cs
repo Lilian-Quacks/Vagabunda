@@ -64,9 +64,9 @@
             this.LBLLIBROS.AutoSize = true;
             this.LBLLIBROS.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.LBLLIBROS.ForeColor = System.Drawing.Color.Black;
-            this.LBLLIBROS.Location = new System.Drawing.Point(44, 302);
+            this.LBLLIBROS.Location = new System.Drawing.Point(48, 241);
             this.LBLLIBROS.Name = "LBLLIBROS";
-            this.LBLLIBROS.Size = new System.Drawing.Size(122, 31);
+            this.LBLLIBROS.Size = new System.Drawing.Size(105, 27);
             this.LBLLIBROS.TabIndex = 0;
             this.LBLLIBROS.Text = "LIBROS";
             this.LBLLIBROS.Click += new System.EventHandler(this.LBLLIBROS_Click);
@@ -78,9 +78,9 @@
             this.LBLPerfil.AutoSize = true;
             this.LBLPerfil.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.LBLPerfil.ForeColor = System.Drawing.Color.Black;
-            this.LBLPerfil.Location = new System.Drawing.Point(46, 879);
+            this.LBLPerfil.Location = new System.Drawing.Point(41, 719);
             this.LBLPerfil.Name = "LBLPerfil";
-            this.LBLPerfil.Size = new System.Drawing.Size(120, 31);
+            this.LBLPerfil.Size = new System.Drawing.Size(104, 27);
             this.LBLPerfil.TabIndex = 27;
             this.LBLPerfil.Text = "PERFIL";
             this.LBLPerfil.Click += new System.EventHandler(this.LBLPerfil_Click);
@@ -92,9 +92,9 @@
             this.LBLBAJAS.AutoSize = true;
             this.LBLBAJAS.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.LBLBAJAS.ForeColor = System.Drawing.Color.Black;
-            this.LBLBAJAS.Location = new System.Drawing.Point(60, 591);
+            this.LBLBAJAS.Location = new System.Drawing.Point(53, 473);
             this.LBLBAJAS.Name = "LBLBAJAS";
-            this.LBLBAJAS.Size = new System.Drawing.Size(106, 31);
+            this.LBLBAJAS.Size = new System.Drawing.Size(91, 27);
             this.LBLBAJAS.TabIndex = 5;
             this.LBLBAJAS.Text = "BAJAS";
             this.LBLBAJAS.Click += new System.EventHandler(this.LBLBAJAS_Click);
@@ -106,9 +106,9 @@
             this.LBLREPORTES.AutoSize = true;
             this.LBLREPORTES.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.LBLREPORTES.ForeColor = System.Drawing.Color.Black;
-            this.LBLREPORTES.Location = new System.Drawing.Point(26, 738);
+            this.LBLREPORTES.Location = new System.Drawing.Point(23, 601);
             this.LBLREPORTES.Name = "LBLREPORTES";
-            this.LBLREPORTES.Size = new System.Drawing.Size(168, 31);
+            this.LBLREPORTES.Size = new System.Drawing.Size(145, 27);
             this.LBLREPORTES.TabIndex = 3;
             this.LBLREPORTES.Text = "REPORTES";
             this.LBLREPORTES.Click += new System.EventHandler(this.LBLREPORTES_Click);
@@ -120,9 +120,9 @@
             this.LBLPRESTAMOS.AutoSize = true;
             this.LBLPRESTAMOS.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.LBLPRESTAMOS.ForeColor = System.Drawing.Color.Black;
-            this.LBLPRESTAMOS.Location = new System.Drawing.Point(28, 453);
+            this.LBLPRESTAMOS.Location = new System.Drawing.Point(23, 362);
             this.LBLPRESTAMOS.Name = "LBLPRESTAMOS";
-            this.LBLPRESTAMOS.Size = new System.Drawing.Size(191, 31);
+            this.LBLPRESTAMOS.Size = new System.Drawing.Size(165, 27);
             this.LBLPRESTAMOS.TabIndex = 2;
             this.LBLPRESTAMOS.Text = "PRESTAMOS";
             this.LBLPRESTAMOS.Click += new System.EventHandler(this.LBLPRESTAMOS_Click);
@@ -132,7 +132,7 @@
             // pictureEdit3
             // 
             this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
-            this.pictureEdit3.Location = new System.Drawing.Point(60, 379);
+            this.pictureEdit3.Location = new System.Drawing.Point(59, 285);
             this.pictureEdit3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -141,14 +141,14 @@
             this.pictureEdit3.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit3.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit3.Properties.ZoomAcceleration = 1333D;
-            this.pictureEdit3.Size = new System.Drawing.Size(97, 82);
+            this.pictureEdit3.Size = new System.Drawing.Size(86, 75);
             this.pictureEdit3.TabIndex = 7;
             this.pictureEdit3.Click += new System.EventHandler(this.LBLPRESTAMOS_Click);
             // 
             // pictureEdit6
             // 
             this.pictureEdit6.EditValue = ((object)(resources.GetObject("pictureEdit6.EditValue")));
-            this.pictureEdit6.Location = new System.Drawing.Point(60, 518);
+            this.pictureEdit6.Location = new System.Drawing.Point(53, 405);
             this.pictureEdit6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureEdit6.Name = "pictureEdit6";
             this.pictureEdit6.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -157,14 +157,14 @@
             this.pictureEdit6.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit6.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit6.Properties.ZoomAcceleration = 1333D;
-            this.pictureEdit6.Size = new System.Drawing.Size(96, 82);
+            this.pictureEdit6.Size = new System.Drawing.Size(85, 66);
             this.pictureEdit6.TabIndex = 10;
             this.pictureEdit6.Click += new System.EventHandler(this.LBLBAJAS_Click);
             // 
             // PE_Bibliotecario
             // 
             this.PE_Bibliotecario.EditValue = ((object)(resources.GetObject("PE_Bibliotecario.EditValue")));
-            this.PE_Bibliotecario.Location = new System.Drawing.Point(64, 801);
+            this.PE_Bibliotecario.Location = new System.Drawing.Point(53, 643);
             this.PE_Bibliotecario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PE_Bibliotecario.Name = "PE_Bibliotecario";
             this.PE_Bibliotecario.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -174,14 +174,14 @@
             this.PE_Bibliotecario.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.PE_Bibliotecario.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.PE_Bibliotecario.Properties.ZoomAcceleration = 1333D;
-            this.PE_Bibliotecario.Size = new System.Drawing.Size(92, 98);
+            this.PE_Bibliotecario.Size = new System.Drawing.Size(82, 78);
             this.PE_Bibliotecario.TabIndex = 26;
             this.PE_Bibliotecario.Click += new System.EventHandler(this.LBLPerfil_Click);
             // 
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(60, 228);
+            this.pictureEdit1.Location = new System.Drawing.Point(62, 181);
             this.pictureEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -190,14 +190,14 @@
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit1.Properties.ZoomAcceleration = 1333D;
-            this.pictureEdit1.Size = new System.Drawing.Size(87, 83);
+            this.pictureEdit1.Size = new System.Drawing.Size(77, 66);
             this.pictureEdit1.TabIndex = 3;
             this.pictureEdit1.Click += new System.EventHandler(this.LBLLIBROS_Click);
             // 
             // pictureEdit4
             // 
             this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
-            this.pictureEdit4.Location = new System.Drawing.Point(68, 667);
+            this.pictureEdit4.Location = new System.Drawing.Point(60, 530);
             this.pictureEdit4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -206,7 +206,7 @@
             this.pictureEdit4.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit4.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit4.Properties.ZoomAcceleration = 1333D;
-            this.pictureEdit4.Size = new System.Drawing.Size(79, 86);
+            this.pictureEdit4.Size = new System.Drawing.Size(70, 69);
             this.pictureEdit4.TabIndex = 8;
             this.pictureEdit4.Click += new System.EventHandler(this.LBLREPORTES_Click);
             // 
@@ -228,7 +228,7 @@
             this.panel1.Location = new System.Drawing.Point(-2, -1);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(236, 967);
+            this.panel1.Size = new System.Drawing.Size(210, 774);
             this.panel1.TabIndex = 2;
             // 
             // LBLUSUARIOS
@@ -237,9 +237,9 @@
             this.LBLUSUARIOS.BackColor = System.Drawing.Color.Transparent;
             this.LBLUSUARIOS.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.LBLUSUARIOS.ForeColor = System.Drawing.Color.Black;
-            this.LBLUSUARIOS.Location = new System.Drawing.Point(27, 153);
+            this.LBLUSUARIOS.Location = new System.Drawing.Point(24, 122);
             this.LBLUSUARIOS.Name = "LBLUSUARIOS";
-            this.LBLUSUARIOS.Size = new System.Drawing.Size(165, 31);
+            this.LBLUSUARIOS.Size = new System.Drawing.Size(142, 27);
             this.LBLUSUARIOS.TabIndex = 1;
             this.LBLUSUARIOS.Text = "USUARIOS";
             this.LBLUSUARIOS.Click += new System.EventHandler(this.LBLUSUARIOS_Click);
@@ -249,7 +249,7 @@
             // pictureEdit2
             // 
             this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
-            this.pictureEdit2.Location = new System.Drawing.Point(64, 79);
+            this.pictureEdit2.Location = new System.Drawing.Point(56, 51);
             this.pictureEdit2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -258,7 +258,7 @@
             this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit2.Properties.ZoomAcceleration = 1333D;
-            this.pictureEdit2.Size = new System.Drawing.Size(92, 86);
+            this.pictureEdit2.Size = new System.Drawing.Size(82, 69);
             this.pictureEdit2.TabIndex = 6;
             this.pictureEdit2.Click += new System.EventHandler(this.LBLUSUARIOS_Click);
             // 
@@ -273,9 +273,10 @@
             this.PNLPrograma.Controls.Add(this.LBLFECHAA);
             this.PNLPrograma.Controls.Add(this.LBLTIEMPO1);
             this.PNLPrograma.Controls.Add(this.pictureEdit7);
-            this.PNLPrograma.Location = new System.Drawing.Point(240, -1);
+            this.PNLPrograma.Location = new System.Drawing.Point(213, -1);
+            this.PNLPrograma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PNLPrograma.Name = "PNLPrograma";
-            this.PNLPrograma.Size = new System.Drawing.Size(1597, 967);
+            this.PNLPrograma.Size = new System.Drawing.Size(1420, 774);
             this.PNLPrograma.TabIndex = 3;
             // 
             // LBLFECHAA
@@ -284,9 +285,9 @@
             this.LBLFECHAA.AutoSize = true;
             this.LBLFECHAA.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLFECHAA.ForeColor = System.Drawing.Color.DarkCyan;
-            this.LBLFECHAA.Location = new System.Drawing.Point(1110, 840);
+            this.LBLFECHAA.Location = new System.Drawing.Point(987, 672);
             this.LBLFECHAA.Name = "LBLFECHAA";
-            this.LBLFECHAA.Size = new System.Drawing.Size(0, 38);
+            this.LBLFECHAA.Size = new System.Drawing.Size(0, 33);
             this.LBLFECHAA.TabIndex = 17;
             // 
             // LBLTIEMPO1
@@ -295,15 +296,15 @@
             this.LBLTIEMPO1.AutoSize = true;
             this.LBLTIEMPO1.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLTIEMPO1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.LBLTIEMPO1.Location = new System.Drawing.Point(1110, 888);
+            this.LBLTIEMPO1.Location = new System.Drawing.Point(987, 710);
             this.LBLTIEMPO1.Name = "LBLTIEMPO1";
-            this.LBLTIEMPO1.Size = new System.Drawing.Size(0, 38);
+            this.LBLTIEMPO1.Size = new System.Drawing.Size(0, 33);
             this.LBLTIEMPO1.TabIndex = 16;
             // 
             // pictureEdit7
             // 
             this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
-            this.pictureEdit7.Location = new System.Drawing.Point(284, 99);
+            this.pictureEdit7.Location = new System.Drawing.Point(252, 79);
             this.pictureEdit7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureEdit7.Name = "pictureEdit7";
             this.pictureEdit7.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -313,16 +314,16 @@
             this.pictureEdit7.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit7.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit7.Properties.ZoomAcceleration = 1333D;
-            this.pictureEdit7.Size = new System.Drawing.Size(1086, 680);
+            this.pictureEdit7.Size = new System.Drawing.Size(965, 544);
             this.pictureEdit7.TabIndex = 15;
             // 
             // MenuPrincipla
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1829, 967);
+            this.ClientSize = new System.Drawing.Size(1626, 774);
             this.Controls.Add(this.PNLPrograma);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

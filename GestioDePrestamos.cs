@@ -243,5 +243,17 @@ namespace Vagabunda
             txtLibro.Clear();
             cbeEstatus.SelectedIndex = -1;
         }
+
+        private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                InfoUsuarios ver = new InfoUsuarios();
+                if (ver.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
+        }
     }
 }

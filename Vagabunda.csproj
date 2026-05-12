@@ -161,6 +161,18 @@
     <Compile Include="GestionDeUsuarios.Designer.cs">
       <DependentUpon>GestionDeUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="InfoLiibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoLiibros.Designer.cs">
+      <DependentUpon>InfoLiibros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoUsuarios.Designer.cs">
+      <DependentUpon>InfoUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="IniciarSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionDeUsuarios.resx">
       <DependentUpon>GestionDeUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoLiibros.resx">
+      <DependentUpon>InfoLiibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoUsuarios.resx">
+      <DependentUpon>InfoUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>

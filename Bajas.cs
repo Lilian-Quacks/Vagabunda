@@ -171,5 +171,16 @@ namespace Vagabunda
                 con.Close();
             }
         }
+
+        private void txtBusqueda_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+           
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

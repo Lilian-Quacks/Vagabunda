@@ -31,8 +31,8 @@ namespace Vagabunda
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bajas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
@@ -51,6 +51,7 @@ namespace Vagabunda
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Libros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechSal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -63,9 +64,9 @@ namespace Vagabunda
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label2.Location = new System.Drawing.Point(63, 176);
+            this.label2.Location = new System.Drawing.Point(110, 119);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(202, 38);
+            this.label2.Size = new System.Drawing.Size(175, 33);
             this.label2.TabIndex = 1;
             this.label2.Text = "DETALLES";
             // 
@@ -78,13 +79,13 @@ namespace Vagabunda
             this.panel1.Location = new System.Drawing.Point(-4, -1);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1269, 82);
+            this.panel1.Size = new System.Drawing.Size(1420, 66);
             this.panel1.TabIndex = 10;
             // 
             // pictureEdit2
             // 
             this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
-            this.pictureEdit2.Location = new System.Drawing.Point(14, -19);
+            this.pictureEdit2.Location = new System.Drawing.Point(12, -15);
             this.pictureEdit2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -94,13 +95,13 @@ namespace Vagabunda
             this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit2.Properties.ZoomAcceleration = 1333D;
-            this.pictureEdit2.Size = new System.Drawing.Size(141, 122);
+            this.pictureEdit2.Size = new System.Drawing.Size(125, 98);
             this.pictureEdit2.TabIndex = 14;
             // 
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(1128, -19);
+            this.pictureEdit1.Location = new System.Drawing.Point(1183, -15);
             this.pictureEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -110,7 +111,7 @@ namespace Vagabunda
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit1.Properties.ZoomAcceleration = 1333D;
-            this.pictureEdit1.Size = new System.Drawing.Size(141, 122);
+            this.pictureEdit1.Size = new System.Drawing.Size(125, 98);
             this.pictureEdit1.TabIndex = 13;
             // 
             // label1
@@ -118,11 +119,12 @@ namespace Vagabunda
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.OldLace;
-            this.label1.Location = new System.Drawing.Point(585, 12);
+            this.label1.Location = new System.Drawing.Point(603, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 47);
+            this.label1.Size = new System.Drawing.Size(133, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "BAJAS";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtLibro
             // 
@@ -137,13 +139,13 @@ namespace Vagabunda
             this.txtLibro.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.txtLibro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtLibro.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLibro.Location = new System.Drawing.Point(27, 234);
-            this.txtLibro.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.txtLibro.Location = new System.Drawing.Point(70, 173);
+            this.txtLibro.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtLibro.Name = "txtLibro";
             this.txtLibro.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtLibro.PlaceholderText = "LIBRO";
             this.txtLibro.SelectedText = "";
-            this.txtLibro.Size = new System.Drawing.Size(285, 47);
+            this.txtLibro.Size = new System.Drawing.Size(253, 38);
             this.txtLibro.TabIndex = 46;
             // 
             // label4
@@ -151,9 +153,9 @@ namespace Vagabunda
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label4.Location = new System.Drawing.Point(23, 395);
+            this.label4.Location = new System.Drawing.Point(66, 302);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 22);
+            this.label4.Size = new System.Drawing.Size(69, 18);
             this.label4.TabIndex = 50;
             this.label4.Text = "FECHA";
             // 
@@ -167,11 +169,12 @@ namespace Vagabunda
             this.dtpFecha.FocusedColor = System.Drawing.Color.White;
             this.dtpFecha.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(27, 420);
+            this.dtpFecha.Location = new System.Drawing.Point(70, 322);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFecha.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFecha.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(285, 43);
+            this.dtpFecha.Size = new System.Drawing.Size(253, 34);
             this.dtpFecha.TabIndex = 47;
             this.dtpFecha.Value = new System.DateTime(2026, 5, 7, 9, 57, 53, 274);
             // 
@@ -180,9 +183,9 @@ namespace Vagabunda
             this.FE.AutoSize = true;
             this.FE.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold);
             this.FE.ForeColor = System.Drawing.Color.DarkCyan;
-            this.FE.Location = new System.Drawing.Point(23, 307);
+            this.FE.Location = new System.Drawing.Point(66, 232);
             this.FE.Name = "FE";
-            this.FE.Size = new System.Drawing.Size(93, 22);
+            this.FE.Size = new System.Drawing.Size(79, 18);
             this.FE.TabIndex = 49;
             this.FE.Text = "MOTIVO";
             // 
@@ -198,9 +201,10 @@ namespace Vagabunda
             this.cbeMotivo.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.cbeMotivo.ForeColor = System.Drawing.Color.Black;
             this.cbeMotivo.ItemHeight = 30;
-            this.cbeMotivo.Location = new System.Drawing.Point(27, 332);
+            this.cbeMotivo.Location = new System.Drawing.Point(70, 252);
+            this.cbeMotivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbeMotivo.Name = "cbeMotivo";
-            this.cbeMotivo.Size = new System.Drawing.Size(285, 36);
+            this.cbeMotivo.Size = new System.Drawing.Size(254, 36);
             this.cbeMotivo.TabIndex = 48;
             // 
             // btnEliminar
@@ -213,11 +217,12 @@ namespace Vagabunda
             this.btnEliminar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnEliminar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnEliminar.FillColor = System.Drawing.Color.SteelBlue;
-            this.btnEliminar.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEliminar.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(40, 510);
+            this.btnEliminar.Location = new System.Drawing.Point(89, 399);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(225, 49);
+            this.btnEliminar.Size = new System.Drawing.Size(211, 42);
             this.btnEliminar.TabIndex = 53;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -235,24 +240,25 @@ namespace Vagabunda
             this.txtBusqueda.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
             this.txtBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtBusqueda.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBusqueda.Location = new System.Drawing.Point(366, 110);
-            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.txtBusqueda.Location = new System.Drawing.Point(363, 86);
+            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtBusqueda.PlaceholderText = "BUSQUEDA";
             this.txtBusqueda.SelectedText = "";
-            this.txtBusqueda.Size = new System.Drawing.Size(740, 42);
+            this.txtBusqueda.Size = new System.Drawing.Size(711, 34);
             this.txtBusqueda.TabIndex = 54;
+            this.txtBusqueda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBusqueda_KeyDown);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.LightBlue;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.dgvBajas);
-            this.panel4.Location = new System.Drawing.Point(332, 176);
+            this.panel4.Location = new System.Drawing.Point(361, 141);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(917, 480);
+            this.panel4.Size = new System.Drawing.Size(816, 385);
             this.panel4.TabIndex = 55;
             // 
             // dgvBajas
@@ -262,28 +268,28 @@ namespace Vagabunda
             this.dgvBajas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBajas.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dgvBajas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBajas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBajas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvBajas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBajas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdLibro,
             this.Usuario,
             this.Libros,
             this.FechSal});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(178)))), ((int)(((byte)(211)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBajas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(178)))), ((int)(((byte)(211)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBajas.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvBajas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBajas.EnableHeadersVisualStyles = false;
             this.dgvBajas.Location = new System.Drawing.Point(0, 0);
@@ -292,7 +298,7 @@ namespace Vagabunda
             this.dgvBajas.RowHeadersVisible = false;
             this.dgvBajas.RowHeadersWidth = 62;
             this.dgvBajas.RowTemplate.Height = 28;
-            this.dgvBajas.Size = new System.Drawing.Size(913, 476);
+            this.dgvBajas.Size = new System.Drawing.Size(812, 381);
             this.dgvBajas.TabIndex = 0;
             // 
             // IdLibro
@@ -301,7 +307,7 @@ namespace Vagabunda
             this.IdLibro.HeaderText = "ID";
             this.IdLibro.MinimumWidth = 8;
             this.IdLibro.Name = "IdLibro";
-            this.IdLibro.Width = 79;
+            this.IdLibro.Width = 65;
             // 
             // Usuario
             // 
@@ -321,12 +327,22 @@ namespace Vagabunda
             this.FechSal.MinimumWidth = 8;
             this.FechSal.Name = "FechSal";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.Location = new System.Drawing.Point(-4, 682);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1451, 159);
+            this.panel2.TabIndex = 15;
+            // 
             // Bajas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1261, 682);
+            this.ClientSize = new System.Drawing.Size(1419, 771);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.btnEliminar);
@@ -370,5 +386,6 @@ namespace Vagabunda
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Libros;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechSal;
+        private System.Windows.Forms.Panel panel2;
     }
 }
