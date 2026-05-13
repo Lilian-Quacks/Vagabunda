@@ -13,7 +13,7 @@ namespace Vagabunda
 {
     public partial class Reportes : Form
     {
-        string conexion = @"Data Source=LOCALHOST;Initial Catalog=Gestión para Sala de Lectura;Integrated Security=True;";
+        string conexion = @"Data Source=LOCALHOST;Initial Catalog=Vagabunda;Integrated Security=True;";
 
         public Reportes()
         {
@@ -29,23 +29,20 @@ namespace Vagabunda
         private void CargarPrestamos()
         {
             dgvDatosPrestamos.Rows.Clear();
-
             using (SqlConnection conn = new SqlConnection(conexion))
             {
                 conn.Open();
-
                 string query = @"
                 SELECT 
-                    P.Prestamo_ID,
+                    P.Prestramo_ID, 
                     U.Nombre AS Usuario,
                     ISNULL(L.Titulo, 'LIBRO ELIMINADO') AS Libro,
                     P.Estatus,
-                    ISNULL(Pe.Monto, 0) AS Penalizacion,
-                    ISNULL(B.Motivo, 'N/A') AS MotivoBaja
-                FROM Prestamos P
+                ISNULL(U.Adeudo_Pendiente, 0) AS Penalizacion, -- Dato del Trigger
+                ISNULL(B.Motivo, 'N/A') AS MotivoBaja
+                FROM Prestramos P
                 INNER JOIN Usuarios U ON P.Usuario_ID = U.Usuario_ID
                 LEFT JOIN Libros L ON P.Libros_ID = L.Libros_ID
-                LEFT JOIN Penalizacion Pe ON Pe.Prestamo_ID = P.Prestamo_ID
                 LEFT JOIN BajaLibros B ON B.Libros_ID = P.Libros_ID";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -54,11 +51,11 @@ namespace Vagabunda
                 while (dr.Read())
                 {
                     dgvDatosPrestamos.Rows.Add(
-                        dr["Prestamo_ID"],
+                        dr["Prestramo_ID"],
                         dr["Usuario"],
                         dr["Libro"],
                         dr["Estatus"],
-                        dr["Penalizacion"],
+                        dr["Penalizacion"], 
                         dr["MotivoBaja"]
                     );
                 }
@@ -72,11 +69,10 @@ namespace Vagabunda
             using (SqlConnection conn = new SqlConnection(conexion))
             {
                 conn.Open();
-
                 string query = @"
                 SELECT 
                     ISNULL(L.Titulo, 'LIBRO ELIMINADO') AS Titulo,
-                    'DADO DE BAJA' AS Estatus
+                    B.Motivo AS MotivoDetalle -- Usamos el motivo guardado en la tabla
                 FROM BajaLibros B
                 LEFT JOIN Libros L ON B.Libros_ID = L.Libros_ID";
 
@@ -87,7 +83,7 @@ namespace Vagabunda
                 {
                     dgvBajasLibros.Rows.Add(
                         dr["Titulo"],
-                        dr["Estatus"]
+                        dr["MotivoDetalle"] //"Dañado", "Perdido", etc.
                     );
                 }
             }

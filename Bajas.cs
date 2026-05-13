@@ -13,7 +13,7 @@ namespace Vagabunda
 {
     public partial class Bajas : Form
     {
-        SqlConnection con = new SqlConnection("Server=localhost;Database=Gestión para Sala de Lectura;Integrated Security=true");
+        SqlConnection con = new SqlConnection("Server=localhost;Database=Vagabunda;Integrated Security=true");
 
         public Bajas()
         {
@@ -105,12 +105,6 @@ namespace Vagabunda
                     cmdInsert.Parameters.AddWithValue("@LibroID", libroID);
 
                     cmdInsert.ExecuteNonQuery();
-
-                    string deleteLibro = "UPDATE Libros SET Estatus_Operativo = 'Baja' WHERE Titulo = @Titulo";
-                    SqlCommand cmdDelete = new SqlCommand(deleteLibro, con, trans);
-                    cmdDelete.Parameters.AddWithValue("@Titulo", txtLibro.Text);
-
-                    cmdDelete.ExecuteNonQuery();
 
                     trans.Commit();
                     con.Close();

@@ -13,7 +13,7 @@ namespace Vagabunda
 {
     public partial class GestionDeUsuarios : Form
     {
-        string cadena = @"Data Source=LOCALHOST;Initial Catalog=Gestión para Sala de Lectura;Integrated Security=True;";
+        string cadena = @"Data Source=LOCALHOST;Initial Catalog=Vagabunda;Integrated Security=True;";
 
         public GestionDeUsuarios()
         {

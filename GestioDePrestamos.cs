@@ -13,7 +13,7 @@ namespace Vagabunda
 {
     public partial class GestioDePrestamos : Form
     {
-        string cadena = @"Data Source=LOCALHOST;Initial Catalog=Gestión para Sala de Lectura;Integrated Security=True;";
+        string cadena = @"Data Source=LOCALHOST;Initial Catalog=Vagabunda;Integrated Security=True;";
 
         int idPrestamoSeleccionado = 0;
 
@@ -42,17 +42,17 @@ namespace Vagabunda
             {
                 using (SqlConnection con = new SqlConnection(cadena))
                 {
+                    // Respetamos 'Prestramos' y 'Prestramo_ID' según tu script SQL
                     string query = @"
-                    SELECT p.Prestamo_ID,
-                           u.Nombre AS Usuario,
-                           l.Titulo AS Libro,
-                           p.Fecha_Salida,
-                           p.Fecha_Limite,
-                           p.Estatus
-                    FROM Prestamos p
+                    SELECT p.Prestramo_ID, 
+                        u.Nombre AS Usuario,
+                        l.Titulo AS Libro,
+                        p.Fecha_Salida,
+                        p.Fecha_Limite,
+                        p.Estatus
+                    FROM Prestramos p 
                     INNER JOIN Usuarios u ON p.Usuario_ID = u.Usuario_ID
-                    INNER JOIN Libros l ON p.Libros_ID = l.Libros_ID
-                    ";
+                    INNER JOIN Libros l ON p.Libros_ID = l.Libros_ID";
 
                     if (!string.IsNullOrEmpty(filtro))
                     {
@@ -72,7 +72,7 @@ namespace Vagabunda
                     foreach (DataRow row in dt.Rows)
                     {
                         dgvPrestamos.Rows.Add(
-                            row["Prestamo_ID"],
+                            row["Prestramo_ID"], // Coincide con el nombre en SQL
                             row["Usuario"],
                             row["Libro"],
                             Convert.ToDateTime(row["Fecha_Salida"]).ToShortDateString(),
@@ -84,7 +84,7 @@ namespace Vagabunda
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error al consultar: " + ex.Message);
             }
         }
 
@@ -148,7 +148,7 @@ namespace Vagabunda
                 using (SqlConnection con = new SqlConnection(cadena))
                 {
                     string query = @"
-                    INSERT INTO Prestamos
+                    INSERT INTO Prestramos
                     (Fecha_Salida, Fecha_Limite, Estatus, Usuario_ID, Libros_ID, Bibliotecario_ID)
                     VALUES (@salida, @limite, @estatus, @usuario, @libro, 1)
                     ";
@@ -185,7 +185,7 @@ namespace Vagabunda
         {
             if (idPrestamoSeleccionado == 0)
             {
-                MessageBox.Show("Selecciona un préstamo.");
+                MessageBox.Show("Selecciona un préstamo de la lista.");
                 return;
             }
 
@@ -197,7 +197,7 @@ namespace Vagabunda
                 {
                     using (SqlConnection con = new SqlConnection(cadena))
                     {
-                        string query = "DELETE FROM Prestamos WHERE Prestamo_ID=@id";
+                        string query = "DELETE FROM Prestramos WHERE Prestramo_ID=@id";
 
                         SqlCommand cmd = new SqlCommand(query, con);
                         cmd.Parameters.AddWithValue("@id", idPrestamoSeleccionado);
@@ -205,7 +205,7 @@ namespace Vagabunda
                         con.Open();
                         cmd.ExecuteNonQuery();
 
-                        MessageBox.Show("Eliminado");
+                        MessageBox.Show("Préstamo eliminado correctamente");
 
                         Limpiar();
                         ConsultarPrestamos();
@@ -214,7 +214,7 @@ namespace Vagabunda
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show("Error al eliminar: " + ex.Message);
                 }
             }
         }
@@ -253,6 +253,63 @@ namespace Vagabunda
                 {
 
                 }
+            }
+        }
+
+
+        // cambios mios de maldonado
+        private void dgvPrestamos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // 1. Forzamos a que el Grid deje de editar y guarde el cambio en su memoria interna
+                dgvPrestamos.EndEdit();
+
+                // 2. Ejecutamos la actualización a la base de datos
+                ActualizarEstatusDesdeGrid();
+
+                // 3. Evitamos que el Enter mueva el cursor a la fila de abajo antes de tiempo
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+        private void ActualizarEstatusDesdeGrid()
+        {
+            if (dgvPrestamos.CurrentRow == null) return;
+
+            try
+            {
+                DataGridViewRow fila = dgvPrestamos.CurrentRow;
+
+                // IMPORTANTE: Verifica que estos índices coincidan con tus columnas
+                // Celda 0 = Prestramo_ID, Celda 5 = Estatus
+                int id = Convert.ToInt32(fila.Cells[0].Value);
+                string nuevoEstatus = fila.Cells[5].Value.ToString();
+
+                using (SqlConnection con = new SqlConnection(cadena))
+                {
+                    con.Open();
+                    // Al ejecutar este UPDATE se dispara el Trigger TR_GenerarPenalizacionSemanal
+                    string query = "UPDATE Prestramos SET Estatus = @estatus WHERE Prestramo_ID = @id";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@estatus", nuevoEstatus);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+
+                    if (filasAfectadas > 0)
+                    {
+                        MessageBox.Show("Estatus actualizado en BD. El Trigger ha procesado la penalización si aplica.");
+                    }
+
+                    // Recargamos para ver los datos frescos del servidor
+                    ConsultarPrestamos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar: " + ex.Message);
             }
         }
     }

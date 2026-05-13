@@ -7,7 +7,7 @@ namespace Vagabunda
 {
     public partial class GestionDeLibros : Form
     {
-        string cadena = @"Data Source=LOCALHOST;Initial Catalog=Gestión para Sala de Lectura;Integrated Security=True;";
+        string cadena = @"Data Source=LOCALHOST;Initial Catalog=Vagabunda;Integrated Security=True;";
 
         public GestionDeLibros()
         {
@@ -35,7 +35,7 @@ namespace Vagabunda
                 using (SqlConnection conexion = new SqlConnection(cadena))
                 {
                     string query = "SELECT Libros_ID, ISBN, Titulo, Autor, Editorial, Estado_Fisico, Fecha_Publicacion " +
-                           "FROM Libros WHERE Estatus_Operativo != 'Baja'";
+                           "FROM Libros WHERE Estatus_Operativo != 'BAJA'";
 
                     if (!string.IsNullOrEmpty(filtro))
                     {
