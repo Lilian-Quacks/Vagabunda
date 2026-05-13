@@ -141,7 +141,7 @@ BEGIN
 
     -- Cambia el estado en la tabla Libros automáticamente
     UPDATE Libros
-    SET Estatus_Operativo = 'NO DISPONIBLE / BAJA',
+    SET Estatus_Operativo = 'BAJA',
         Estado_Fisico = 'DEBAJA'
     FROM Libros l
     INNER JOIN inserted i ON l.Libros_ID = i.Libros_ID;
