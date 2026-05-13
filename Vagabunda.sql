@@ -58,7 +58,7 @@ create table Prestramos
     Fecha_Limite datetime,
     Fecha_Devolucion datetime,
     Penalizacion_Generada Varchar(100),
-    Estatus Varchar,
+    Estatus Varchar (20),
     Usuario_ID int,
     Libros_ID int,
     Bibliotecario_ID int,
@@ -142,7 +142,7 @@ BEGIN
     -- Cambia el estado en la tabla Libros automáticamente
     UPDATE Libros
     SET Estatus_Operativo = 'BAJA',
-        Estado_Fisico = 'DEBAJA'
+        Estado_Fisico = i.Motivo
     FROM Libros l
     INNER JOIN inserted i ON l.Libros_ID = i.Libros_ID;
 END
