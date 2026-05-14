@@ -10,7 +10,7 @@ create table Usuarios
     Telefono Varchar(10) not null,
     Email Varchar(255) not null,
     Adeudo_Pendiente money,
-    Prestamos_Activos int
+    Prestamos_Activos Bool,
 )
 
 create table Bibliotecario
