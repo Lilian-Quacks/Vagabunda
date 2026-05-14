@@ -92,21 +92,21 @@ namespace Vagabunda
 
                 try
                 {
-                    string queryValidar = "SELECT Libros_ID, Estatus_Operativo FROM Libros WHERE Titulo = @Titulo";
+                    string queryValidar = "SELECT Libros_ID, Estatus_Operativo FROM Libros WHERE ISBN = @isbn";
                     SqlCommand cmdValidar = new SqlCommand(queryValidar, con, trans);
-                    cmdValidar.Parameters.AddWithValue("@Titulo", txtLibro.Text);
-
-                    SqlDataReader reader = cmdValidar.ExecuteReader();
+                    cmdValidar.Parameters.AddWithValue("@isbn", txtLibro.Text.Trim());
 
                     int libroID = 0;
                     string estatusActual = "";
 
-                    if (reader.Read())
+                    using (SqlDataReader reader = cmdValidar.ExecuteReader())
                     {
-                        libroID = Convert.ToInt32(reader["Libros_ID"]);
-                        estatusActual = reader["Estatus_Operativo"].ToString();
+                        if (reader.Read())
+                        {
+                            libroID = Convert.ToInt32(reader["Libros_ID"]);
+                            estatusActual = reader["Estatus_Operativo"].ToString();
+                        }
                     }
-                    reader.Close();
 
                     if (libroID == 0)
                     {
@@ -150,7 +150,6 @@ namespace Vagabunda
                     MessageBox.Show("El libro ha sido dado de baja exitosamente.");
 
                     txtLibro.Clear();
-                    MostrarBajas();
                 }
                 catch (Exception ex2)
                 {
@@ -160,6 +159,7 @@ namespace Vagabunda
                 finally
                 {
                     con.Close();
+                    MostrarBajas();
                 }
             }
             catch (Exception ex)
