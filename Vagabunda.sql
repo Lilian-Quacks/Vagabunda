@@ -95,8 +95,27 @@ create table Reporte
 )
 
 
+
+CREATE TRIGGER TR_VerificarVencimiento
+ON Prestamos
+AFTER UPDATE, INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Si el libro no se ha devuelto y la fecha actual superó la límite
+    UPDATE Prestamos
+    SET Estatus = 'Retrasado'
+    FROM Prestamos p
+    INNER JOIN inserted i ON p.Prestamo_ID = i.Prestamo_ID
+    WHERE p.Fecha_Devolucion IS NULL 
+      AND GETDATE() > p.Fecha_Limite;
+END;
+GO
+
+
 CREATE TRIGGER TR_GenerarPenalizacionSemanal
-ON Prestramos
+ON Prestamos
 AFTER UPDATE 
 AS
 BEGIN
@@ -146,3 +165,4 @@ BEGIN
     FROM Libros l
     INNER JOIN inserted i ON l.Libros_ID = i.Libros_ID;
 END
+
