@@ -33,15 +33,10 @@ namespace Vagabunda
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reportes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.dgvDatos = new System.Windows.Forms.Panel();
             this.dgvDatosPrestamos = new System.Windows.Forms.DataGridView();
             this.IdLibro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,18 +45,13 @@ namespace Vagabunda
             this.Prestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Penalizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dgvBajasLibros = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cbeReportes = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             this.dgvDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPrestamos)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBajasLibros)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,7 +69,7 @@ namespace Vagabunda
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(1294, -16);
+            this.pictureEdit1.Location = new System.Drawing.Point(770, -16);
             this.pictureEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -113,42 +103,11 @@ namespace Vagabunda
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.OldLace;
-            this.label1.Location = new System.Drawing.Point(551, 20);
+            this.label1.Location = new System.Drawing.Point(333, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "REPORTES";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel2.Location = new System.Drawing.Point(950, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(40, 725);
-            this.panel2.TabIndex = 35;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label2.Location = new System.Drawing.Point(323, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(311, 33);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "DATOS PRESTAMOS";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century", 14F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label3.Location = new System.Drawing.Point(1055, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(250, 28);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "BAJAS DE LIBROS";
             // 
             // dgvDatos
             // 
@@ -241,67 +200,6 @@ namespace Vagabunda
             this.Motivo.MinimumWidth = 8;
             this.Motivo.Name = "Motivo";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LightBlue;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.dgvBajasLibros);
-            this.panel3.Location = new System.Drawing.Point(1043, 119);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(288, 418);
-            this.panel3.TabIndex = 48;
-            // 
-            // dgvBajasLibros
-            // 
-            this.dgvBajasLibros.AllowUserToAddRows = false;
-            this.dgvBajasLibros.AllowUserToDeleteRows = false;
-            this.dgvBajasLibros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvBajasLibros.BackgroundColor = System.Drawing.Color.LightBlue;
-            this.dgvBajasLibros.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBajasLibros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvBajasLibros.ColumnHeadersHeight = 46;
-            this.dgvBajasLibros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn2});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(178)))), ((int)(((byte)(211)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBajasLibros.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvBajasLibros.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBajasLibros.EnableHeadersVisualStyles = false;
-            this.dgvBajasLibros.Location = new System.Drawing.Point(0, 0);
-            this.dgvBajasLibros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvBajasLibros.Name = "dgvBajasLibros";
-            this.dgvBajasLibros.RowHeadersVisible = false;
-            this.dgvBajasLibros.RowHeadersWidth = 62;
-            this.dgvBajasLibros.RowTemplate.Height = 28;
-            this.dgvBajasLibros.Size = new System.Drawing.Size(284, 414);
-            this.dgvBajasLibros.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "LIBRO";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "ESTATUS";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.SteelBlue;
@@ -311,20 +209,36 @@ namespace Vagabunda
             this.panel4.Size = new System.Drawing.Size(1451, 178);
             this.panel4.TabIndex = 36;
             // 
+            // cbeReportes
+            // 
+            this.cbeReportes.AutoRoundedCorners = true;
+            this.cbeReportes.BackColor = System.Drawing.Color.Transparent;
+            this.cbeReportes.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cbeReportes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbeReportes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbeReportes.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbeReportes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbeReportes.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
+            this.cbeReportes.ForeColor = System.Drawing.Color.Black;
+            this.cbeReportes.ItemHeight = 30;
+            this.cbeReportes.Location = new System.Drawing.Point(158, 81);
+            this.cbeReportes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbeReportes.Name = "cbeReportes";
+            this.cbeReportes.Size = new System.Drawing.Size(302, 36);
+            this.cbeReportes.TabIndex = 48;
+            this.cbeReportes.SelectedIndexChanged += new System.EventHandler(this.cbeReportes_SelectedIndexChanged);
+            // 
             // Reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1415, 781);
+            this.ClientSize = new System.Drawing.Size(916, 781);
+            this.Controls.Add(this.cbeReportes);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.dgvDatos);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Reportes";
             this.Text = "Reportes";
@@ -335,10 +249,7 @@ namespace Vagabunda
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             this.dgvDatos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPrestamos)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBajasLibros)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -346,14 +257,9 @@ namespace Vagabunda
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private System.Windows.Forms.Panel dgvDatos;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dgvBajasLibros;
         private System.Windows.Forms.DataGridView dgvDatosPrestamos;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdLibro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
@@ -361,8 +267,7 @@ namespace Vagabunda
         private System.Windows.Forms.DataGridViewTextBoxColumn Prestamo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Penalizacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Motivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Panel panel4;
+        private Guna.UI2.WinForms.Guna2ComboBox cbeReportes;
     }
 }

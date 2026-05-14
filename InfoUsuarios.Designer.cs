@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoUsuarios));
             this.txtBusqueda = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgv_info_libros = new System.Windows.Forms.Panel();
             this.dgvInfo2 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgv_info_libros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfo2)).BeginInit();
@@ -71,6 +71,7 @@
             this.txtBusqueda.SelectedText = "";
             this.txtBusqueda.Size = new System.Drawing.Size(711, 34);
             this.txtBusqueda.TabIndex = 59;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // dgv_info_libros
             // 
@@ -87,41 +88,74 @@
             // 
             this.dgvInfo2.AllowUserToAddRows = false;
             this.dgvInfo2.AllowUserToDeleteRows = false;
+            this.dgvInfo2.AllowUserToResizeColumns = false;
+            this.dgvInfo2.AllowUserToResizeRows = false;
             this.dgvInfo2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInfo2.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dgvInfo2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInfo2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInfo2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInfo2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInfo2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
             this.Direccion,
             this.Telefono,
             this.Correo});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(178)))), ((int)(((byte)(211)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInfo2.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(178)))), ((int)(((byte)(211)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInfo2.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInfo2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInfo2.EnableHeadersVisualStyles = false;
             this.dgvInfo2.Location = new System.Drawing.Point(0, 0);
             this.dgvInfo2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvInfo2.Name = "dgvInfo2";
+            this.dgvInfo2.ReadOnly = true;
             this.dgvInfo2.RowHeadersVisible = false;
             this.dgvInfo2.RowHeadersWidth = 62;
             this.dgvInfo2.RowTemplate.Height = 28;
+            this.dgvInfo2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInfo2.Size = new System.Drawing.Size(816, 394);
             this.dgvInfo2.TabIndex = 0;
+            this.dgvInfo2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInfo2_CellDoubleClick);
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "NOMBRE";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Direccion
+            // 
+            this.Direccion.HeaderText = "DIRECCION";
+            this.Direccion.MinimumWidth = 6;
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "TELEFONO";
+            this.Telefono.MinimumWidth = 6;
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Correo
+            // 
+            this.Correo.HeaderText = "CORREO";
+            this.Correo.MinimumWidth = 6;
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
             // 
             // panel1
             // 
@@ -177,30 +211,6 @@
             this.pictureEdit2.Size = new System.Drawing.Size(125, 98);
             this.pictureEdit2.TabIndex = 59;
             // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "NOMBRE";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "DIRECCION";
-            this.Direccion.MinimumWidth = 6;
-            this.Direccion.Name = "Direccion";
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "TELEFONO";
-            this.Telefono.MinimumWidth = 6;
-            this.Telefono.Name = "Telefono";
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "CORREO";
-            this.Correo.MinimumWidth = 6;
-            this.Correo.Name = "Correo";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SteelBlue;
@@ -221,6 +231,7 @@
             this.Controls.Add(this.dgv_info_libros);
             this.Name = "InfoUsuarios";
             this.Text = "InfoUsuarios";
+            this.Load += new System.EventHandler(this.InfoUsuarios_Load);
             this.dgv_info_libros.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfo2)).EndInit();
             this.panel1.ResumeLayout(false);

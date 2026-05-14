@@ -31,8 +31,8 @@ namespace Vagabunda
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bajas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
@@ -124,7 +124,6 @@ namespace Vagabunda
             this.label1.Size = new System.Drawing.Size(133, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "BAJAS";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtLibro
             // 
@@ -147,6 +146,7 @@ namespace Vagabunda
             this.txtLibro.SelectedText = "";
             this.txtLibro.Size = new System.Drawing.Size(253, 38);
             this.txtLibro.TabIndex = 46;
+            this.txtLibro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLibro_KeyDown);
             // 
             // label4
             // 
@@ -248,7 +248,7 @@ namespace Vagabunda
             this.txtBusqueda.SelectedText = "";
             this.txtBusqueda.Size = new System.Drawing.Size(711, 34);
             this.txtBusqueda.TabIndex = 54;
-            this.txtBusqueda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBusqueda_KeyDown);
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // panel4
             // 
@@ -265,36 +265,39 @@ namespace Vagabunda
             // 
             this.dgvBajas.AllowUserToAddRows = false;
             this.dgvBajas.AllowUserToDeleteRows = false;
+            this.dgvBajas.AllowUserToResizeColumns = false;
+            this.dgvBajas.AllowUserToResizeRows = false;
             this.dgvBajas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBajas.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dgvBajas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBajas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBajas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBajas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBajas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdLibro,
             this.Usuario,
             this.Libros,
             this.FechSal});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(178)))), ((int)(((byte)(211)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBajas.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(178)))), ((int)(((byte)(211)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBajas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBajas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBajas.EnableHeadersVisualStyles = false;
             this.dgvBajas.Location = new System.Drawing.Point(0, 0);
             this.dgvBajas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvBajas.Name = "dgvBajas";
+            this.dgvBajas.ReadOnly = true;
             this.dgvBajas.RowHeadersVisible = false;
             this.dgvBajas.RowHeadersWidth = 62;
             this.dgvBajas.RowTemplate.Height = 28;
@@ -307,6 +310,7 @@ namespace Vagabunda
             this.IdLibro.HeaderText = "ID";
             this.IdLibro.MinimumWidth = 8;
             this.IdLibro.Name = "IdLibro";
+            this.IdLibro.ReadOnly = true;
             this.IdLibro.Width = 65;
             // 
             // Usuario
@@ -314,18 +318,21 @@ namespace Vagabunda
             this.Usuario.HeaderText = "LIBRO";
             this.Usuario.MinimumWidth = 8;
             this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
             // 
             // Libros
             // 
             this.Libros.HeaderText = "MOTIVO";
             this.Libros.MinimumWidth = 8;
             this.Libros.Name = "Libros";
+            this.Libros.ReadOnly = true;
             // 
             // FechSal
             // 
             this.FechSal.HeaderText = "FECHA ";
             this.FechSal.MinimumWidth = 8;
             this.FechSal.Name = "FechSal";
+            this.FechSal.ReadOnly = true;
             // 
             // panel2
             // 

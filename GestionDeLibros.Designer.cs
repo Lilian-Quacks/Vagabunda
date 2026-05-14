@@ -147,6 +147,8 @@ namespace Vagabunda
             // 
             this.dgvLibros.AllowUserToAddRows = false;
             this.dgvLibros.AllowUserToDeleteRows = false;
+            this.dgvLibros.AllowUserToResizeColumns = false;
+            this.dgvLibros.AllowUserToResizeRows = false;
             this.dgvLibros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLibros.BackgroundColor = System.Drawing.Color.LightCyan;
             this.dgvLibros.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -159,6 +161,7 @@ namespace Vagabunda
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvLibros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLibros.ColumnHeadersHeight = 58;
+            this.dgvLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvLibros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,
             this.Codigo,
@@ -180,53 +183,63 @@ namespace Vagabunda
             this.dgvLibros.Location = new System.Drawing.Point(0, 0);
             this.dgvLibros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvLibros.Name = "dgvLibros";
+            this.dgvLibros.ReadOnly = true;
             this.dgvLibros.RowHeadersVisible = false;
             this.dgvLibros.RowHeadersWidth = 62;
             this.dgvLibros.RowTemplate.Height = 28;
+            this.dgvLibros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLibros.Size = new System.Drawing.Size(1028, 384);
             this.dgvLibros.TabIndex = 0;
+            this.dgvLibros.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLibros_CellDoubleClick);
             // 
             // Column2
             // 
             this.Column2.HeaderText = "ID";
             this.Column2.MinimumWidth = 8;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Codigo
             // 
             this.Codigo.HeaderText = "CODIGO";
             this.Codigo.MinimumWidth = 8;
             this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
             // 
             // Titulo
             // 
             this.Titulo.HeaderText = "TITULO";
             this.Titulo.MinimumWidth = 8;
             this.Titulo.Name = "Titulo";
+            this.Titulo.ReadOnly = true;
             // 
             // Autor
             // 
             this.Autor.HeaderText = "AUTOR";
             this.Autor.MinimumWidth = 8;
             this.Autor.Name = "Autor";
+            this.Autor.ReadOnly = true;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "EDITORIAL";
             this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // EstFisico
             // 
             this.EstFisico.HeaderText = "ESTADO FISICO";
             this.EstFisico.MinimumWidth = 8;
             this.EstFisico.Name = "EstFisico";
+            this.EstFisico.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "FECHA PUBLICACION";
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // txtBusquedaDeLibros
             // 
@@ -249,6 +262,7 @@ namespace Vagabunda
             this.txtBusquedaDeLibros.SelectedText = "";
             this.txtBusquedaDeLibros.Size = new System.Drawing.Size(768, 39);
             this.txtBusquedaDeLibros.TabIndex = 8;
+            this.txtBusquedaDeLibros.TextChanged += new System.EventHandler(this.txtBusquedaDeLibros_TextChanged);
             // 
             // txtCodigo
             // 

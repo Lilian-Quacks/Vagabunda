@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Vagabunda
 {
@@ -18,15 +12,21 @@ namespace Vagabunda
         public Reportes()
         {
             InitializeComponent();
+
+            cbeReportes.Items.Add("Libros prestados");
+            cbeReportes.Items.Add("Libros regresados");
+            cbeReportes.Items.Add("Libros fuera de periodo de prestamo");
+            cbeReportes.Items.Add("Titulos mas solicitados");
+
+            cbeReportes.SelectedIndex = 0;
         }
 
         private void Reportes_Load(object sender, EventArgs e)
         {
-            CargarPrestamos();
-            CargarBajas();
+            GenerarReporte();
         }
 
-        private void CargarPrestamos()
+        private void GenerarReporte()
         {
             dgvDatosPrestamos.Rows.Clear();
 
@@ -34,19 +34,90 @@ namespace Vagabunda
             {
                 conn.Open();
 
-                string query = @"
-                SELECT 
-                    P.Prestamo_ID,
-                    U.Nombre AS Usuario,
-                    ISNULL(L.Titulo, 'LIBRO ELIMINADO') AS Libro,
-                    P.Estatus,
-                    ISNULL(Pe.Monto, 0) AS Penalizacion,
-                    ISNULL(B.Motivo, 'N/A') AS MotivoBaja
-                FROM Prestamos P
-                INNER JOIN Usuarios U ON P.Usuario_ID = U.Usuario_ID
-                LEFT JOIN Libros L ON P.Libros_ID = L.Libros_ID
-                LEFT JOIN Penalizacion Pe ON Pe.Prestamo_ID = P.Prestamo_ID
-                LEFT JOIN BajaLibros B ON B.Libros_ID = P.Libros_ID";
+                string query = "";
+
+                switch (cbeReportes.Text)
+                {
+                    case "Libros prestados":
+
+                        query = @"
+                        SELECT 
+                            P.Prestamo_ID,
+                            U.Nombre AS Usuario,
+                            L.Titulo AS Libro,
+                            CONVERT(VARCHAR, P.Fecha_Salida, 103) AS Fecha,
+                            ISNULL(CONVERT(VARCHAR, P.Penalizacion_Generada), '0') AS Penalizacion,
+                            'PRESTADO' AS Motivo
+                        FROM Prestamos P
+                        INNER JOIN Usuarios U 
+                            ON P.Usuario_ID = U.Usuario_ID
+                        INNER JOIN Libros L 
+                            ON P.Libros_ID = L.Libros_ID
+                        WHERE MONTH(P.Fecha_Salida) = MONTH(GETDATE())
+                        AND YEAR(P.Fecha_Salida) = YEAR(GETDATE())
+                        ORDER BY P.Fecha_Salida DESC";
+
+                        break;
+
+                    case "Libros regresados":
+
+                        query = @"
+                        SELECT 
+                            P.Prestamo_ID,
+                            U.Nombre AS Usuario,
+                            L.Titulo AS Libro,
+                            CONVERT(VARCHAR, P.Fecha_Devolucion, 103) AS Fecha,
+                            ISNULL(CONVERT(VARCHAR, P.Penalizacion_Generada), '0') AS Penalizacion,
+                            'REGRESADO' AS Motivo
+                        FROM Prestamos P
+                        INNER JOIN Usuarios U 
+                            ON P.Usuario_ID = U.Usuario_ID
+                        INNER JOIN Libros L 
+                            ON P.Libros_ID = L.Libros_ID
+                        WHERE P.Estatus = 'Devuelto'
+                        AND P.Fecha_Devolucion IS NOT NULL
+                        AND MONTH(P.Fecha_Salida) = MONTH(GETDATE())
+                        AND YEAR(P.Fecha_Salida) = YEAR(GETDATE())
+                        ORDER BY P.Fecha_Devolucion DESC";
+
+                        break;
+
+                    case "Libros fuera de periodo de prestamo":
+
+                        query = @"
+                        SELECT 
+                            P.Prestamo_ID,
+                            U.Nombre AS Usuario,
+                            L.Titulo AS Libro,
+                            CONVERT(VARCHAR, P.Fecha_Limite, 103) AS Fecha,
+                            ISNULL(CONVERT(VARCHAR, P.Penalizacion_Generada), '0') AS Penalizacion,
+                            'FUERA DE TIEMPO' AS Motivo
+                        FROM Prestamos P
+                        INNER JOIN Usuarios U 
+                            ON P.Usuario_ID = U.Usuario_ID
+                        INNER JOIN Libros L 
+                            ON P.Libros_ID = L.Libros_ID
+                        WHERE GETDATE() > P.Fecha_Limite
+                        AND P.Estatus = 'Prestado'
+                        ORDER BY P.Fecha_Limite DESC";
+
+                        break;
+
+                    case "Titulos mas solicitados":
+
+                        query = @"
+                        SELECT TOP 20
+                            L.Libros_ID,
+                            'N/A' AS Usuario,
+                            L.Titulo AS Libro,
+                            CONVERT(VARCHAR, L.Contador_Prestamo) + ' prestamos' AS Fecha,
+                            '0' AS Penalizacion,
+                            'MAS SOLICITADO' AS Motivo
+                        FROM Libros L
+                        ORDER BY L.Contador_Prestamo DESC";
+
+                        break;
+                }
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -54,43 +125,23 @@ namespace Vagabunda
                 while (dr.Read())
                 {
                     dgvDatosPrestamos.Rows.Add(
-                        dr["Prestamo_ID"],
-                        dr["Usuario"],
-                        dr["Libro"],
-                        dr["Estatus"],
-                        dr["Penalizacion"],
-                        dr["MotivoBaja"]
+                        dr[0].ToString(),
+                        dr[1].ToString(),
+                        dr[2].ToString(),
+                        dr[3].ToString(),
+                        dr[4].ToString(),
+                        dr[5].ToString()
                     );
                 }
             }
+
+            label1.Text = cbeReportes.Text.ToUpper();
         }
 
-        private void CargarBajas()
+
+        private void cbeReportes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvBajasLibros.Rows.Clear();
-
-            using (SqlConnection conn = new SqlConnection(conexion))
-            {
-                conn.Open();
-
-                string query = @"
-                SELECT 
-                    ISNULL(L.Titulo, 'LIBRO ELIMINADO') AS Titulo,
-                    'DADO DE BAJA' AS Estatus
-                FROM BajaLibros B
-                LEFT JOIN Libros L ON B.Libros_ID = L.Libros_ID";
-
-                SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    dgvBajasLibros.Rows.Add(
-                        dr["Titulo"],
-                        dr["Estatus"]
-                    );
-                }
-            }
+            GenerarReporte();
         }
     }
 }
