@@ -75,7 +75,7 @@ create table Penalizacion
     Pagado bit,
     Prestamo_ID int,
 
-    foreign key (Prestamo_ID) references Pestramos(Prestamo_ID)
+    foreign key (Prestamo_ID) references Prestramos(Prestamo_ID)
 )
 
 create table Reporte
