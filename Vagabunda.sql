@@ -73,9 +73,9 @@ create table Penalizacion
     Penalizacion_ID int Primary key identity(1,1),
     Fecha_Generada datetime,
     Pagado bit,
-    Prestramo_ID int,
+    Prestamo_ID int,
 
-    foreign key (Prestramo_ID) references Prestramos(Prestramo_ID)
+    foreign key (Prestamo_ID) references Pestramos(Prestamo_ID)
 )
 
 create table Reporte
@@ -83,13 +83,13 @@ create table Reporte
     Reporte_ID int Primary key identity(1,1),
     Nombre_Miembro Varchar(50),
     Libros_ID int,
-    Prestramo_ID int,
+    Prestamo_ID int,
     Baja_ID int,
     Penalizacion_ID int,
 	Fecha_Registro DATETIME DEFAULT GETDATE(),
 
     foreign key (Libros_ID) references Libros(Libros_ID),
-    foreign key (Prestramo_ID) references Prestramos(Prestramo_ID),
+    foreign key (Prestamo_ID) references Prestamos(Prestamo_ID),
     foreign key (Baja_ID) references BajaLibros(Baja_ID),
     foreign key (Penalizacion_ID) references Penalizacion(Penalizacion_ID)
 )
