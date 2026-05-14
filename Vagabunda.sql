@@ -51,9 +51,9 @@ create table BajaLibros
     foreign key (Bibliotecario_ID) references Bibliotecario(Bibliotecario_ID)
 )
 
-create table Prestramos
+create table Prestamos
 (
-    Prestramo_ID int Primary key identity(1,1),
+    Prestamo_ID int Primary key identity(1,1),
     Fecha_Salida datetime,
     Fecha_Limite datetime,
     Fecha_Devolucion datetime,
