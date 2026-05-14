@@ -49,15 +49,15 @@ namespace Vagabunda
             this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvPrestamos = new System.Windows.Forms.DataGridView();
+            this.txtBusqueda = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dtpFechaLimite = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.IdLibro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Libros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechSal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechLimite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstFisico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtBusqueda = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dtpFechaLimite = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -138,9 +138,9 @@ namespace Vagabunda
             this.labelq.ForeColor = System.Drawing.Color.DarkCyan;
             this.labelq.Location = new System.Drawing.Point(41, 242);
             this.labelq.Name = "labelq";
-            this.labelq.Size = new System.Drawing.Size(139, 18);
+            this.labelq.Size = new System.Drawing.Size(200, 18);
             this.labelq.TabIndex = 41;
-            this.labelq.Text = "FECHA SALIDA";
+            this.labelq.Text = "FECHA DE PRESTAMO";
             // 
             // CS
             // 
@@ -243,9 +243,9 @@ namespace Vagabunda
             this.label4.ForeColor = System.Drawing.Color.DarkCyan;
             this.label4.Location = new System.Drawing.Point(41, 303);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(197, 18);
+            this.label4.Size = new System.Drawing.Size(137, 18);
             this.label4.TabIndex = 43;
-            this.label4.Text = "FECHA PUBLICACION";
+            this.label4.Text = "FECHA LIMITE\r\n";
             // 
             // btnGuardar
             // 
@@ -300,17 +300,17 @@ namespace Vagabunda
             this.dgvPrestamos.AllowUserToResizeColumns = false;
             this.dgvPrestamos.AllowUserToResizeRows = false;
             this.dgvPrestamos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPrestamos.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.dgvPrestamos.BackgroundColor = System.Drawing.Color.LightCyan;
             this.dgvPrestamos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century", 8F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(218)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPrestamos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPrestamos.ColumnHeadersHeight = 29;
+            this.dgvPrestamos.ColumnHeadersHeight = 58;
             this.dgvPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPrestamos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdLibro,
@@ -321,7 +321,7 @@ namespace Vagabunda
             this.EstFisico});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(178)))), ((int)(((byte)(211)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century", 8F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
@@ -340,50 +340,6 @@ namespace Vagabunda
             this.dgvPrestamos.Size = new System.Drawing.Size(812, 381);
             this.dgvPrestamos.TabIndex = 0;
             this.dgvPrestamos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrestamos_CellDoubleClick);
-            // 
-            // IdLibro
-            // 
-            this.IdLibro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.IdLibro.HeaderText = "ID";
-            this.IdLibro.MinimumWidth = 8;
-            this.IdLibro.Name = "IdLibro";
-            this.IdLibro.ReadOnly = true;
-            this.IdLibro.Width = 65;
-            // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "USUARIO";
-            this.Usuario.MinimumWidth = 8;
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            // 
-            // Libros
-            // 
-            this.Libros.HeaderText = "LIBROS";
-            this.Libros.MinimumWidth = 8;
-            this.Libros.Name = "Libros";
-            this.Libros.ReadOnly = true;
-            // 
-            // FechSal
-            // 
-            this.FechSal.HeaderText = "FECHA SALIDA";
-            this.FechSal.MinimumWidth = 8;
-            this.FechSal.Name = "FechSal";
-            this.FechSal.ReadOnly = true;
-            // 
-            // FechLimite
-            // 
-            this.FechLimite.HeaderText = "FECHA LIMITE";
-            this.FechLimite.MinimumWidth = 8;
-            this.FechLimite.Name = "FechLimite";
-            this.FechLimite.ReadOnly = true;
-            // 
-            // EstFisico
-            // 
-            this.EstFisico.HeaderText = "ESTATUS";
-            this.EstFisico.MinimumWidth = 8;
-            this.EstFisico.Name = "EstFisico";
-            this.EstFisico.ReadOnly = true;
             // 
             // txtBusqueda
             // 
@@ -435,6 +391,50 @@ namespace Vagabunda
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1434, 874);
             this.panel2.TabIndex = 15;
+            // 
+            // IdLibro
+            // 
+            this.IdLibro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.IdLibro.HeaderText = "ID";
+            this.IdLibro.MinimumWidth = 8;
+            this.IdLibro.Name = "IdLibro";
+            this.IdLibro.ReadOnly = true;
+            this.IdLibro.Width = 65;
+            // 
+            // Usuario
+            // 
+            this.Usuario.HeaderText = "USUARIO";
+            this.Usuario.MinimumWidth = 8;
+            this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
+            // 
+            // Libros
+            // 
+            this.Libros.HeaderText = "LIBROS";
+            this.Libros.MinimumWidth = 8;
+            this.Libros.Name = "Libros";
+            this.Libros.ReadOnly = true;
+            // 
+            // FechSal
+            // 
+            this.FechSal.HeaderText = "FECHA DEL PRESTAMO";
+            this.FechSal.MinimumWidth = 8;
+            this.FechSal.Name = "FechSal";
+            this.FechSal.ReadOnly = true;
+            // 
+            // FechLimite
+            // 
+            this.FechLimite.HeaderText = "FECHA LIMITE";
+            this.FechLimite.MinimumWidth = 8;
+            this.FechLimite.Name = "FechLimite";
+            this.FechLimite.ReadOnly = true;
+            // 
+            // EstFisico
+            // 
+            this.EstFisico.HeaderText = "ESTATUS";
+            this.EstFisico.MinimumWidth = 8;
+            this.EstFisico.Name = "EstFisico";
+            this.EstFisico.ReadOnly = true;
             // 
             // GestioDePrestamos
             // 
@@ -489,14 +489,14 @@ namespace Vagabunda
         private Guna.UI2.WinForms.Guna2Button btnEliminar;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dgvPrestamos;
+        private Guna.UI2.WinForms.Guna2TextBox txtBusqueda;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFechaLimite;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdLibro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Libros;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechSal;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechLimite;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstFisico;
-        private Guna.UI2.WinForms.Guna2TextBox txtBusqueda;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFechaLimite;
-        private System.Windows.Forms.Panel panel2;
     }
 }

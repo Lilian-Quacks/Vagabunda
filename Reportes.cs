@@ -135,7 +135,7 @@ namespace Vagabunda
                 }
             }
 
-            label1.Text = cbeReportes.Text.ToUpper();
+           // label1.Text = cbeReportes.Text.ToUpper();
         }
 
 
