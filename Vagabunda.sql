@@ -10,7 +10,7 @@ create table Usuarios
     Telefono Varchar(10) not null,
     Email Varchar(255) not null,
     Adeudo_Pendiente money,
-    Prestamos_Activos int
+    Prestamos_Activos Bit,
 )
 
 create table Bibliotecario
@@ -51,14 +51,14 @@ create table BajaLibros
     foreign key (Bibliotecario_ID) references Bibliotecario(Bibliotecario_ID)
 )
 
-create table Prestramos
+create table Prestamos
 (
-    Prestramo_ID int Primary key identity(1,1),
+    Prestamo_ID int Primary key identity(1,1),
     Fecha_Salida datetime,
     Fecha_Limite datetime,
     Fecha_Devolucion datetime,
     Penalizacion_Generada Varchar(100),
-    Estatus Varchar,
+    Estatus Varchar (20),
     Usuario_ID int,
     Libros_ID int,
     Bibliotecario_ID int,
@@ -72,31 +72,52 @@ create table Penalizacion
 (
     Penalizacion_ID int Primary key identity(1,1),
     Fecha_Generada datetime,
+    Monto money,
     Pagado bit,
-    Prestramo_ID int,
+    Prestamo_ID int,
 
-    foreign key (Prestramo_ID) references Prestramos(Prestramo_ID)
+    foreign key (Prestamo_ID) references Prestamos(Prestamo_ID)
 )
 
 create table Reporte
 (
     Reporte_ID int Primary key identity(1,1),
+    Fecha Datetime,
     Nombre_Miembro Varchar(50),
     Libros_ID int,
-    Prestramo_ID int,
+    Prestamo_ID int,
     Baja_ID int,
     Penalizacion_ID int,
 	Fecha_Registro DATETIME DEFAULT GETDATE(),
 
     foreign key (Libros_ID) references Libros(Libros_ID),
-    foreign key (Prestramo_ID) references Prestramos(Prestramo_ID),
+    foreign key (Prestamo_ID) references Prestamos(Prestamo_ID),
     foreign key (Baja_ID) references BajaLibros(Baja_ID),
     foreign key (Penalizacion_ID) references Penalizacion(Penalizacion_ID)
 )
 
 
+
+CREATE TRIGGER TR_VerificarVencimiento
+ON Prestamos
+AFTER UPDATE, INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Si el libro no se ha devuelto y la fecha actual superó la límite
+    UPDATE Prestamos
+    SET Estatus = 'Retrasado'
+    FROM Prestamos p
+    INNER JOIN inserted i ON p.Prestamo_ID = i.Prestamo_ID
+    WHERE p.Fecha_Devolucion IS NULL 
+      AND GETDATE() > p.Fecha_Limite;
+END;
+GO
+
+
 CREATE TRIGGER TR_GenerarPenalizacionSemanal
-ON Prestramos
+ON Prestamos
 AFTER UPDATE 
 AS
 BEGIN
@@ -141,8 +162,9 @@ BEGIN
 
     -- Cambia el estado en la tabla Libros automáticamente
     UPDATE Libros
-    SET Estatus_Operativo = 'NO DISPONIBLE / BAJA',
-        Estado_Fisico = 'DEBAJA'
+    SET Estatus_Operativo = 'BAJA',
+        Estado_Fisico = i.Motivo
     FROM Libros l
     INNER JOIN inserted i ON l.Libros_ID = i.Libros_ID;
 END
+
