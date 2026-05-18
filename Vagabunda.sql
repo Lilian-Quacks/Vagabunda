@@ -72,6 +72,7 @@ create table Penalizacion
 (
     Penalizacion_ID int Primary key identity(1,1),
     Fecha_Generada datetime,
+    Monto money,
     Pagado bit,
     Prestamo_ID int,
 
@@ -81,6 +82,7 @@ create table Penalizacion
 create table Reporte
 (
     Reporte_ID int Primary key identity(1,1),
+    Fecha Datetime,
     Nombre_Miembro Varchar(50),
     Libros_ID int,
     Prestamo_ID int,
