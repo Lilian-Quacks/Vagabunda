@@ -7,7 +7,7 @@ namespace Vagabunda
 {
     public partial class Reportes : Form
     {
-        string conexion = @"Data Source=LOCALHOST;Initial Catalog=Gestión para Sala de Lectura;Integrated Security=True;";
+        string conexion = @"Data Source=LOCALHOST;Initial Catalog=Vagabunda;Integrated Security=True;";
 
         public Reportes()
         {
@@ -29,7 +29,6 @@ namespace Vagabunda
         private void GenerarReporte()
         {
             dgvDatosPrestamos.Rows.Clear();
-
             using (SqlConnection conn = new SqlConnection(conexion))
             {
                 conn.Open();
@@ -118,6 +117,18 @@ namespace Vagabunda
 
                         break;
                 }
+                string query = @"
+                SELECT 
+                    P.Prestramo_ID, 
+                    U.Nombre AS Usuario,
+                    ISNULL(L.Titulo, 'LIBRO ELIMINADO') AS Libro,
+                    P.Estatus,
+                ISNULL(U.Adeudo_Pendiente, 0) AS Penalizacion, -- Dato del Trigger
+                ISNULL(B.Motivo, 'N/A') AS MotivoBaja
+                FROM Prestramos P
+                INNER JOIN Usuarios U ON P.Usuario_ID = U.Usuario_ID
+                LEFT JOIN Libros L ON P.Libros_ID = L.Libros_ID
+                LEFT JOIN BajaLibros B ON B.Libros_ID = P.Libros_ID";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -131,6 +142,12 @@ namespace Vagabunda
                         dr[3].ToString(),
                         dr[4].ToString(),
                         dr[5].ToString()
+                        dr["Prestramo_ID"],
+                        dr["Usuario"],
+                        dr["Libro"],
+                        dr["Estatus"],
+                        dr["Penalizacion"], 
+                        dr["MotivoBaja"]
                     );
                 }
             }
@@ -142,6 +159,29 @@ namespace Vagabunda
         private void cbeReportes_SelectedIndexChanged(object sender, EventArgs e)
         {
             GenerarReporte();
+            dgvBajasLibros.Rows.Clear();
+
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                string query = @"
+                SELECT 
+                    ISNULL(L.Titulo, 'LIBRO ELIMINADO') AS Titulo,
+                    B.Motivo AS MotivoDetalle -- Usamos el motivo guardado en la tabla
+                FROM BajaLibros B
+                LEFT JOIN Libros L ON B.Libros_ID = L.Libros_ID";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgvBajasLibros.Rows.Add(
+                        dr["Titulo"],
+                        dr["MotivoDetalle"] //"Dañado", "Perdido", etc.
+                    );
+                }
+            }
         }
     }
 }

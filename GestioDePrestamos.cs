@@ -87,6 +87,52 @@ namespace Vagabunda
                 }
             }
             catch (Exception ex) { MessageBox.Show("Error al cargar préstamos: " + ex.Message); }
+                        dgvPrestamos.Rows.Add(
+                            row["Prestramo_ID"], // Coincide con el nombre en SQL
+                            row["Usuario"],
+                            row["Libro"],
+                            Convert.ToDateTime(row["Fecha_Salida"]).ToShortDateString(),
+                            Convert.ToDateTime(row["Fecha_Limite"]).ToShortDateString(),
+                            row["Estatus"]
+                        );
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al consultar: " + ex.Message);
+            }
+        }
+
+        private int ObtenerUsuarioID(string nombre)
+        {
+            using (SqlConnection con = new SqlConnection(cadena))
+            {
+                string query = "SELECT Usuario_ID FROM Usuarios WHERE Nombre = @nombre";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@nombre", nombre);
+
+                con.Open();
+                object result = cmd.ExecuteScalar();
+
+                return result != null ? Convert.ToInt32(result) : 0;
+            }
+        }
+
+
+        private int ObtenerLibroID(string titulo)
+        {
+            using (SqlConnection con = new SqlConnection(cadena))
+            {
+                string query = "SELECT Libros_ID FROM Libros WHERE Titulo = @titulo";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@titulo", titulo);
+
+                con.Open();
+                object result = cmd.ExecuteScalar();
+
+                return result != null ? Convert.ToInt32(result) : 0;
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -112,6 +158,11 @@ namespace Vagabunda
                 {
                     int uID = ObtenerUsuarioID(txtUsuario.Text.Trim());
                     int lID = ObtenerLibroID(txtLibro.Text.Trim());
+                    string query = @"
+                    INSERT INTO Prestramos
+                    (Fecha_Salida, Fecha_Limite, Estatus, Usuario_ID, Libros_ID, Bibliotecario_ID)
+                    VALUES (@salida, @limite, @estatus, @usuario, @libro, 1)
+                    ";
 
                     if (uID == 0 || lID == 0) { MessageBox.Show("Usuario o Libro no válidos."); return; }
 
@@ -249,6 +300,47 @@ namespace Vagabunda
                 {
                     transaccion.Rollback(); 
                     MessageBox.Show("Error: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (idPrestamoSeleccionado == 0)
+            {
+                MessageBox.Show("Selecciona un préstamo de la lista.");
+                return;
+            }
+
+            var confirm = MessageBox.Show("¿Eliminar préstamo?", "Confirmar", MessageBoxButtons.YesNo);
+
+            if (confirm == DialogResult.Yes)
+            {
+                try
+                {
+                    using (SqlConnection con = new SqlConnection(cadena))
+                    {
+                        string query = "DELETE FROM Prestramos WHERE Prestramo_ID=@id";
+
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        cmd.Parameters.AddWithValue("@id", idPrestamoSeleccionado);
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Préstamo eliminado correctamente");
+
+                        Limpiar();
+                        ConsultarPrestamos();
+                        idPrestamoSeleccionado = 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar: " + ex.Message);
                 }
             }
         }
@@ -371,6 +463,63 @@ namespace Vagabunda
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+
+        // cambios mios de maldonado
+        private void dgvPrestamos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // 1. Forzamos a que el Grid deje de editar y guarde el cambio en su memoria interna
+                dgvPrestamos.EndEdit();
+
+                // 2. Ejecutamos la actualización a la base de datos
+                ActualizarEstatusDesdeGrid();
+
+                // 3. Evitamos que el Enter mueva el cursor a la fila de abajo antes de tiempo
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+        private void ActualizarEstatusDesdeGrid()
+        {
+            if (dgvPrestamos.CurrentRow == null) return;
+
+            try
+            {
+                DataGridViewRow fila = dgvPrestamos.CurrentRow;
+
+                // IMPORTANTE: Verifica que estos índices coincidan con tus columnas
+                // Celda 0 = Prestramo_ID, Celda 5 = Estatus
+                int id = Convert.ToInt32(fila.Cells[0].Value);
+                string nuevoEstatus = fila.Cells[5].Value.ToString();
+
+                using (SqlConnection con = new SqlConnection(cadena))
+                {
+                    con.Open();
+                    // Al ejecutar este UPDATE se dispara el Trigger TR_GenerarPenalizacionSemanal
+                    string query = "UPDATE Prestramos SET Estatus = @estatus WHERE Prestramo_ID = @id";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@estatus", nuevoEstatus);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+
+                    if (filasAfectadas > 0)
+                    {
+                        MessageBox.Show("Estatus actualizado en BD. El Trigger ha procesado la penalización si aplica.");
+                    }
+
+                    // Recargamos para ver los datos frescos del servidor
+                    ConsultarPrestamos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar: " + ex.Message);
+            }
         }
     }
 }
