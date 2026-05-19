@@ -10,7 +10,7 @@ namespace Vagabunda
 {
     public partial class GestioDePrestamos : Form
     {
-        string cadena = @"Data Source=LOCALHOST;Initial Catalog=Gestión para Sala de Lectura;Integrated Security=True;";
+        string cadena = @"Data Source=LOCALHOST;Initial Catalog=Vagabunda;Integrated Security=True;";
         int idPrestamoSeleccionado = -1;
 
         public GestioDePrestamos()
