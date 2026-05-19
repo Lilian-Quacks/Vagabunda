@@ -83,7 +83,7 @@ namespace Vagabunda
                 }
                 else
                 {
-                    this.IsbnSeleccionado = dgvInfo.Rows[e.RowIndex].Cells["isbn"].Value.ToString();
+                    this.IsbnSeleccionado = dgvInfo.Rows[e.RowIndex].Cells["Libros_ID"].Value.ToString();
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
