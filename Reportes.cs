@@ -117,19 +117,6 @@ namespace Vagabunda
 
                         break;
                 }
-                string query = @"
-                SELECT 
-                    P.Prestramo_ID, 
-                    U.Nombre AS Usuario,
-                    ISNULL(L.Titulo, 'LIBRO ELIMINADO') AS Libro,
-                    P.Estatus,
-                ISNULL(U.Adeudo_Pendiente, 0) AS Penalizacion, -- Dato del Trigger
-                ISNULL(B.Motivo, 'N/A') AS MotivoBaja
-                FROM Prestramos P
-                INNER JOIN Usuarios U ON P.Usuario_ID = U.Usuario_ID
-                LEFT JOIN Libros L ON P.Libros_ID = L.Libros_ID
-                LEFT JOIN BajaLibros B ON B.Libros_ID = P.Libros_ID";
-
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader dr = cmd.ExecuteReader();
 
@@ -141,7 +128,7 @@ namespace Vagabunda
                         dr[2].ToString(),
                         dr[3].ToString(),
                         dr[4].ToString(),
-                        dr[5].ToString()
+                        dr[5].ToString(),
                         dr["Prestramo_ID"],
                         dr["Usuario"],
                         dr["Libro"],
@@ -159,7 +146,7 @@ namespace Vagabunda
         private void cbeReportes_SelectedIndexChanged(object sender, EventArgs e)
         {
             GenerarReporte();
-            dgvBajasLibros.Rows.Clear();
+            dgvDatosPrestamos.Rows.Clear();
 
             using (SqlConnection conn = new SqlConnection(conexion))
             {
@@ -176,7 +163,7 @@ namespace Vagabunda
 
                 while (dr.Read())
                 {
-                    dgvBajasLibros.Rows.Add(
+                    dgvDatosPrestamos.Rows.Add(
                         dr["Titulo"],
                         dr["MotivoDetalle"] //"Dañado", "Perdido", etc.
                     );

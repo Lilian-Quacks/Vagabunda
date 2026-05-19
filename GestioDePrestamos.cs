@@ -80,15 +80,8 @@ namespace Vagabunda
                     dgvPrestamos.Rows.Clear();
                     foreach (DataRow row in dt.Rows)
                     {
-                        dgvPrestamos.Rows.Add(row[0], row[1], row[2],
-                            Convert.ToDateTime(row[3]).ToShortDateString(),
-                            Convert.ToDateTime(row[4]).ToShortDateString(), row[5]);
-                    }
-                }
-            }
-            catch (Exception ex) { MessageBox.Show("Error al cargar préstamos: " + ex.Message); }
                         dgvPrestamos.Rows.Add(
-                            row["Prestramo_ID"], // Coincide con el nombre en SQL
+                            row["Prestamo_ID"], // Coincide con el nombre en SQL
                             row["Usuario"],
                             row["Libro"],
                             Convert.ToDateTime(row["Fecha_Salida"]).ToShortDateString(),
@@ -98,41 +91,11 @@ namespace Vagabunda
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al consultar: " + ex.Message);
+            catch (Exception ex) 
+            { 
+                MessageBox.Show("Error al cargar préstamos: " + ex.Message); 
             }
-        }
-
-        private int ObtenerUsuarioID(string nombre)
-        {
-            using (SqlConnection con = new SqlConnection(cadena))
-            {
-                string query = "SELECT Usuario_ID FROM Usuarios WHERE Nombre = @nombre";
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@nombre", nombre);
-
-                con.Open();
-                object result = cmd.ExecuteScalar();
-
-                return result != null ? Convert.ToInt32(result) : 0;
-            }
-        }
-
-
-        private int ObtenerLibroID(string titulo)
-        {
-            using (SqlConnection con = new SqlConnection(cadena))
-            {
-                string query = "SELECT Libros_ID FROM Libros WHERE Titulo = @titulo";
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@titulo", titulo);
-
-                con.Open();
-                object result = cmd.ExecuteScalar();
-
-                return result != null ? Convert.ToInt32(result) : 0;
-            }
+            
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -166,7 +129,7 @@ namespace Vagabunda
 
                     if (uID == 0 || lID == 0) { MessageBox.Show("Usuario o Libro no válidos."); return; }
 
-                    if (idPrestamoSeleccionado == -1) 
+                    if (idPrestamoSeleccionado == -1)
                     {
                         string check = "SELECT COUNT(*) FROM Prestamos WHERE Usuario_ID = @uid AND Estatus = 'Retrasado'";
                         SqlCommand vCmd = new SqlCommand(check, con, transaccion);
@@ -198,7 +161,7 @@ namespace Vagabunda
                         cmdLibro.Parameters.AddWithValue("@lid", lID);
                         cmdLibro.ExecuteNonQuery();
                     }
-                    else 
+                    else
                     {
                         string queryU = "UPDATE Prestamos SET Estatus = @estatus WHERE Prestamo_ID = @id";
                         SqlCommand cmdU = new SqlCommand(queryU, con, transaccion);
@@ -291,19 +254,16 @@ namespace Vagabunda
                         }
                     }
 
-                    transaccion.Commit(); 
+                    transaccion.Commit();
                     MessageBox.Show("Operación exitosa.");
                     Limpiar();
                     ConsultarPrestamos();
                 }
                 catch (Exception ex)
                 {
-                    transaccion.Rollback(); 
+                    transaccion.Rollback();
                     MessageBox.Show("Error: " + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
+                }
             }
         }
 
