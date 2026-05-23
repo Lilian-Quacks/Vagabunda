@@ -128,13 +128,7 @@ namespace Vagabunda
                         dr[2].ToString(),
                         dr[3].ToString(),
                         dr[4].ToString(),
-                        dr[5].ToString(),
-                        dr["Prestramo_ID"],
-                        dr["Usuario"],
-                        dr["Libro"],
-                        dr["Estatus"],
-                        dr["Penalizacion"], 
-                        dr["MotivoBaja"]
+                        dr[5].ToString()
                     );
                 }
             }
@@ -145,8 +139,8 @@ namespace Vagabunda
 
         private void cbeReportes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GenerarReporte();
             dgvDatosPrestamos.Rows.Clear();
+            GenerarReporte();
 
             using (SqlConnection conn = new SqlConnection(conexion))
             {

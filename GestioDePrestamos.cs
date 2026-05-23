@@ -38,6 +38,8 @@ namespace Vagabunda
 
             ConsultarPrestamos();
             if (dgvPrestamos.Columns.Count > 0) dgvPrestamos.Columns[0].Visible = false;
+
+            cbeEstatus.Enabled = false;
         }
 
         private void ConsultarPrestamos(string filtro = "", bool porUsuarioExacto = false)
@@ -269,7 +271,7 @@ namespace Vagabunda
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (idPrestamoSeleccionado == 0)
+            if (idPrestamoSeleccionado == -1)
             {
                 MessageBox.Show("Selecciona un préstamo de la lista.");
                 return;
@@ -295,7 +297,7 @@ namespace Vagabunda
 
                         Limpiar();
                         ConsultarPrestamos();
-                        idPrestamoSeleccionado = 0;
+                        idPrestamoSeleccionado = -1;
                     }
                 }
                 catch (Exception ex)
@@ -307,7 +309,7 @@ namespace Vagabunda
 
         private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F1)
+            if (e.KeyCode == Keys.F1 || e.KeyCode == Keys.F2)
             {
                 InfoUsuarios ver = new InfoUsuarios();
                 if (ver.ShowDialog() == DialogResult.OK)
@@ -324,7 +326,7 @@ namespace Vagabunda
 
         private void txtLibro_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F1)
+            if (e.KeyCode == Keys.F1 || e.KeyCode == Keys.F2)
             {
                 InfoLiibros ver = new InfoLiibros();
                 if (ver.ShowDialog() == DialogResult.OK)
@@ -360,13 +362,13 @@ namespace Vagabunda
         {
             using (SqlConnection con = new SqlConnection(cadena))
             {
-                string query = "SELECT Titulo FROM Libros WHERE ISBN = @dato";
+                string query = "SELECT Titulo FROM Libros WHERE ISBN = @dato AND Estatus_Operativo = 'Disponible'";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@dato", isbn);
                 con.Open();
                 object result = cmd.ExecuteScalar();
                 if (result != null) { txtLibro.Text = result.ToString(); }
-                else { MessageBox.Show("Libro no encontrado."); }
+                else { MessageBox.Show("Libro no encontrado. / Libro no disponible."); }
             }
         }
 
@@ -382,6 +384,7 @@ namespace Vagabunda
                 dtpFechaLimite.Value = fila.Cells[4].Value != null ? Convert.ToDateTime(fila.Cells[4].Value) : DateTime.Now;
                 cbeEstatus.Text = fila.Cells[5].Value.ToString();
                 txtUsuario.ReadOnly = true; txtLibro.ReadOnly = true;
+                cbeEstatus.Enabled = true;
             }
         }
 
@@ -392,6 +395,7 @@ namespace Vagabunda
             cbeEstatus.SelectedIndex = 0; idPrestamoSeleccionado = -1;
             dtpFechaSalida.Value = DateTime.Now;
             dtpFechaLimite.Value = DateTime.Now.AddDays(7);
+            cbeEstatus.Enabled = false;
         }
 
         private int ObtenerUsuarioID(string criterio)
@@ -409,7 +413,16 @@ namespace Vagabunda
         {
             using (SqlConnection con = new SqlConnection(cadena))
             {
-                SqlCommand cmd = new SqlCommand("SELECT Libros_ID FROM Libros WHERE Titulo = @t", con);
+                SqlCommand cmd;
+
+                if (idPrestamoSeleccionado == -1)
+                {
+                    cmd = new SqlCommand("SELECT Libros_ID FROM Libros WHERE Titulo = @t AND Estatus_Operativo = 'Disponible'", con);
+                } else
+                {
+                    cmd = new SqlCommand("SELECT Libros_ID FROM Libros WHERE Titulo = @t", con);
+                }
+
                 cmd.Parameters.AddWithValue("@t", titulo); con.Open();
                 object res = cmd.ExecuteScalar(); return res != null ? Convert.ToInt32(res) : 0;
             }
