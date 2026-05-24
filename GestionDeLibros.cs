@@ -172,5 +172,10 @@ namespace Vagabunda
             dtpFechaPublicacion.Value = DateTime.Now;
             idLibroSeleccionado = -1;
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
     }
 }

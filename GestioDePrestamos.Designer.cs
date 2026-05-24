@@ -46,18 +46,18 @@ namespace Vagabunda
             this.txtUsuario = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLimpiar = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvPrestamos = new System.Windows.Forms.DataGridView();
-            this.txtBusqueda = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dtpFechaLimite = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.IdLibro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Libros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechSal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechLimite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstFisico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBusqueda = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dtpFechaLimite = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -159,6 +159,7 @@ namespace Vagabunda
             this.dtpFechaSalida.BackColor = System.Drawing.Color.Transparent;
             this.dtpFechaSalida.BorderColor = System.Drawing.Color.Transparent;
             this.dtpFechaSalida.Checked = true;
+            this.dtpFechaSalida.Enabled = false;
             this.dtpFechaSalida.FillColor = System.Drawing.Color.White;
             this.dtpFechaSalida.FocusedColor = System.Drawing.Color.White;
             this.dtpFechaSalida.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
@@ -265,22 +266,23 @@ namespace Vagabunda
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnEliminar
+            // btnLimpiar
             // 
-            this.btnEliminar.AutoRoundedCorners = true;
-            this.btnEliminar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEliminar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEliminar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEliminar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEliminar.FillColor = System.Drawing.Color.SteelBlue;
-            this.btnEliminar.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(58, 519);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(215, 48);
-            this.btnEliminar.TabIndex = 40;
-            this.btnEliminar.Text = "ELIMINAR";
+            this.btnLimpiar.AutoRoundedCorners = true;
+            this.btnLimpiar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLimpiar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLimpiar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLimpiar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLimpiar.FillColor = System.Drawing.Color.SteelBlue;
+            this.btnLimpiar.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(58, 519);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(215, 48);
+            this.btnLimpiar.TabIndex = 40;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // panel4
             // 
@@ -341,57 +343,6 @@ namespace Vagabunda
             this.dgvPrestamos.TabIndex = 0;
             this.dgvPrestamos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrestamos_CellDoubleClick);
             // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.AutoRoundedCorners = true;
-            this.txtBusqueda.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBusqueda.DefaultText = "";
-            this.txtBusqueda.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtBusqueda.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtBusqueda.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBusqueda.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBusqueda.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBusqueda.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
-            this.txtBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtBusqueda.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBusqueda.Location = new System.Drawing.Point(364, 94);
-            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtBusqueda.PlaceholderText = "BUSQUEDA";
-            this.txtBusqueda.SelectedText = "";
-            this.txtBusqueda.Size = new System.Drawing.Size(816, 41);
-            this.txtBusqueda.TabIndex = 41;
-            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
-            // 
-            // dtpFechaLimite
-            // 
-            this.dtpFechaLimite.AutoRoundedCorners = true;
-            this.dtpFechaLimite.BackColor = System.Drawing.Color.Transparent;
-            this.dtpFechaLimite.BorderColor = System.Drawing.Color.Transparent;
-            this.dtpFechaLimite.Checked = true;
-            this.dtpFechaLimite.FillColor = System.Drawing.Color.White;
-            this.dtpFechaLimite.FocusedColor = System.Drawing.Color.White;
-            this.dtpFechaLimite.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
-            this.dtpFechaLimite.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaLimite.Location = new System.Drawing.Point(44, 323);
-            this.dtpFechaLimite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpFechaLimite.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFechaLimite.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFechaLimite.Name = "dtpFechaLimite";
-            this.dtpFechaLimite.Size = new System.Drawing.Size(253, 34);
-            this.dtpFechaLimite.TabIndex = 37;
-            this.dtpFechaLimite.Value = new System.DateTime(2026, 5, 7, 9, 57, 53, 274);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel2.Location = new System.Drawing.Point(-4, 703);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1434, 874);
-            this.panel2.TabIndex = 15;
-            // 
             // IdLibro
             // 
             this.IdLibro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -399,7 +350,7 @@ namespace Vagabunda
             this.IdLibro.MinimumWidth = 8;
             this.IdLibro.Name = "IdLibro";
             this.IdLibro.ReadOnly = true;
-            this.IdLibro.Width = 65;
+            this.IdLibro.Width = 56;
             // 
             // Usuario
             // 
@@ -436,6 +387,58 @@ namespace Vagabunda
             this.EstFisico.Name = "EstFisico";
             this.EstFisico.ReadOnly = true;
             // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.AutoRoundedCorners = true;
+            this.txtBusqueda.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBusqueda.DefaultText = "";
+            this.txtBusqueda.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBusqueda.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBusqueda.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBusqueda.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBusqueda.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBusqueda.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
+            this.txtBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.txtBusqueda.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBusqueda.Location = new System.Drawing.Point(364, 94);
+            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtBusqueda.PlaceholderText = "BUSQUEDA";
+            this.txtBusqueda.SelectedText = "";
+            this.txtBusqueda.Size = new System.Drawing.Size(816, 41);
+            this.txtBusqueda.TabIndex = 41;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            // 
+            // dtpFechaLimite
+            // 
+            this.dtpFechaLimite.AutoRoundedCorners = true;
+            this.dtpFechaLimite.BackColor = System.Drawing.Color.Transparent;
+            this.dtpFechaLimite.BorderColor = System.Drawing.Color.Transparent;
+            this.dtpFechaLimite.Checked = true;
+            this.dtpFechaLimite.Enabled = false;
+            this.dtpFechaLimite.FillColor = System.Drawing.Color.White;
+            this.dtpFechaLimite.FocusedColor = System.Drawing.Color.White;
+            this.dtpFechaLimite.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
+            this.dtpFechaLimite.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaLimite.Location = new System.Drawing.Point(44, 323);
+            this.dtpFechaLimite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpFechaLimite.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFechaLimite.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFechaLimite.Name = "dtpFechaLimite";
+            this.dtpFechaLimite.Size = new System.Drawing.Size(253, 34);
+            this.dtpFechaLimite.TabIndex = 37;
+            this.dtpFechaLimite.Value = new System.DateTime(2026, 5, 7, 9, 57, 53, 274);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.Location = new System.Drawing.Point(-4, 703);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1434, 874);
+            this.panel2.TabIndex = 15;
+            // 
             // GestioDePrestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -445,7 +448,7 @@ namespace Vagabunda
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtpFechaLimite);
@@ -486,7 +489,7 @@ namespace Vagabunda
         private Guna.UI2.WinForms.Guna2TextBox txtUsuario;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
-        private Guna.UI2.WinForms.Guna2Button btnEliminar;
+        private Guna.UI2.WinForms.Guna2Button btnLimpiar;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dgvPrestamos;
         private Guna.UI2.WinForms.Guna2TextBox txtBusqueda;

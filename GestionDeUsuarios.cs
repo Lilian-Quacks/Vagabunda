@@ -84,12 +84,12 @@ namespace Vagabunda
                     }
                     else 
                     {
-                        query = @"UPDATE Usuarios SET Direccion=@direccion, Telefono=@tel, Email=@mail 
+                        query = @"UPDATE Usuarios SET Nombre=@nombre, Direccion=@direccion, Telefono=@tel, Email=@mail 
                                  WHERE Usuario_ID=@id";
                     }
 
                     SqlCommand cmd = new SqlCommand(query, con);
-                    if (idSeleccionado == -1) cmd.Parameters.AddWithValue("@nombre", txtNombre.Text.Trim());
+                    cmd.Parameters.AddWithValue("@nombre", txtNombre.Text.Trim());
                     cmd.Parameters.AddWithValue("@direccion", txtDireccion.Text.Trim());
                     cmd.Parameters.AddWithValue("@tel", txtTelefono.Text.Trim());
                     cmd.Parameters.AddWithValue("@mail", txtCorreo.Text.Trim());
@@ -144,7 +144,6 @@ namespace Vagabunda
                 txtTelefono.Text = fila.Cells[3].Value.ToString();
                 txtCorreo.Text = fila.Cells[4].Value.ToString();
 
-                txtNombre.ReadOnly = true;
                 MessageBox.Show("Modo edición activado para el usuario: " + txtNombre.Text);
             }
         }
@@ -162,6 +161,11 @@ namespace Vagabunda
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
             ConsultarUsuarios(txtBusqueda.Text.Trim());
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCamposDetalle();
         }
     }
 }

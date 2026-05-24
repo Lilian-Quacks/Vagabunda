@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace Vagabunda
 {
     public partial class GestioDePrestamos : Form
@@ -29,7 +30,6 @@ namespace Vagabunda
             {
                 cbeEstatus.Items.Add("Activo");
                 cbeEstatus.Items.Add("Devuelto");
-                cbeEstatus.Items.Add("Retrasado");
             }
             cbeEstatus.SelectedIndex = 0;
 
@@ -157,8 +157,85 @@ namespace Vagabunda
 
                         if (cbeEstatus.Text == "Devuelto")
                         {
-                            SqlCommand cmdLibro = new SqlCommand("UPDATE Libros SET Estatus_Operativo = 'Disponible' WHERE Libros_ID = @lid", con, transaccion);
+                            decimal adeudo = 0;
+
+                            SqlCommand cmdAdeudo = new SqlCommand(@"
+                            SELECT ISNULL(Adeudo_Pendiente,0)
+                            FROM Usuarios
+                            WHERE Usuario_ID = @uid",
+                            con,
+                            transaccion);
+
+                            cmdAdeudo.Parameters.AddWithValue("@uid", uID);
+
+                            adeudo = Convert.ToDecimal(cmdAdeudo.ExecuteScalar());
+
+                            if (adeudo > 0)
+                            {
+                                DialogResult pago =
+                                    MessageBox.Show(
+                                    "El usuario tiene una multa pendiente de $" +
+                                    adeudo +
+                                    ".\n\n¿Desea marcarla como PAGADA?",
+                                    "Pago de multa",
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Question);
+
+                                if (pago == DialogResult.No)
+                                {
+                                    MessageBox.Show(
+                                        "No se puede marcar como devuelto hasta pagar la multa.");
+
+                                    transaccion.Rollback();
+                                    return;
+                                }
+
+                                SqlCommand cmdLiquidar = new SqlCommand(@"
+                                UPDATE Usuarios
+                                SET Adeudo_Pendiente = 0
+                                WHERE Usuario_ID = @uid",
+                                con,
+                                transaccion);
+
+                                cmdLiquidar.Parameters.AddWithValue("@uid", uID);
+
+                                cmdLiquidar.ExecuteNonQuery();
+
+                                SqlCommand cmdPago = new SqlCommand(@"
+                                UPDATE Penalizacion
+                                SET Pagado = 1
+                                WHERE Prestamo_ID = @prestamo",
+                                con,
+                                transaccion);
+
+                                cmdPago.Parameters.AddWithValue(
+                                    "@prestamo",
+                                    idPrestamoSeleccionado);
+
+                                cmdPago.ExecuteNonQuery();
+                            }
+
+                            SqlCommand cmdFecha = new SqlCommand(@"
+                            UPDATE Prestamos
+                            SET Fecha_Devolucion = GETDATE()
+                            WHERE Prestamo_ID = @id",
+                            con,
+                            transaccion);
+
+                            cmdFecha.Parameters.AddWithValue(
+                                "@id",
+                                idPrestamoSeleccionado);
+
+                            cmdFecha.ExecuteNonQuery();
+
+                            SqlCommand cmdLibro = new SqlCommand(@"UPDATE Libros
+                            SET Estatus_Operativo = 'Disponible'
+                            WHERE Libros_ID = @lid",
+                            con,
+                            transaccion);
+
                             cmdLibro.Parameters.AddWithValue("@lid", lID);
+
                             cmdLibro.ExecuteNonQuery();
                         }
                     }
@@ -249,6 +326,8 @@ namespace Vagabunda
                 idPrestamoSeleccionado = Convert.ToInt32(fila.Cells[0].Value);
                 txtUsuario.Text = fila.Cells[1].Value.ToString();
                 txtLibro.Text = fila.Cells[2].Value.ToString();
+                dtpFechaSalida.Value = fila.Cells[3].Value != null ? Convert.ToDateTime(fila.Cells[3].Value) : DateTime.Now;
+                dtpFechaLimite.Value = fila.Cells[4].Value != null ? Convert.ToDateTime(fila.Cells[4].Value) : DateTime.Now;
                 cbeEstatus.Text = fila.Cells[5].Value.ToString();
                 txtUsuario.ReadOnly = true; txtLibro.ReadOnly = true;
             }
@@ -259,6 +338,8 @@ namespace Vagabunda
             txtUsuario.Clear(); txtLibro.Clear();
             txtUsuario.ReadOnly = false; txtLibro.ReadOnly = false;
             cbeEstatus.SelectedIndex = 0; idPrestamoSeleccionado = -1;
+            dtpFechaSalida.Value = DateTime.Now;
+            dtpFechaLimite.Value = DateTime.Now.AddDays(7);
         }
 
         private int ObtenerUsuarioID(string criterio)
@@ -285,6 +366,11 @@ namespace Vagabunda
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
             ConsultarPrestamos(txtBusqueda.Text);
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }

@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using System.Data.SqlClient;
+using System.Net;
+using System.Net.Mail;
 
 namespace Vagabunda
 {
@@ -18,6 +21,8 @@ namespace Vagabunda
             InitializeComponent();
             AsignarEventos();
         }
+
+        string cadena = @"Data Source=LOCALHOST;Initial Catalog=Gestión para Sala de Lectura;Integrated Security=True;";
 
         private void AsignarEventos()
         {
@@ -102,10 +107,12 @@ namespace Vagabunda
             panel.Region = new Region(path);
         }
 
-        private void MenuPrincipla_Load(object sender, EventArgs e)
+        private async void MenuPrincipla_Load(object sender, EventArgs e)
         {
             BordesRedondos(panel1, 30);
             timer1.Start();
+
+            _ = Task.Run(() => VerificarPrestamosRetrasados());
         }
 
         private void LBLUSUARIOS_MouseEnter(object sender, EventArgs e)
@@ -202,5 +209,200 @@ namespace Vagabunda
         private void panelPrograma_Paint(object sender, PaintEventArgs e)
         {
         }
+
+        private void VerificarPrestamosRetrasados()
+        {
+            using (SqlConnection con = new SqlConnection(cadena))
+            {
+                con.Open();
+
+                string query = @"
+        SELECT 
+            p.Prestamo_ID,
+            p.Fecha_Limite,
+            p.Usuario_ID,
+            p.Penalizacion_Generada,
+            p.Estatus,
+            u.Nombre,
+            u.Email,
+            l.Titulo
+        FROM Prestamos p
+        INNER JOIN Usuarios u ON p.Usuario_ID = u.Usuario_ID
+        INNER JOIN Libros l ON p.Libros_ID = l.Libros_ID
+        WHERE 
+        (
+            p.Estatus = 'Activo'
+            OR p.Estatus = 'Retrasado'
+        )
+        AND p.Fecha_Devolucion IS NULL
+        AND CAST(GETDATE() AS DATE) > CAST(p.Fecha_Limite AS DATE)";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                List<dynamic> prestamos = new List<dynamic>();
+
+                while (dr.Read())
+                {
+                    prestamos.Add(new
+                    {
+                        PrestamoID = Convert.ToInt32(dr["Prestamo_ID"]),
+                        FechaLimite = Convert.ToDateTime(dr["Fecha_Limite"]),
+                        UsuarioID = Convert.ToInt32(dr["Usuario_ID"]),
+                        PenalizacionActual = Convert.ToDecimal(dr["Penalizacion_Generada"]),
+                        Estatus = dr["Estatus"].ToString(),
+                        Nombre = dr["Nombre"].ToString(),
+                        Email = dr["Email"].ToString(),
+                        Libro = dr["Titulo"].ToString()
+                    });
+                }
+
+                dr.Close();
+
+                foreach (var p in prestamos)
+                {
+                    int diasRetraso =
+                        (DateTime.Now.Date - p.FechaLimite.Date).Days;
+
+                    // 1 al día siguiente
+                    // luego cada 7 días
+                    int semanas = ((diasRetraso - 1) / 7) + 1;
+
+                    decimal multaEsperada = semanas * 50;
+
+                    // ya tiene esa multa
+                    if (multaEsperada <= p.PenalizacionActual)
+                        continue;
+
+                    decimal diferencia =
+                        multaEsperada - p.PenalizacionActual;
+
+                    SqlTransaction trans = con.BeginTransaction();
+
+                    try
+                    {
+                        SqlCommand cmdUpdate = new SqlCommand(@"
+                UPDATE Prestamos
+                SET 
+                    Estatus = 'Retrasado',
+                    Penalizacion_Generada = @multa
+                WHERE Prestamo_ID = @id",
+                        con, trans);
+
+                        cmdUpdate.Parameters.AddWithValue(
+                            "@multa",
+                            multaEsperada);
+
+                        cmdUpdate.Parameters.AddWithValue(
+                            "@id",
+                            p.PrestamoID);
+
+                        cmdUpdate.ExecuteNonQuery();
+
+                        SqlCommand cmdAdeudo = new SqlCommand(@"
+                UPDATE Usuarios
+                SET Adeudo_Pendiente =
+                    ISNULL(Adeudo_Pendiente,0) + @diferencia
+                WHERE Usuario_ID = @uid",
+                        con, trans);
+
+                        cmdAdeudo.Parameters.AddWithValue(
+                            "@diferencia",
+                            diferencia);
+
+                        cmdAdeudo.Parameters.AddWithValue(
+                            "@uid",
+                            p.UsuarioID);
+
+                        cmdAdeudo.ExecuteNonQuery();
+
+                        SqlCommand cmdPenal = new SqlCommand(@"
+                INSERT INTO Penalizacion
+                (
+                    Fecha_Generada,
+                    Monto,
+                    Pagado,
+                    Prestamo_ID
+                )
+                VALUES
+                (
+                    GETDATE(),
+                    @multa,
+                    0,
+                    @prestamo
+                )",
+                        con, trans);
+
+                        cmdPenal.Parameters.AddWithValue(
+                            "@multa",
+                            diferencia);
+
+                        cmdPenal.Parameters.AddWithValue(
+                            "@prestamo",
+                            p.PrestamoID);
+
+                        cmdPenal.ExecuteNonQuery();
+
+                        trans.Commit();
+
+                        MandandoMailRetraso(
+                            p.Email,
+                            p.Nombre,
+                            p.Libro,
+                            multaEsperada,
+                            diasRetraso
+                        );
+                    }
+                    catch
+                    {
+                        trans.Rollback();
+                    }
+                }
+            }
+        }
+
+        private void MandandoMailRetraso( string receptor, string nombre, string libro, decimal multa, int dias)
+        {
+            try
+            {
+                MailMessage mensaje = new MailMessage();
+
+                mensaje.From = new MailAddress("lilianramirez534@gmail.com");
+
+                mensaje.To.Add(receptor);
+
+                mensaje.Subject = "Aviso de retraso de préstamo - La Vagabunda";
+
+                mensaje.Body =
+                    "Hola " + nombre + ".\n\n" +
+                    "El libro:\n" +
+                    libro + "\n\n" +
+                    "ha excedido la fecha límite de entrega.\n\n" +
+                    "Días de retraso: " + dias + "\n" +
+                    "Multa acumulada: $" + multa + " MXN\n\n" +
+                    "Favor de acudir a biblioteca para regularizar la situación.";
+
+                SmtpClient clienteSmtp = new SmtpClient("smtp.gmail.com");
+
+                clienteSmtp.Port = 587;
+
+                clienteSmtp.Credentials =
+                    new NetworkCredential(
+                        "lilianramirez534@gmail.com",
+                        "udceftebesehwxos");
+
+                clienteSmtp.EnableSsl = true;
+
+                clienteSmtp.Send(mensaje);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error enviando correo: " +
+                    (ex.InnerException?.Message ?? ex.Message));
+            }
+        }
+
     }
 }

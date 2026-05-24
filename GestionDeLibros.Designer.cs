@@ -59,6 +59,7 @@ namespace Vagabunda
             this.dtpFechaPublicacion = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLimpiar = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -438,6 +439,24 @@ namespace Vagabunda
             this.panel2.Size = new System.Drawing.Size(1451, 159);
             this.panel2.TabIndex = 88;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.AutoRoundedCorners = true;
+            this.btnLimpiar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLimpiar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLimpiar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLimpiar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLimpiar.FillColor = System.Drawing.Color.SteelBlue;
+            this.btnLimpiar.Font = new System.Drawing.Font("Century", 13F, System.Drawing.FontStyle.Bold);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(70, 581);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(215, 36);
+            this.btnLimpiar.TabIndex = 89;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // GestionDeLibros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -445,6 +464,7 @@ namespace Vagabunda
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1416, 813);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dtpFechaPublicacion);
@@ -501,5 +521,6 @@ namespace Vagabunda
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpFechaPublicacion;
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
         private Panel panel2;
+        private Guna.UI2.WinForms.Guna2Button btnLimpiar;
     }
 }
