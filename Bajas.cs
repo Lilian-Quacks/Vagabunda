@@ -92,7 +92,7 @@ namespace Vagabunda
 
                 try
                 {
-                    string queryValidar = "SELECT Libros_ID, Estatus_Operativo FROM Libros WHERE ISBN = @isbn";
+                    string queryValidar = "SELECT Libros_ID, Estatus_Operativo FROM Libros WHERE Titulo = @isbn";
                     SqlCommand cmdValidar = new SqlCommand(queryValidar, con, trans);
                     cmdValidar.Parameters.AddWithValue("@isbn", txtLibro.Text.Trim());
 
@@ -140,11 +140,6 @@ namespace Vagabunda
                     cmdInsert.Parameters.AddWithValue("@Motivo", cbeMotivo.Text);
                     cmdInsert.Parameters.AddWithValue("@LibroID", libroID);
                     cmdInsert.ExecuteNonQuery();
-
-                    string updateLibro = "UPDATE Libros SET Estatus_Operativo = 'Baja' WHERE Libros_ID = @LibroID";
-                    SqlCommand cmdUpdate = new SqlCommand(updateLibro, con, trans);
-                    cmdUpdate.Parameters.AddWithValue("@LibroID", libroID);
-                    cmdUpdate.ExecuteNonQuery();
 
                     trans.Commit();
                     MessageBox.Show("El libro ha sido dado de baja exitosamente.");
@@ -229,7 +224,7 @@ namespace Vagabunda
         {
             using (SqlConnection con = new SqlConnection(cadena))
             {
-                string query = "SELECT ISBN, Titulo FROM Libros WHERE ISBN = @dato";
+                string query = "SELECT Titulo FROM Libros WHERE Libros_ID = @dato";
 
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@dato", isbn);
@@ -240,7 +235,7 @@ namespace Vagabunda
 
                 if (dr.Read())
                 {
-                    txtLibro.Text = dr["ISBN"].ToString();
+                    txtLibro.Text = dr["Titulo"].ToString();
                 }
                 else
                 {
