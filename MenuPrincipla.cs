@@ -247,14 +247,14 @@ namespace Vagabunda
                 {
                     prestamos.Add(new
                     {
-                        PrestamoID = Convert.ToInt32(dr["Prestamo_ID"]),
-                        FechaLimite = Convert.ToDateTime(dr["Fecha_Limite"]),
-                        UsuarioID = Convert.ToInt32(dr["Usuario_ID"]),
-                        PenalizacionActual = Convert.ToDecimal(dr["Penalizacion_Generada"]),
-                        Estatus = dr["Estatus"].ToString(),
-                        Nombre = dr["Nombre"].ToString(),
-                        Email = dr["Email"].ToString(),
-                        Libro = dr["Titulo"].ToString()
+                        PrestamoID = dr["Prestamo_ID"] == DBNull.Value ? 0 : Convert.ToInt32(dr["Prestamo_ID"]),
+                        FechaLimite = dr["Fecha_Limite"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(dr["Fecha_Limite"]),
+                        UsuarioID = dr["Usuario_ID"] == DBNull.Value ? 0 : Convert.ToInt32(dr["Usuario_ID"]),
+                        PenalizacionActual = dr["Penalizacion_Generada"] == DBNull.Value ? 0.0m : Convert.ToDecimal(dr["Penalizacion_Generada"]),
+                        Estatus = dr["Estatus"] == DBNull.Value ? string.Empty : dr["Estatus"].ToString(),
+                        Nombre = dr["Nombre"] == DBNull.Value ? string.Empty : dr["Nombre"].ToString(),
+                        Email = dr["Email"] == DBNull.Value ? string.Empty : dr["Email"].ToString(),
+                        Libro = dr["Titulo"] == DBNull.Value ? string.Empty : dr["Titulo"].ToString()
                     });
                 }
 
