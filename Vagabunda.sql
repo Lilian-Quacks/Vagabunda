@@ -1,19 +1,22 @@
-create database Vagabunda
+CREATE DATABASE Vagabunda
+GO
 
-use Vagabunda
+USE Vagabunda
+GO
 
-create table Usuarios
+CREATE TABLE Usuarios
 (
     Usuario_ID int Primary key identity(1,1),
-    Nombre Varchar(50)not null,
-    Direccion Varchar(150)not null,
+    Nombre Varchar(50) not null,
+    Direccion Varchar(150) not null,
     Telefono Varchar(10) not null,
     Email Varchar(255) not null,
     Adeudo_Pendiente money,
     Prestamos_Activos Bit,
 )
+GO
 
-create table Bibliotecario
+CREATE TABLE Bibliotecario
 (
     Bibliotecario_ID int Primary key identity(1,1),
     Nombre Varchar(50),
@@ -22,8 +25,9 @@ create table Bibliotecario
     Correo Varchar(50),
     Rol Varchar(50),
 )
+GO
 
-create table Libros
+CREATE TABLE Libros
 (
     Libros_ID int Primary key identity(1,1),
     Titulo Varchar(100),
@@ -35,23 +39,23 @@ create table Libros
     Estatus_Operativo Varchar(50),
     Contador_Prestamo int,
     Bibliotecario_ID int,
-
     foreign key (Bibliotecario_ID) references Bibliotecario(Bibliotecario_ID)
 )
+GO
 
-create table BajaLibros
+CREATE TABLE BajaLibros
 (
     Baja_ID int Primary key identity(1,1),
     Fecha datetime,
     Motivo Varchar(100),
     Libros_ID int,
     Bibliotecario_ID int,
-
     foreign key (Libros_ID) references Libros(Libros_ID),
     foreign key (Bibliotecario_ID) references Bibliotecario(Bibliotecario_ID)
 )
+GO
 
-create table Prestamos
+CREATE TABLE Prestamos
 (
     Prestamo_ID int Primary key identity(1,1),
     Fecha_Salida datetime,
@@ -62,24 +66,24 @@ create table Prestamos
     Usuario_ID int,
     Libros_ID int,
     Bibliotecario_ID int,
-
     foreign key (Usuario_ID) references Usuarios(Usuario_ID),
     foreign key (Libros_ID) references Libros(Libros_ID),
     foreign key (Bibliotecario_ID) references Bibliotecario(Bibliotecario_ID)
 )
+GO
 
-create table Penalizacion
+CREATE TABLE Penalizacion
 (
     Penalizacion_ID int Primary key identity(1,1),
     Fecha_Generada datetime,
     Monto money,
     Pagado bit,
     Prestamo_ID int,
-
     foreign key (Prestamo_ID) references Prestamos(Prestamo_ID)
 )
+GO
 
-create table Reporte
+CREATE TABLE Reporte
 (
     Reporte_ID int Primary key identity(1,1),
     Fecha Datetime,
@@ -88,15 +92,13 @@ create table Reporte
     Prestamo_ID int,
     Baja_ID int,
     Penalizacion_ID int,
-	Fecha_Registro DATETIME DEFAULT GETDATE(),
-
+    Fecha_Registro DATETIME DEFAULT GETDATE(),
     foreign key (Libros_ID) references Libros(Libros_ID),
     foreign key (Prestamo_ID) references Prestamos(Prestamo_ID),
     foreign key (Baja_ID) references BajaLibros(Baja_ID),
     foreign key (Penalizacion_ID) references Penalizacion(Penalizacion_ID)
 )
-
-
+GO
 
 CREATE TRIGGER TR_VerificarVencimiento
 ON Prestamos
@@ -104,17 +106,14 @@ AFTER UPDATE, INSERT
 AS
 BEGIN
     SET NOCOUNT ON;
-
-    -- Si el libro no se ha devuelto y la fecha actual superó la límite
     UPDATE Prestamos
     SET Estatus = 'Retrasado'
     FROM Prestamos p
-    INNER JOIN inserted i ON p.Prestamo_ID = i.Prestamo_ID
-    WHERE p.Fecha_Devolucion IS NULL 
+    INNER JOIN inserted insV on p.Prestamo_ID = insV.Prestamo_ID
+    WHERE p.Fecha_Devolucion IS NULL  
       AND GETDATE() > p.Fecha_Limite;
 END;
 GO
-
 
 CREATE TRIGGER TR_GenerarPenalizacionSemanal
 ON Prestamos
@@ -122,21 +121,19 @@ AFTER UPDATE
 AS
 BEGIN
     SET NOCOUNT ON;
-
-    -- Solo actualiza si el libro no se ha devuelto y ya pasó la fecha límite
+    
     IF EXISTS (SELECT 1 FROM inserted WHERE Fecha_Devolucion IS NULL AND GETDATE() > Fecha_Limite)
     BEGIN
         UPDATE Usuarios
-        SET Adeudo_Pendiente = ISNULL(Adeudo_Pendiente, 0) + 
+        SET Adeudo_Pendiente = ISNULL(u.Adeudo_Pendiente, 0) + 
             (CASE 
-                -- Si ya pasó más de una semana de la fecha límite
-                WHEN DATEDIFF(DAY, i.Fecha_Limite, GETDATE()) >= 7 
-                THEN (DATEDIFF(DAY, i.Fecha_Limite, GETDATE()) / 7) * 50 
+                WHEN DATEDIFF(DAY, insP.Fecha_Limite, GETDATE()) >= 7 
+                THEN (DATEDIFF(DAY, insP.Fecha_Limite, GETDATE()) / 7) * 50 
                 ELSE 0 
              END)
         FROM Usuarios u
-        INNER JOIN inserted i ON u.Usuario_ID = i.Usuario_ID
-        WHERE i.Fecha_Devolucion IS NULL;
+        INNER JOIN inserted insP ON u.Usuario_ID = insP.Usuario_ID
+        WHERE insP.Fecha_Devolucion IS NULL;
     END
 END;
 GO
@@ -147,11 +144,10 @@ AFTER INSERT
 AS
 BEGIN
     SET NOCOUNT ON;
-    
-    -- Borra registros con más de 30 días de antigüedad
     DELETE FROM Reporte 
     WHERE Fecha_Registro < DATEADD(DAY, -30, GETDATE());
 END
+GO
 
 CREATE TRIGGER TR_BajaAutomaticaLibro
 ON BajaLibros
@@ -159,12 +155,28 @@ AFTER INSERT
 AS
 BEGIN
     SET NOCOUNT ON;
-
-    -- Cambia el estado en la tabla Libros automáticamente
     UPDATE Libros
     SET Estatus_Operativo = 'BAJA',
-        Estado_Fisico = i.Motivo
+        Estado_Fisico = insB.Motivo
     FROM Libros l
-    INNER JOIN inserted i ON l.Libros_ID = i.Libros_ID;
+    INNER JOIN inserted insB ON l.Libros_ID = insB.Libros_ID;
 END
+GO
 
+INSERT INTO Bibliotecario
+(
+    Nombre,
+    Usuario_Login,
+    Contraseña,
+    Correo,
+    Rol
+)
+VALUES
+(
+    'Administrador',
+    'admin',
+    '1234',
+    'admin@vagabunda.com',
+    'Administrador'
+)
+GO

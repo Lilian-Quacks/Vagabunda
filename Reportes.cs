@@ -7,7 +7,7 @@ namespace Vagabunda
 {
     public partial class Reportes : Form
     {
-        string conexion = @"Data Source=LOCALHOST;Initial Catalog=Vagabunda;Integrated Security=True;";
+        string conexion = @"Data Source=.;Initial Catalog=Vagabunda;Integrated Security=True;";
 
         public Reportes()
         {

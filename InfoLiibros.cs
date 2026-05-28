@@ -8,7 +8,7 @@ namespace Vagabunda
 {
     public partial class InfoLiibros : Form
     {
-        string cadena = @"Data Source=LOCALHOST;Initial Catalog=Vagabunda;Integrated Security=True;";
+        string cadena = @"Data Source=.;Initial Catalog=Vagabunda;Integrated Security=True;";
         public string IsbnSeleccionado { get; set; }
 
         public InfoLiibros()

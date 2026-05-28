@@ -7,23 +7,31 @@ namespace Vagabunda
 {
     public partial class IniciarSesion : Form
     {
-        string cadena = @"Data Source=LOCALHOST;Initial Catalog=Vagabunda;Integrated Security=True;";
+        string cadena = @"Data Source=.;Initial Catalog=Vagabunda;Integrated Security=True;";
 
         public IniciarSesion()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             LLOlvideContra.TabStop = false;
-            this.FormClosed += (s, e) => Application.Exit();
+
         }
+
 
         private void IniciarSesion_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.UsuarioGuardado))
+            try
             {
-                TXTUsuario.Text = Properties.Settings.Default.UsuarioGuardado;
-                TXTContra.Text = Properties.Settings.Default.ContraGuardada;
-                CBRecordar.Checked = true;
+                if (!string.IsNullOrEmpty(Properties.Settings.Default.UsuarioGuardado))
+                {
+                    TXTUsuario.Text = Properties.Settings.Default.UsuarioGuardado;
+                    TXTContra.Text = Properties.Settings.Default.ContraGuardada;
+                    CBRecordar.Checked = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar configuraciones de usuario: " + ex.Message);
             }
         }
 

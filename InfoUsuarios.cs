@@ -8,7 +8,7 @@ namespace Vagabunda
 {
     public partial class InfoUsuarios : Form
     {
-        string cadena = @"Data Source=LOCALHOST;Initial Catalog=Vagabunda;Integrated Security=True;";
+        string cadena = @"Data Source=.;Initial Catalog=Vagabunda;Integrated Security=True;";
         public string NombreSeleccionado { get; set; }
 
         public InfoUsuarios()
