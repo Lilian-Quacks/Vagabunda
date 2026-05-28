@@ -81,6 +81,7 @@
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
@@ -178,6 +179,12 @@
     </Compile>
     <Compile Include="IniciarSesion.Designer.cs">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstaladorDB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InstaladorDB.Designer.cs">
+      <DependentUpon>InstaladorDB.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuPrincipla.cs">
       <SubType>Form</SubType>
