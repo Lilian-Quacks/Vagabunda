@@ -362,7 +362,7 @@ namespace Vagabunda
         {
             using (SqlConnection con = new SqlConnection(cadena))
             {
-                string query = "SELECT Titulo FROM Libros WHERE ISBN = @dato AND Estatus_Operativo = 'Disponible'";
+                string query = "SELECT Titulo FROM Libros WHERE Libros_ID = @dato AND Estatus_Operativo = 'Disponible'";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@dato", isbn);
                 con.Open();
